@@ -1,0 +1,22 @@
+flowchart LR
+    U[Student browser] --> UI[Custom Streamlit UI: app.py]
+    UI --> P[Validated profile in session memory]
+    C[Reviewed USA catalog: data/opportunities.json] --> V[Pydantic catalog validation]
+    V --> W[Local rules and LangGraph matching]
+    P --> W
+    W --> AC[Shared agent contracts: agents.py]
+    UI --> PL[Planning specialist on selection]
+    PL --> AC
+    AC --> FW[Fireworks: structured model responses]
+    W -.-> KE[Keenable: broad subject search]
+    UI -.-> KEF[Keenable: reviewed URL fetch]
+    KE --> LE[Separate unverified leads]
+    KEF --> ST[Source text for manual inspection]
+    W --> UI
+    PL --> UI
+    UI --> DB[(Local SQLite: saved plans and stage metadata)]
+    FW --> BL[(SQLite: cumulative usage ledger)]
+    BL -.-> FW
+    ENV[Ignored environment file: server-side keys] -.-> FW
+    ENV -.-> KE
+    ENV -.-> KEF

@@ -1,0 +1,23 @@
+{
+  "run_id": "20261103T025100348696Z",
+  "started_utc": "2026-11-03T02:51:00.352724+00:00",
+  "model": "accounts/fireworks/models/gpt-oss-120b",
+  "prompt_version": "2026-11-02-v2",
+  "dataset_version": "2026-11-02-v1",
+  "dataset_fingerprint": "60a2969f4f33b1fbe1aca9f26f6b91fac310eb8fa5b50902d904958c4574f401",
+  "source_fingerprint": "519c85ebb4be2183d776fa1d414819d356ba7dfee28a84abb5136a3add0f5142",
+  "repeats": 3,
+  "python": "3.13.15",
+  "pydantic": "2.14.2",
+  "langgraph": "1.2.19",
+  "initial_ledger_usd": 0.0173982,
+  "additional_eval_cap_usd": 1.0,
+  "live": true,
+  "gates": {
+    "contract_rate": 1.0,
+    "task_pass_rate": 0.9
+  },
+  "finished_utc": "2026-11-03T02:52:35.598550+00:00",
+  "final_ledger_usd": 0.026000099999999998,
+  "estimated_eval_delta_usd": 0.008601899999999999
+}

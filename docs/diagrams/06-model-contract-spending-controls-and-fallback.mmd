@@ -1,0 +1,20 @@
+flowchart TD
+    A[Request one specialist role] --> B{Input references empty?}
+    B -->|Yes| EMPTY[Return empty validated result with no API call]
+    B -->|No| READY{Live mode and configured provider?}
+    READY -->|No| LOCAL[Use role-specific local behavior]
+    READY -->|Yes| CONTEXT[Build bounded role context and JSON schema]
+    CONTEXT --> RES[Estimate conservative request cost plus margin]
+    RES --> TX[Atomic SQLite reservation: BEGIN IMMEDIATE]
+    TX --> CAP{Fits remaining cumulative cap?}
+    CAP -->|No| FALL[Record Fallback event and use local result]
+    CAP -->|Yes| CALL[Call Fireworks with bounded output and timeout]
+    CALL --> RESP{Response received with usable usage?}
+    RESP -->|Yes| SET[Settle estimated cost using returned token counts]
+    RESP -->|No or ambiguous failure| KEEP[Retain reservation for unknown billed usage]
+    SET --> VALID{Normal finish, valid schema and exact allowed references?}
+    VALID -->|Yes| OK[Accept result and record stage event]
+    VALID -->|No| FALL
+    KEEP --> FAIL{Response otherwise usable?}
+    FAIL -->|Yes| VALID
+    FAIL -->|No| FALL

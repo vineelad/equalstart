@@ -1,0 +1,18 @@
+flowchart TD
+    A[Select reviewed opportunity] --> B[Read published material list]
+    B --> C{Live provider ready and materials present?}
+    C -->|Yes| D[Planning model orders explicit zero-based material indices]
+    D --> E{Every original index exactly once?}
+    E -->|Yes| F[Use validated order]
+    E -->|No or call failure| G[Keep original source order and show Fallback]
+    C -->|No| H[Keep original order without model call]
+    F --> TASK[Build source-linked tasks using unchanged material text]
+    G --> TASK
+    H --> TASK
+    TASK --> GEN[Add separately labeled general verification, cost and final-review steps]
+    GEN --> SAVE[(SQLite: opportunity ID, checklist order and completion IDs)]
+    SAVE --> UI[My plan: reload and check off tasks]
+    UI --> SAVE
+    UI --> EXPORT[Download JSON or Markdown]
+    UI --> CLEAR[Clear saved plans]
+    CLEAR --> RETAIN[Budget ledger and stage logs remain]

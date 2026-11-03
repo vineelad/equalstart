@@ -1,0 +1,18 @@
+flowchart TD
+    CASES[Freeze 32 synthetic labeled cases: eight per agent] --> SPLIT[Separate model context from expected labels]
+    SPLIT --> BASE[Run local role baseline]
+    SPLIT --> LIVE[Run production invoke_agent prompts, schemas and guards]
+    CONFIG[Record model, prompt, dataset and grader fingerprints] --> LIVE
+    LIVE --> BUDGET[Use shared cumulative ledger and smaller eval run cap]
+    BASE --> GRADE[Deterministic graders compare outputs with hidden expected labels]
+    BUDGET --> GRADE
+    GRADE --> METRICS[Per-agent contract validity and task pass rates]
+    GRADE --> DIAG[Quality metrics, latency, cost and repeat stability]
+    METRICS --> GATE{Each live agent: contract 100 percent and task pass at least 90 percent?}
+    GATE -->|Yes| PASS[Successful evaluation exit]
+    GATE -->|No| FAIL[Nonzero exit with failures preserved]
+    PASS --> REPORT[Versioned run folder: journal, cases, metadata, JSON, CSV and HTML]
+    FAIL --> REPORT
+    DIAG --> REPORT
+    REPORT --> TEAM[Team review and capstone evidence]
+    REPORT --> APP[How it works evaluation scorecards]

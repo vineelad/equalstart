@@ -1,0 +1,1571 @@
+[
+  {
+    "id": "noaa-hollings",
+    "title": "Hollings Undergraduate Scholarship",
+    "provider": "NOAA",
+    "category": "Scholarship",
+    "summary": "Support for NOAA-related study, followed by a paid summer research internship.",
+    "location": "U.S. institutions and NOAA facilities",
+    "tags": [
+      "Environment",
+      "STEM",
+      "Research",
+      "Social sciences"
+    ],
+    "award": "Up to $9,500 / academic year",
+    "official_url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective",
+    "claims": [
+      {
+        "id": "noaa-hollings-overview",
+        "topic": "overview",
+        "text": "Support for NOAA-related study, followed by a paid summer research internship.",
+        "url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "noaa-hollings-eligibility",
+        "topic": "eligibility",
+        "text": "U.S. citizens; GPA at least 3.0; qualifying second-year, five-year-program third-year, or community-college transfer standing; NOAA-related major.",
+        "url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "noaa-hollings-funding",
+        "topic": "funding",
+        "text": "Academic support up to $9,500 annually and a paid internship. Check site-specific housing, travel and payment conditions.",
+        "url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "noaa-hollings-timing",
+        "topic": "timing",
+        "text": "2027 application open; closes January 31, 2027 at 11:59 p.m. Eastern.",
+        "url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "noaa-hollings-materials",
+        "topic": "materials",
+        "text": "Complete application and essay questions; Provide college transcripts; Arrange two academic references and graduation-date documentation",
+        "url": "https://www.noaa.gov/office-education/hollings-scholarship/prospective",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "US citizen"
+        ],
+        "label": "U.S. citizenship",
+        "claim_id": "noaa-hollings-eligibility"
+      },
+      {
+        "field": "gpa",
+        "op": "gte",
+        "value": 3.0,
+        "label": "Minimum 3.0 GPA",
+        "claim_id": "noaa-hollings-eligibility"
+      },
+      {
+        "field": "full_time",
+        "op": "eq",
+        "value": true,
+        "label": "Full-time enrollment",
+        "claim_id": "noaa-hollings-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Qualifying year or transfer pathway",
+      "Declared major supports NOAA's mission",
+      "Full-time enrollment through the award period"
+    ],
+    "materials": [
+      "Complete application and essay questions",
+      "Provide college transcripts",
+      "Arrange two academic references and graduation-date documentation"
+    ],
+    "cycle_status": "Open",
+    "cycle": "2027",
+    "deadline": "2027-01-31T23:59:00-05:00",
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "cooke-transfer",
+    "title": "Undergraduate Transfer Scholarship",
+    "provider": "Jack Kent Cooke Foundation",
+    "category": "Scholarship",
+    "summary": "Help completing a bachelor's degree after community college, with transition advising.",
+    "location": "Accredited U.S. four-year institutions",
+    "tags": [
+      "All fields",
+      "Transfer",
+      "Tuition"
+    ],
+    "award": "Up to $55,000 / year",
+    "official_url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/how-to-apply/",
+    "claims": [
+      {
+        "id": "cooke-transfer-overview",
+        "topic": "overview",
+        "text": "Help completing a bachelor's degree after community college, with transition advising.",
+        "url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/how-to-apply/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cooke-transfer-eligibility",
+        "topic": "eligibility",
+        "text": "Community-college sophomore by January 1, 2027, or qualifying recent graduate; GPA 3.5; transfer in fall 2027; unmet financial need.",
+        "url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/how-to-apply/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cooke-transfer-funding",
+        "topic": "funding",
+        "text": "Last-dollar educational funding up to $55,000 annually, based on costs and other aid; transition and career advising included.",
+        "url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/how-to-apply/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cooke-transfer-timing",
+        "topic": "timing",
+        "text": "Application opened August 19, 2026; closes December 9, 2026 at 11:59 p.m. Eastern.",
+        "url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/how-to-apply/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cooke-transfer-materials",
+        "topic": "materials",
+        "text": "Complete the Common App for Transfer scholarship application",
+        "url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/how-to-apply/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "institution_type",
+        "op": "eq",
+        "value": "Community college",
+        "label": "Community-college transfer pathway",
+        "claim_id": "cooke-transfer-eligibility"
+      },
+      {
+        "field": "gpa",
+        "op": "gte",
+        "value": 3.5,
+        "label": "Minimum 3.5 GPA",
+        "claim_id": "cooke-transfer-eligibility"
+      },
+      {
+        "field": "transfer_plans",
+        "op": "eq",
+        "value": true,
+        "label": "Plan to transfer to a four-year institution",
+        "claim_id": "cooke-transfer-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Sophomore status or qualifying graduation date",
+      "Fall 2027 full-time bachelor's enrollment",
+      "Financial review including family income limit of $95,000",
+      "Prior four-year enrollment restrictions"
+    ],
+    "materials": [
+      "Complete the Common App for Transfer scholarship application"
+    ],
+    "cycle_status": "Open",
+    "cycle": "Fall 2027 transfer",
+    "deadline": "2026-12-09T23:59:00-05:00",
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "goldwater",
+    "title": "Goldwater Scholarship",
+    "provider": "Goldwater Foundation",
+    "category": "Scholarship",
+    "summary": "Academic funding for undergraduates pursuing research in natural science, mathematics, or engineering.",
+    "location": "Accredited U.S. institutions",
+    "tags": [
+      "STEM",
+      "Research",
+      "Tuition"
+    ],
+    "award": "Up to $7,500 / academic year",
+    "official_url": "https://goldwaterscholarship.gov/students/overview/",
+    "claims": [
+      {
+        "id": "goldwater-overview",
+        "topic": "overview",
+        "text": "Academic funding for undergraduates pursuing research in natural science, mathematics, or engineering.",
+        "url": "https://goldwaterscholarship.gov/students/overview/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "goldwater-eligibility",
+        "topic": "eligibility",
+        "text": "Sophomore or junior by remaining terms; GPA 3.0; full-time study while supported; U.S. citizen, national, or permanent resident; research career intent.",
+        "url": "https://goldwaterscholarship.gov/students/overview/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "goldwater-funding",
+        "topic": "funding",
+        "text": "Up to $7,500 annually for eligible academic costs after other aid. Campus nomination is required.",
+        "url": "https://goldwaterscholarship.gov/students/overview/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "goldwater-timing",
+        "topic": "timing",
+        "text": "National nominations use the last Friday in January, 5 p.m. Central. Confirm the cycle and earlier campus deadline.",
+        "url": "https://goldwaterscholarship.gov/students/overview/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "goldwater-materials",
+        "topic": "materials",
+        "text": "Contact your campus representative; Complete the application and research essay; Obtain campus nomination",
+        "url": "https://goldwaterscholarship.gov/students/overview/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "US citizen",
+          "US national",
+          "Permanent resident"
+        ],
+        "label": "Citizenship, national or permanent-resident status",
+        "claim_id": "goldwater-eligibility"
+      },
+      {
+        "field": "gpa",
+        "op": "gte",
+        "value": 3.0,
+        "label": "Minimum 3.0 GPA",
+        "claim_id": "goldwater-eligibility"
+      },
+      {
+        "field": "full_time",
+        "op": "eq",
+        "value": true,
+        "label": "Full-time enrollment",
+        "claim_id": "goldwater-eligibility"
+      },
+      {
+        "field": "research_career",
+        "op": "eq",
+        "value": true,
+        "label": "Intend to pursue a research career",
+        "claim_id": "goldwater-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Sophomore or junior definition based on remaining semesters",
+      "Eligible research field and career",
+      "Campus nomination and earlier campus deadline"
+    ],
+    "materials": [
+      "Contact your campus representative",
+      "Complete the application and research essay",
+      "Obtain campus nomination"
+    ],
+    "cycle_status": "Unknown",
+    "cycle": "Current cycle unconfirmed",
+    "deadline": null,
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "doe-suli",
+    "title": "Science Undergraduate Laboratory Internships",
+    "provider": "U.S. Department of Energy",
+    "category": "Research",
+    "summary": "On-site research or technical projects with scientists and engineers at U.S. national laboratories.",
+    "location": "U.S. DOE national laboratories",
+    "tags": [
+      "STEM",
+      "Environment",
+      "Research",
+      "Community college"
+    ],
+    "award": "$650 / week + housing support",
+    "official_url": "https://science.osti.gov/wdts/suli/Eligibility",
+    "claims": [
+      {
+        "id": "doe-suli-overview",
+        "topic": "overview",
+        "text": "On-site research or technical projects with scientists and engineers at U.S. national laboratories.",
+        "url": "https://science.osti.gov/wdts/suli/Eligibility",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "doe-suli-eligibility",
+        "topic": "eligibility",
+        "text": "U.S. citizen or permanent resident; minimum GPA 3.0; college coursework and enrollment criteria; age 18 by start. Full-time undergraduate enrollment or qualifying recent graduation.",
+        "url": "https://science.osti.gov/wdts/suli/Eligibility",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "doe-suli-funding",
+        "topic": "funding",
+        "text": "Weekly stipend, housing arrangements or allowance, and qualifying domestic round-trip travel reimbursement. Upfront travel costs may remain.",
+        "url": "https://science.osti.gov/wdts/suli/Benefits",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "doe-suli-timing",
+        "topic": "timing",
+        "text": "Current application dates need confirmation.",
+        "url": "https://science.osti.gov/wdts/suli/Eligibility",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "US citizen",
+          "Permanent resident"
+        ],
+        "label": "U.S. citizen or permanent resident",
+        "claim_id": "doe-suli-eligibility"
+      },
+      {
+        "field": "gpa",
+        "op": "gte",
+        "value": 3.0,
+        "label": "Minimum 3.0 GPA",
+        "claim_id": "doe-suli-eligibility"
+      },
+      {
+        "field": "full_time",
+        "op": "eq",
+        "value": true,
+        "label": "Full-time enrollment",
+        "claim_id": "doe-suli-eligibility"
+      }
+    ],
+    "confirmations": [
+      "At least one matriculated semester, 6 STEM credits and 12 total credits",
+      "Age 18 by internship start",
+      "Participation limits and full-term availability"
+    ],
+    "materials": [],
+    "cycle_status": "Unknown",
+    "cycle": "Current cycle unconfirmed",
+    "deadline": null,
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Allowance or arranged",
+    "travel": "Reimbursed",
+    "upfront": "Reimbursement barrier"
+  },
+  {
+    "id": "doe-cci",
+    "title": "Community College Internships",
+    "provider": "U.S. Department of Energy",
+    "category": "Internship",
+    "summary": "On-site research or technical projects with scientists and engineers at U.S. national laboratories.",
+    "location": "U.S. DOE national laboratories",
+    "tags": [
+      "STEM",
+      "Environment",
+      "Research",
+      "Community college"
+    ],
+    "award": "$650 / week + housing support",
+    "official_url": "https://science.osti.gov/wdts/cci/Eligibility",
+    "claims": [
+      {
+        "id": "doe-cci-overview",
+        "topic": "overview",
+        "text": "On-site research or technical projects with scientists and engineers at U.S. national laboratories.",
+        "url": "https://science.osti.gov/wdts/cci/Eligibility",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "doe-cci-eligibility",
+        "topic": "eligibility",
+        "text": "U.S. citizen or permanent resident; minimum GPA 2.7; college coursework and enrollment criteria; age 18 by start. Community-college enrollment required; below 3.0 needs a GPA waiver statement.",
+        "url": "https://science.osti.gov/wdts/cci/Eligibility",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "doe-cci-funding",
+        "topic": "funding",
+        "text": "Weekly stipend, housing arrangements or allowance, and qualifying domestic round-trip travel reimbursement. Upfront travel costs may remain.",
+        "url": "https://science.osti.gov/wdts/cci/Benefits",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "doe-cci-timing",
+        "topic": "timing",
+        "text": "Current application dates need confirmation.",
+        "url": "https://science.osti.gov/wdts/cci/Eligibility",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "US citizen",
+          "Permanent resident"
+        ],
+        "label": "U.S. citizen or permanent resident",
+        "claim_id": "doe-cci-eligibility"
+      },
+      {
+        "field": "gpa",
+        "op": "gte",
+        "value": 2.7,
+        "label": "Minimum 2.7 GPA",
+        "claim_id": "doe-cci-eligibility"
+      },
+      {
+        "field": "institution_type",
+        "op": "eq",
+        "value": "Community college",
+        "label": "Community-college enrollment",
+        "claim_id": "doe-cci-eligibility"
+      }
+    ],
+    "confirmations": [
+      "At least one matriculated semester, 6 STEM credits and 12 total credits",
+      "Age 18 by internship start",
+      "Participation limits and full-term availability",
+      "GPA waiver statement if GPA is below 3.0"
+    ],
+    "materials": [],
+    "cycle_status": "Unknown",
+    "cycle": "Current cycle unconfirmed",
+    "deadline": null,
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Allowance or arranged",
+    "travel": "Reimbursed",
+    "upfront": "Reimbursement barrier"
+  },
+  {
+    "id": "nih-sip",
+    "title": "NIH Summer Internship Program",
+    "provider": "National Institutes of Health",
+    "category": "Research",
+    "summary": "Full-time biomedical, behavioral, and social-science research with NIH investigators.",
+    "location": "NIH campuses in the United States",
+    "tags": [
+      "Health",
+      "STEM",
+      "Social sciences",
+      "Research"
+    ],
+    "award": "Paid stipend; amount varies",
+    "official_url": "https://www.training.nih.gov/research-training/pb/sip/",
+    "claims": [
+      {
+        "id": "nih-sip-overview",
+        "topic": "overview",
+        "text": "Full-time biomedical, behavioral, and social-science research with NIH investigators.",
+        "url": "https://www.training.nih.gov/research-training/pb/sip/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "nih-sip-eligibility",
+        "topic": "eligibility",
+        "text": "U.S. citizen or permanent resident; qualifying enrollment at least half time; age and full-program availability conditions apply.",
+        "url": "https://www.training.nih.gov/research-training/pb/sip/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "nih-sip-funding",
+        "topic": "funding",
+        "text": "Stipend depends on education. Housing is not provided; interns arrange their own accommodation and need health insurance.",
+        "url": "https://www.training.nih.gov/research-training/pb/sip/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "nih-sip-timing",
+        "topic": "timing",
+        "text": "2027 application open; application due January 26 at noon Eastern. Reference letters have a separate February 2 noon deadline.",
+        "url": "https://www.training.nih.gov/research-training/pb/sip/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "nih-sip-materials",
+        "topic": "materials",
+        "text": "Submit coursework and grades; Prepare a CV or resume and personal statement; Provide two reference contacts; Complete NIH's eligibility screener and application; Identify relevant investigators; outreach is recommended by NIH",
+        "url": "https://www.training.nih.gov/research-training/pb/sip/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "US citizen",
+          "Permanent resident"
+        ],
+        "label": "U.S. citizen or permanent resident",
+        "claim_id": "nih-sip-eligibility"
+      }
+    ],
+    "confirmations": [
+      "At least half-time enrollment",
+      "Published age rule for summer 2027",
+      "Health insurance and full-time in-person availability"
+    ],
+    "materials": [
+      "Submit coursework and grades",
+      "Prepare a CV or resume and personal statement",
+      "Provide two reference contacts",
+      "Complete NIH's eligibility screener and application",
+      "Identify relevant investigators; outreach is recommended by NIH"
+    ],
+    "cycle_status": "Open",
+    "cycle": "Summer 2027",
+    "deadline": "2027-01-26T12:00:00-05:00",
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Not provided",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "nih-ugsp",
+    "title": "NIH Undergraduate Scholarship Program",
+    "provider": "National Institutes of Health",
+    "category": "Scholarship",
+    "summary": "Need-based academic support with paid NIH research service commitments.",
+    "location": "U.S. four-year institutions; NIH service placements",
+    "tags": [
+      "Health",
+      "STEM",
+      "Social sciences",
+      "Research",
+      "Tuition"
+    ],
+    "award": "Up to $20,000 / academic year",
+    "official_url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+    "claims": [
+      {
+        "id": "nih-ugsp-overview",
+        "topic": "overview",
+        "text": "Need-based academic support with paid NIH research service commitments.",
+        "url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "nih-ugsp-eligibility",
+        "topic": "eligibility",
+        "text": "Citizen or permanent resident; full-time four-year study; 3.3 GPA OR top 5%; certified exceptional financial need; qualifying transfer or junior/senior standing.",
+        "url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "nih-ugsp-funding",
+        "topic": "funding",
+        "text": "Up to $20,000 for academic and living costs. Each supported year carries paid summer and post-graduation NIH service obligations.",
+        "url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "nih-ugsp-timing",
+        "topic": "timing",
+        "text": "Opens January 5, 2027. Application due March 31 at noon Eastern; references and financial-need forms have later separate deadlines.",
+        "url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "nih-ugsp-materials",
+        "topic": "materials",
+        "text": "Complete NIH's eligibility screener and scholarship application; Arrange Exceptional Financial Need certification",
+        "url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "US citizen",
+          "Permanent resident"
+        ],
+        "label": "U.S. citizen or permanent resident",
+        "claim_id": "nih-ugsp-eligibility"
+      },
+      {
+        "field": "full_time",
+        "op": "eq",
+        "value": true,
+        "label": "Full-time enrollment",
+        "claim_id": "nih-ugsp-eligibility"
+      },
+      {
+        "field": "research_career",
+        "op": "eq",
+        "value": true,
+        "label": "Intend to pursue a research career",
+        "claim_id": "nih-ugsp-eligibility"
+      }
+    ],
+    "confirmations": [
+      "3.3 GPA OR top-five-percent class rank",
+      "Exceptional Financial Need certified by financial aid office",
+      "Qualifying transfer or junior/senior standing",
+      "Ability to fulfill paid service obligations and background check"
+    ],
+    "materials": [
+      "Complete NIH's eligibility screener and scholarship application",
+      "Arrange Exceptional Financial Need certification"
+    ],
+    "cycle_status": "Upcoming",
+    "cycle": "2027",
+    "deadline": "2027-03-31T12:00:00-04:00",
+    "deadline_date": null,
+    "opens_on": "2027-01-05",
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "ncsa-reu",
+    "title": "NCSA Summer Research Experience",
+    "provider": "University of Illinois Urbana-Champaign",
+    "category": "Research",
+    "summary": "Ten weeks of mentored research in machine learning and open-source scientific tools.",
+    "location": "Urbana-Champaign, Illinois",
+    "tags": [
+      "STEM",
+      "Research",
+      "Computing",
+      "Open source"
+    ],
+    "award": "$700 / week + housing + meals",
+    "official_url": "https://reu.ncsa.illinois.edu/",
+    "claims": [
+      {
+        "id": "ncsa-reu-overview",
+        "topic": "overview",
+        "text": "Ten weeks of mentored research in machine learning and open-source scientific tools.",
+        "url": "https://reu.ncsa.illinois.edu/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "ncsa-reu-eligibility",
+        "topic": "eligibility",
+        "text": "Citizen or permanent resident; associate or bachelor's enrollment in any major/year; good standing; age 18; Python and some machine-learning exposure.",
+        "url": "https://reu.ncsa.illinois.edu/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "ncsa-reu-funding",
+        "topic": "funding",
+        "text": "Weekly stipend, program-arranged paid housing, a meal plan and one round trip. Travel payment timing needs confirmation.",
+        "url": "https://reu.ncsa.illinois.edu/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "ncsa-reu-timing",
+        "topic": "timing",
+        "text": "Applications November 15, 2026 through February 15, 2027; program May 24–July 30, 2027. Closing time not stated.",
+        "url": "https://reu.ncsa.illinois.edu/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "US citizen",
+          "Permanent resident"
+        ],
+        "label": "U.S. citizen or permanent resident",
+        "claim_id": "ncsa-reu-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Age 18 by start and good academic standing",
+      "Python experience and exposure to machine learning",
+      "Full-time availability and required campus residence"
+    ],
+    "materials": [],
+    "cycle_status": "Upcoming",
+    "cycle": "Summer 2027",
+    "deadline": null,
+    "deadline_date": "2027-02-15",
+    "opens_on": "2026-11-15",
+    "housing": "Provided",
+    "travel": "Supported; timing unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "cmu-reuse",
+    "title": "REUSE Software Engineering Research",
+    "provider": "Carnegie Mellon University",
+    "category": "Research",
+    "summary": "Paid software-engineering research; the published FAQ welcomes applicants with limited prior research.",
+    "location": "Pittsburgh, Pennsylvania",
+    "tags": [
+      "STEM",
+      "Research",
+      "Computing"
+    ],
+    "award": "$7,000 stipend + meals + housing",
+    "official_url": "https://www.cmu.edu/scs/s3d/reuse/faq.html",
+    "claims": [
+      {
+        "id": "cmu-reuse-overview",
+        "topic": "overview",
+        "text": "Paid software-engineering research; the published FAQ welcomes applicants with limited prior research.",
+        "url": "https://www.cmu.edu/scs/s3d/reuse/faq.html",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cmu-reuse-eligibility",
+        "topic": "eligibility",
+        "text": "Undergraduate enrollment; published graduation-date and age rules. Students on visas at U.S. institutions may need CPT or OPT.",
+        "url": "https://www.cmu.edu/scs/s3d/reuse/faq.html",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cmu-reuse-funding",
+        "topic": "funding",
+        "text": "$7,000 stipend, $1,400 meal allowance, paid campus housing and travel compensation in the published 2026 cycle.",
+        "url": "https://www.cmu.edu/scs/s3d/reuse/faq.html",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cmu-reuse-timing",
+        "topic": "timing",
+        "text": "Published deadline was February 1, 2026 at 11:59 p.m. Eastern; next cycle is unconfirmed.",
+        "url": "https://www.cmu.edu/scs/s3d/reuse/faq.html",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cmu-reuse-materials",
+        "topic": "materials",
+        "text": "Arrange one required reference letter; Submit transcript with the ETAP application",
+        "url": "https://www.cmu.edu/scs/s3d/reuse/faq.html",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [],
+    "confirmations": [
+      "Next cycle's eligibility and graduation cutoff",
+      "Age 18 by program start",
+      "Work authorization if applicable"
+    ],
+    "materials": [
+      "Arrange one required reference letter",
+      "Submit transcript with the ETAP application"
+    ],
+    "cycle_status": "Closed",
+    "cycle": "2026 archive",
+    "deadline": "2026-02-01T23:59:00-05:00",
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Provided",
+    "travel": "Supported; timing unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "hsf-scholar",
+    "title": "HSF Scholar Program",
+    "provider": "Hispanic Scholarship Fund",
+    "category": "Scholarship",
+    "summary": "Scholar support services with possible need-based funding, subject to available funds.",
+    "location": "Eligible U.S. four-year institutions",
+    "tags": [
+      "All fields",
+      "Tuition",
+      "Mentorship"
+    ],
+    "award": "$500–$5,000 if funded",
+    "official_url": "https://www.hsf.net/scholarship/",
+    "claims": [
+      {
+        "id": "hsf-scholar-overview",
+        "topic": "overview",
+        "text": "Scholar support services with possible need-based funding, subject to available funds.",
+        "url": "https://www.hsf.net/scholarship/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "hsf-scholar-eligibility",
+        "topic": "eligibility",
+        "text": "Citizen, permanent resident or DACA; college GPA at least 2.5; Hispanic heritage; qualifying full-time four-year study and FAFSA submission.",
+        "url": "https://www.hsf.net/scholarship/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "hsf-scholar-funding",
+        "topic": "funding",
+        "text": "Scholar status does not guarantee an award. Funding ranges from $500 to $5,000 depending on need and available funds.",
+        "url": "https://www.hsf.net/scholarship/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "hsf-scholar-timing",
+        "topic": "timing",
+        "text": "2026 application is closed; published deadline February 15, 2026. Next cycle unconfirmed.",
+        "url": "https://www.hsf.net/scholarship/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "US citizen",
+          "Permanent resident",
+          "DACA"
+        ],
+        "label": "Citizen, permanent resident or DACA",
+        "claim_id": "hsf-scholar-eligibility"
+      },
+      {
+        "field": "gpa",
+        "op": "gte",
+        "value": 2.5,
+        "label": "Minimum 2.5 college GPA",
+        "claim_id": "hsf-scholar-eligibility"
+      },
+      {
+        "field": "full_time",
+        "op": "eq",
+        "value": true,
+        "label": "Full-time enrollment",
+        "claim_id": "hsf-scholar-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Voluntary heritage criterion and FAFSA requirement",
+      "Qualifying four-year institution and funding availability"
+    ],
+    "materials": [],
+    "cycle_status": "Closed",
+    "cycle": "2026 archive",
+    "deadline": null,
+    "deadline_date": "2026-02-15",
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "udall-environment",
+    "title": "Udall Undergraduate Scholarship",
+    "provider": "Udall Foundation",
+    "category": "Scholarship",
+    "summary": "Academic support and an alumni community for environmental and Tribal public-service leadership.",
+    "location": "U.S. undergraduate institutions",
+    "tags": [
+      "Environment",
+      "Social sciences",
+      "Public service"
+    ],
+    "award": "Up to $7,500",
+    "official_url": "https://udall.gov/ourprograms/scholarship/scholarship",
+    "claims": [
+      {
+        "id": "udall-environment-overview",
+        "topic": "overview",
+        "text": "Academic support and an alumni community for environmental and Tribal public-service leadership.",
+        "url": "https://udall.gov/ourprograms/scholarship/scholarship",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "udall-environment-eligibility",
+        "topic": "eligibility",
+        "text": "Eligibility varies by environmental, Tribal-policy or Native-health category. Verify current standing, citizenship and nomination rules.",
+        "url": "https://udall.gov/ourprograms/scholarship/scholarship",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "udall-environment-funding",
+        "topic": "funding",
+        "text": "Up to $7,500 for eligible academic expenses; the Foundation anticipates up to 65 awards in 2027.",
+        "url": "https://www.udall.gov/ourprograms/scholarship/aboutscholarship",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "udall-environment-timing",
+        "topic": "timing",
+        "text": "2027 program announced; verify national and campus closing dates.",
+        "url": "https://udall.gov/ourprograms/scholarship/scholarship",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [],
+    "confirmations": [
+      "Current 2027 eligibility criteria and category",
+      "Campus nomination and earlier campus deadline"
+    ],
+    "materials": [],
+    "cycle_status": "Unknown",
+    "cycle": "2027",
+    "deadline": null,
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "ud-first-generation",
+    "title": "Constantin First-Generation Scholarship",
+    "provider": "University of Dallas",
+    "category": "Scholarship",
+    "summary": "Institution-specific support for current first-generation University of Dallas students.",
+    "location": "University of Dallas, Texas",
+    "tags": [
+      "All fields",
+      "First generation",
+      "Tuition"
+    ],
+    "award": "Amount not confirmed",
+    "official_url": "https://udallas.edu/admissions-aid/financial-aid/undergraduate-financial-aid/undergrad-scholarships.php",
+    "claims": [
+      {
+        "id": "ud-first-generation-overview",
+        "topic": "overview",
+        "text": "Institution-specific support for current first-generation University of Dallas students.",
+        "url": "https://udallas.edu/admissions-aid/financial-aid/undergraduate-financial-aid/undergrad-scholarships.php",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "ud-first-generation-eligibility",
+        "topic": "eligibility",
+        "text": "Restricted to current University of Dallas first-generation students; full award conditions need confirmation.",
+        "url": "https://udallas.edu/admissions-aid/financial-aid/undergraduate-financial-aid/undergrad-scholarships.php",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "ud-first-generation-funding",
+        "topic": "funding",
+        "text": "Award amount and covered expenses are not established in this catalog.",
+        "url": "https://udallas.edu/admissions-aid/financial-aid/undergraduate-financial-aid/undergrad-scholarships.php",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "ud-first-generation-timing",
+        "topic": "timing",
+        "text": "Spring 2027 application listed open, due November 4, 2026. University deadlines use Central time; exact time unconfirmed.",
+        "url": "https://udallas.edu/admissions-aid/financial-aid/undergraduate-financial-aid/undergrad-scholarships.php",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "institution",
+        "op": "eq",
+        "value": "University of Dallas",
+        "label": "Current University of Dallas enrollment",
+        "claim_id": "ud-first-generation-eligibility"
+      }
+    ],
+    "confirmations": [
+      "First-generation definition and current enrollment",
+      "Complete institution-specific award conditions"
+    ],
+    "materials": [],
+    "cycle_status": "Open",
+    "cycle": "Spring 2027",
+    "deadline": null,
+    "deadline_date": "2026-11-04",
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "rankin-national",
+    "title": "Jeannette Rankin National Scholar Grant",
+    "provider": "Jeannette Rankin Foundation",
+    "category": "Scholarship",
+    "summary": "Flexible non-tuition support for women returning to education later in life.",
+    "location": "Accredited nonprofit U.S. institutions",
+    "tags": [
+      "All fields",
+      "Nontraditional students",
+      "Living costs"
+    ],
+    "award": "Up to $3,000 / year",
+    "official_url": "https://rankinfoundation.org/national-scholar-grant/",
+    "claims": [
+      {
+        "id": "rankin-national-overview",
+        "topic": "overview",
+        "text": "Flexible non-tuition support for women returning to education later in life.",
+        "url": "https://rankinfoundation.org/national-scholar-grant/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "rankin-national-eligibility",
+        "topic": "eligibility",
+        "text": "Women age 35 or older with financial need pursuing a first associate or bachelor's degree, or eligible vocational study.",
+        "url": "https://rankinfoundation.org/national-scholar-grant/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "rankin-national-funding",
+        "topic": "funding",
+        "text": "Up to $3,000 annually, paid directly to recipients; renewal may be available for up to five years.",
+        "url": "https://rankinfoundation.org/national-scholar-grant/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "rankin-national-timing",
+        "topic": "timing",
+        "text": "2026–2027 grant applications opened October 5, 2026; application and letters due February 12, 2027. Exact closing time unconfirmed.",
+        "url": "https://rankinfoundation.org/national-scholar-grant/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "rankin-national-materials",
+        "topic": "materials",
+        "text": "Complete the eligibility survey and application essays; Arrange recommendation letters",
+        "url": "https://rankinfoundation.org/national-scholar-grant/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [],
+    "confirmations": [
+      "Age 35+ and published gender criterion",
+      "Financial need and first-degree restrictions",
+      "State-specific grant pathway and full eligibility survey"
+    ],
+    "materials": [
+      "Complete the eligibility survey and application essays",
+      "Arrange recommendation letters"
+    ],
+    "cycle_status": "Open",
+    "cycle": "2026–2027",
+    "deadline": null,
+    "deadline_date": "2027-02-12",
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "davis-putter",
+    "title": "Davis-Putter Scholarship",
+    "provider": "Davis-Putter Scholarship Fund",
+    "category": "Scholarship",
+    "summary": "Need-based support for students active in progressive social-change organizing.",
+    "location": "U.S. postsecondary study; confirm full conditions",
+    "tags": [
+      "All fields",
+      "Public service",
+      "Social sciences"
+    ],
+    "award": "Up to $15,000 / year",
+    "official_url": "https://www.davisputter.org/apply",
+    "claims": [
+      {
+        "id": "davis-putter-overview",
+        "topic": "overview",
+        "text": "Need-based support for students active in progressive social-change organizing.",
+        "url": "https://www.davisputter.org/apply",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "davis-putter-eligibility",
+        "topic": "eligibility",
+        "text": "Applicants must have financial need, postsecondary enrollment, and active involvement in the Fund's specified social-change movements.",
+        "url": "https://www.davisputter.org/apply",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "davis-putter-funding",
+        "topic": "funding",
+        "text": "Published maximum $15,000 for 2026–2027; grants are disbursed by academic term and cannot be deferred.",
+        "url": "https://www.davisputter.org/apply",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "davis-putter-timing",
+        "topic": "timing",
+        "text": "The site describes annual January–April 1 applications. Confirm the next cycle; no future-year date is inferred.",
+        "url": "https://www.davisputter.org/apply",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "davis-putter-materials",
+        "topic": "materials",
+        "text": "Complete application and personal statement; Provide two recommendation letters and recent transcripts; Provide required financial-aid or equivalent financial documentation",
+        "url": "https://www.davisputter.org/apply",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [],
+    "confirmations": [
+      "Published organizing and financial-need conditions",
+      "Eligible U.S. study and current-cycle terms"
+    ],
+    "materials": [
+      "Complete application and personal statement",
+      "Provide two recommendation letters and recent transcripts",
+      "Provide required financial-aid or equivalent financial documentation"
+    ],
+    "cycle_status": "Unknown",
+    "cycle": "Next cycle unconfirmed",
+    "deadline": null,
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "patsy-mink",
+    "title": "Patsy Mink Education Support Awards",
+    "provider": "Patsy Takemoto Mink Education Foundation",
+    "category": "Scholarship",
+    "summary": "Education and living-expense support for low-income mothers pursuing further qualifications.",
+    "location": "Accredited nonprofit U.S. institutions",
+    "tags": [
+      "All fields",
+      "Student parents",
+      "Living costs"
+    ],
+    "award": "Up to $5,000",
+    "official_url": "https://www.patsyminkfoundation.org/education-support-application",
+    "claims": [
+      {
+        "id": "patsy-mink-overview",
+        "topic": "overview",
+        "text": "Education and living-expense support for low-income mothers pursuing further qualifications.",
+        "url": "https://www.patsyminkfoundation.org/education-support-application",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "patsy-mink-eligibility",
+        "topic": "eligibility",
+        "text": "Women age 17+ with minor children, qualifying family income, U.S. residence, and full-time progressive study at an eligible U.S. institution.",
+        "url": "https://www.patsyminkfoundation.org/education-support-application",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "patsy-mink-funding",
+        "topic": "funding",
+        "text": "Published 2026 awards provide up to $5,000 in two installments for school or living costs.",
+        "url": "https://www.patsyminkfoundation.org/education-support-application",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "patsy-mink-timing",
+        "topic": "timing",
+        "text": "2026–2027 cycle closed August 1, 2026; 2027–2028 information expected May 2027.",
+        "url": "https://www.patsyminkfoundation.org/education-support-application",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "full_time",
+        "op": "eq",
+        "value": true,
+        "label": "Full-time enrollment",
+        "claim_id": "patsy-mink-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Age, parenthood, gender and income conditions",
+      "Degree progression, institution rules and completion date"
+    ],
+    "materials": [],
+    "cycle_status": "Closed",
+    "cycle": "2026–2027 archive",
+    "deadline": null,
+    "deadline_date": "2026-08-01",
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "live-your-dream",
+    "title": "Live Your Dream Education Awards",
+    "provider": "Soroptimist International of the Americas",
+    "category": "Scholarship",
+    "summary": "Flexible education support for women who provide their family's main financial support.",
+    "location": "U.S. applicants and study pathway",
+    "tags": [
+      "All fields",
+      "Student parents",
+      "Living costs"
+    ],
+    "award": "Varies; up to $16,000 across levels",
+    "official_url": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
+    "claims": [
+      {
+        "id": "live-your-dream-overview",
+        "topic": "overview",
+        "text": "Flexible education support for women who provide their family's main financial support.",
+        "url": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "live-your-dream-eligibility",
+        "topic": "eligibility",
+        "text": "Women with financial need, dependents and primary financial-provider responsibility, pursuing undergraduate or vocational study; prior awards and affiliation exclusions apply.",
+        "url": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "live-your-dream-funding",
+        "topic": "funding",
+        "text": "Club, region and international awards differ. Support can cover tuition, books, transport or childcare; timing depends on the club.",
+        "url": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "live-your-dream-timing",
+        "topic": "timing",
+        "text": "Provider describes annual August 1–November 15 applications; confirm the current local club's cycle and exact closing time.",
+        "url": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [],
+    "confirmations": [
+      "Published gender, dependent-support and financial-need criteria",
+      "U.S. residence and eligible study pathway",
+      "No prior award, graduate degree, or excluded Soroptimist affiliation",
+      "Current local-club application window"
+    ],
+    "materials": [],
+    "cycle_status": "Unknown",
+    "cycle": "Current cycle unconfirmed",
+    "deadline": null,
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "cobell-undergrad",
+    "title": "Cobell Undergraduate Scholarship",
+    "provider": "Indigenous Education, Inc.",
+    "category": "Scholarship",
+    "summary": "Degree-cost support for qualifying Tribal students at nonprofit colleges.",
+    "location": "Eligible nonprofit U.S. institutions",
+    "tags": [
+      "All fields",
+      "Community college",
+      "Tuition"
+    ],
+    "award": "Up to $5,000 new / $8,000 returning",
+    "official_url": "https://cobellscholar.org/scholarships/undergraduate/",
+    "claims": [
+      {
+        "id": "cobell-undergrad-overview",
+        "topic": "overview",
+        "text": "Degree-cost support for qualifying Tribal students at nonprofit colleges.",
+        "url": "https://cobellscholar.org/scholarships/undergraduate/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cobell-undergrad-eligibility",
+        "topic": "eligibility",
+        "text": "Enrollment in a federally recognized Tribe or Alaska Native Corporation and eligible associate or bachelor's study. No minimum GPA; enrollment exceptions need review.",
+        "url": "https://cobellscholar.org/scholarships/undergraduate/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cobell-undergrad-funding",
+        "topic": "funding",
+        "text": "Awards can support tuition, fees, books and living costs; disbursement is divided across terms. Applicants reapply annually.",
+        "url": "https://cobellscholar.org/scholarships/undergraduate/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cobell-undergrad-timing",
+        "topic": "timing",
+        "text": "Listed opening December 15, 2026; deadline March 31, 2027 at 11:59 p.m. Mountain. Confirm timezone and cycle labeling.",
+        "url": "https://cobellscholar.org/scholarships/undergraduate/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "cobell-undergrad-materials",
+        "topic": "materials",
+        "text": "Complete the OASIS scholarship application",
+        "url": "https://cobellscholar.org/scholarships/undergraduate/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [],
+    "confirmations": [
+      "Published Tribal membership and institution conditions",
+      "Full-time enrollment or approved exception",
+      "Provider page conflicts on second bachelor's degrees; ask before relying on eligibility"
+    ],
+    "materials": [
+      "Complete the OASIS scholarship application"
+    ],
+    "cycle_status": "Upcoming",
+    "cycle": "2027 deadline; provider cycle label needs confirmation",
+    "deadline": null,
+    "deadline_date": "2027-03-31",
+    "opens_on": "2026-12-15",
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "collegefund-fullcircle",
+    "title": "Full Circle Scholarship Program",
+    "provider": "American Indian College Fund",
+    "category": "Scholarship",
+    "summary": "One application for a portfolio of scholarships supporting Native college students.",
+    "location": "Accredited nonprofit U.S. institutions",
+    "tags": [
+      "All fields",
+      "Tuition"
+    ],
+    "award": "Varies; published average $2,000–$3,000",
+    "official_url": "https://collegefund.org/students/scholarships/college-students/",
+    "claims": [
+      {
+        "id": "collegefund-fullcircle-overview",
+        "topic": "overview",
+        "text": "One application for a portfolio of scholarships supporting Native college students.",
+        "url": "https://collegefund.org/students/scholarships/college-students/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "collegefund-fullcircle-eligibility",
+        "topic": "eligibility",
+        "text": "Tribal enrollment or qualifying descent; GPA 2.0; full-time study at an accredited nonprofit institution; confirm the appropriate scholarship pathway.",
+        "url": "https://collegefund.org/students/scholarships/college-students/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "collegefund-fullcircle-funding",
+        "topic": "funding",
+        "text": "Amounts vary by award. Funds are sent to the student's institutional financial-aid office after enrollment verification.",
+        "url": "https://collegefund.org/students/scholarships/college-students/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "collegefund-fullcircle-timing",
+        "topic": "timing",
+        "text": "Annual application opens February 1 with May 31 priority review and later application opportunities. Confirm current term and closing date.",
+        "url": "https://collegefund.org/students/scholarships/college-students/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "collegefund-fullcircle-materials",
+        "topic": "materials",
+        "text": "Provide a digital photo and recent transcript; Provide Tribal affiliation or descent documentation",
+        "url": "https://collegefund.org/students/scholarships/college-students/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "gpa",
+        "op": "gte",
+        "value": 2.0,
+        "label": "Minimum 2.0 GPA",
+        "claim_id": "collegefund-fullcircle-eligibility"
+      },
+      {
+        "field": "full_time",
+        "op": "eq",
+        "value": true,
+        "label": "Full-time enrollment",
+        "claim_id": "collegefund-fullcircle-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Tribal membership or descent documentation",
+      "Institution and current scholarship-pathway conditions"
+    ],
+    "materials": [
+      "Provide a digital photo and recent transcript",
+      "Provide Tribal affiliation or descent documentation"
+    ],
+    "cycle_status": "Unknown",
+    "cycle": "Current cycle unconfirmed",
+    "deadline": null,
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "dream-national",
+    "title": "TheDream.US National Scholarship",
+    "provider": "TheDream.US",
+    "category": "Scholarship",
+    "summary": "Undergraduate tuition support for qualifying Dreamer students at U.S. Partner Colleges.",
+    "location": "U.S. National Partner Colleges",
+    "tags": [
+      "All fields",
+      "Transfer",
+      "Tuition"
+    ],
+    "award": "Up to $36,000 bachelor's tuition + stipend",
+    "official_url": "https://www.thedream.us/scholarships/national-scholarship/faqs/",
+    "claims": [
+      {
+        "id": "dream-national-overview",
+        "topic": "overview",
+        "text": "Undergraduate tuition support for qualifying Dreamer students at U.S. Partner Colleges.",
+        "url": "https://www.thedream.us/scholarships/national-scholarship/faqs/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "dream-national-eligibility",
+        "topic": "eligibility",
+        "text": "Qualifying Dreamer status, arrival before age 16 and November 1, 2021, continuous U.S. residence, GPA 2.5, and partner-college conditions; temporary visas and federal-aid eligibility are excluded.",
+        "url": "https://www.thedream.us/scholarships/national-scholarship/faqs/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "dream-national-funding",
+        "topic": "funding",
+        "text": "Up to $18,000 for an associate degree or $36,000 for a bachelor's degree, plus up to $6,000 for books and supplies; total and partner terms apply.",
+        "url": "https://www.thedream.us/scholarships/national-scholarship/faqs/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "dream-national-timing",
+        "topic": "timing",
+        "text": "Applications opened November 1, 2026; close February 28, 2027 at 11:59 p.m. Pacific.",
+        "url": "https://www.thedream.us/scholarships/national-scholarship/faqs/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "DACA",
+          "Other"
+        ],
+        "label": "Potentially qualifying Dreamer status; federal-aid and visa exclusions still apply",
+        "claim_id": "dream-national-eligibility"
+      },
+      {
+        "field": "gpa",
+        "op": "gte",
+        "value": 2.5,
+        "label": "Minimum 2.5 college GPA",
+        "claim_id": "dream-national-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Immigration, arrival and federal-aid eligibility conditions",
+      "Partner college, residence and tuition-rate restrictions",
+      "Partner admission application by scholarship deadline"
+    ],
+    "materials": [],
+    "cycle_status": "Open",
+    "cycle": "2027",
+    "deadline": "2027-02-28T23:59:00-08:00",
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  },
+  {
+    "id": "dream-opportunity",
+    "title": "TheDream.US Opportunity Scholarship",
+    "provider": "TheDream.US",
+    "category": "Scholarship",
+    "summary": "Support to attend a designated out-of-state U.S. Partner College for qualifying Dreamers in specified states.",
+    "location": "Designated U.S. Opportunity Partner Colleges",
+    "tags": [
+      "All fields",
+      "Tuition",
+      "Living costs"
+    ],
+    "award": "Up to $100,000 for a bachelor's degree",
+    "official_url": "https://www.thedream.us/scholarships/opportunity-scholarship/",
+    "claims": [
+      {
+        "id": "dream-opportunity-overview",
+        "topic": "overview",
+        "text": "Support to attend a designated out-of-state U.S. Partner College for qualifying Dreamers in specified states.",
+        "url": "https://www.thedream.us/scholarships/opportunity-scholarship/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "dream-opportunity-eligibility",
+        "topic": "eligibility",
+        "text": "Restricted Dreamer, immigration, academic, home-state and designated-college conditions apply; verify all current requirements.",
+        "url": "https://www.thedream.us/scholarships/opportunity-scholarship/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "dream-opportunity-funding",
+        "topic": "funding",
+        "text": "National-program FAQ describes up to $100,000 for tuition, required fees, campus housing and meals at selected Opportunity Partner Colleges.",
+        "url": "https://www.thedream.us/scholarships/national-scholarship/faqs/",
+        "checked": "2026-11-02"
+      },
+      {
+        "id": "dream-opportunity-timing",
+        "topic": "timing",
+        "text": "Opportunity Scholarship applications November 1, 2026–January 31, 2027 at 11:59 p.m. Pacific; a different deadline from the National program.",
+        "url": "https://www.thedream.us/scholarships/opportunity-scholarship/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "rules": [
+      {
+        "field": "citizenship",
+        "op": "in",
+        "value": [
+          "DACA",
+          "Other"
+        ],
+        "label": "Potentially qualifying Dreamer status; federal-aid and visa exclusions still apply",
+        "claim_id": "dream-opportunity-eligibility"
+      }
+    ],
+    "confirmations": [
+      "Eligible home state and designated Partner College",
+      "Full current immigration, academic, residence and enrollment conditions"
+    ],
+    "materials": [],
+    "cycle_status": "Open",
+    "cycle": "2027",
+    "deadline": "2027-01-31T23:59:00-08:00",
+    "deadline_date": null,
+    "opens_on": null,
+    "housing": "Unknown",
+    "travel": "Unknown",
+    "upfront": "Unknown"
+  }
+]

@@ -1,0 +1,15 @@
+flowchart TD
+    OFF[Official provider pages] --> REVIEW[Human review of requirements, dates and funding]
+    OFF --> FETCH[Explicit Keenable fetch of approved HTTPS provider URLs]
+    FETCH --> TEXT[Extracted source text: session or ignored runtime receipts]
+    TEXT --> REVIEW
+    REVIEW --> SEED[Developer-authored summaries, claims and rules: seed_catalog.py]
+    SEED --> JSON[Reviewed opportunities.json with source URLs and review dates]
+    JSON --> VALID[Pydantic validation]
+    VALID --> UI[Reviewed opportunity cards and evidence links]
+    QUERY[Broad discipline search] --> SEARCH[Keenable search: at most five hits]
+    SEARCH --> LEADS[Unverified web leads panel]
+    LEADS -.-> MANUAL[Future manual review required before catalog inclusion]
+    MANUAL -.-> REVIEW
+    UI --> REFRESH[Student requests source refresh]
+    REFRESH --> FETCH

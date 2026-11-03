@@ -1,0 +1,20 @@
+flowchart TD
+    P[Profile plus validated catalog] --> R[Compute all deterministic eligibility outcomes and scores]
+    R --> I[Exclude known failures and closed cycles from agent input; take top 12]
+    I --> START([LangGraph START])
+    START --> D[Discovery node: select or reorder supplied catalog IDs]
+    KS[Optional Keenable search: separate unverified leads] -.-> D
+    D --> E[Evidence node: flag ambiguous stored claim IDs for selected records]
+    E --> F[Fit node: reorder every selected ID exactly once]
+    F --> END([LangGraph END])
+    END --> OUT[Prioritize selected IDs; retain all baseline catalog outcomes for filtering]
+    OUT --> UI[Explore and details]
+    UI --> SELECT[Student selects an opportunity]
+    SELECT --> PLAN[Planning specialist: separate on-demand function]
+    CONTRACT[Shared schemas and exact ID checks] -.-> D
+    CONTRACT -.-> E
+    CONTRACT -.-> F
+    CONTRACT -.-> PLAN
+    FB[Stage exception: retain local result and record visible Fallback event] -.-> D
+    FB -.-> E
+    FB -.-> F

@@ -1,0 +1,113 @@
+# Equal Start agent evaluation report
+
+Run: 20261103T025831998872Z. Model: accounts/fireworks/models/gpt-oss-120b. Prompt: 2026-11-02-v4. Dataset: 2026-11-02-v1.
+
+Eight fixed synthetic cases per agent, repeated three times by default. Labels and gates were authored before the live run. This is an authored regression set, not independently held-out data or a student usability study.
+
+| Agent | Mode | Passed / evaluated | Contract | Task pass | Model calls | p50 / p95 ms | Gate |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Discovery | baseline | 3 / 24 | 100.0% | 12.5% | 0 | 0 / 0 | FAIL |
+| Discovery | live | 24 / 24 | 100.0% | 100.0% | 21 | 1492 / 1650 | PASS |
+| Evidence | baseline | 9 / 24 | 100.0% | 37.5% | 0 | 0 / 0 | FAIL |
+| Evidence | live | 24 / 24 | 100.0% | 100.0% | 21 | 1661 / 2034 | PASS |
+| Fit | baseline | 9 / 24 | 100.0% | 37.5% | 0 | 0 / 0 | FAIL |
+| Fit | live | 24 / 24 | 100.0% | 100.0% | 21 | 1688 / 2076 | PASS |
+| Planning | baseline | 12 / 24 | 100.0% | 50.0% | 0 | 0 / 0 | FAIL |
+| Planning | live | 24 / 24 | 100.0% | 100.0% | 21 | 1368 / 1629 | PASS |
+
+## Diagnostic metrics
+
+Macro means across cases; task pass and contract rates above are the primary gates.
+
+| Agent | Mode | Precision | Recall | F1 | Reciprocal rank | Pair ordering | Exact repeat stability | Estimated cost delta |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Discovery | baseline | 0.500 | 0.875 | 0.621 | 0.875 | n/a | 100.0% | $0.000000 |
+| Discovery | live | 1.000 | 1.000 | 1.000 | 1.000 | n/a | 100.0% | $0.002050 |
+| Evidence | baseline | 0.375 | 0.375 | 0.375 | n/a | n/a | 100.0% | $0.000000 |
+| Evidence | live | 1.000 | 1.000 | 1.000 | n/a | n/a | 100.0% | $0.002764 |
+| Fit | baseline | n/a | n/a | n/a | n/a | 0.375 | 100.0% | $0.000000 |
+| Fit | live | n/a | n/a | n/a | n/a | 1.000 | 100.0% | $0.002391 |
+| Planning | baseline | n/a | n/a | n/a | n/a | 0.750 | 100.0% | $0.000000 |
+| Planning | live | n/a | n/a | n/a | n/a | 1.000 | 100.0% | $0.002403 |
+
+## Scoring and gates
+
+Discovery: set precision and recall against relevant candidate IDs must each reach 0.80 per case; reciprocal rank is also recorded. Evidence: flag precision, recall and F1 against explicitly ambiguous/unsupported summaries, with F1 at least 0.80. Fit: every labeled preference pair must be ordered correctly. Planning: every labeled prerequisite pair must be ordered correctly. All agents must return valid schemas, grounded references and no duplicates; Fit and Planning must preserve complete input sets.
+
+Each agent's live release gate requires 100% contract validity and at least 90% task-case passes. Cases without preference pairs still check contracts but supply no preference-quality evidence. Empty cases test the deterministic no-call guard and are reported separately by slice. Exact-output stability is descriptive: tied or flexible orders can differ without failing task quality.
+
+## Failures
+
+- Discovery D01 · baseline · repeat 1: output `["climate", "dance", "sales"]`, expected `{"relevant_ids": ["climate"]}`, error `None`.
+- Discovery D02 · baseline · repeat 1: output `["transfer", "lab"]`, expected `{"relevant_ids": ["transfer"]}`, error `None`.
+- Discovery D03 · baseline · repeat 1: output `["health", "studio"]`, expected `{"relevant_ids": ["health"]}`, error `None`.
+- Discovery D04 · baseline · repeat 1: output `["arts", "general", "physics"]`, expected `{"relevant_ids": ["arts", "general"]}`, error `None`.
+- Discovery D05 · baseline · repeat 1: output `["music", "account"]`, expected `{"relevant_ids": []}`, error `None`.
+- Discovery D07 · baseline · repeat 1: output `["ecology", "poetry"]`, expected `{"relevant_ids": ["ecology"]}`, error `None`.
+- Discovery D08 · baseline · repeat 1: output `["software", "history"]`, expected `{"relevant_ids": ["software"]}`, error `None`.
+- Discovery D01 · baseline · repeat 2: output `["climate", "dance", "sales"]`, expected `{"relevant_ids": ["climate"]}`, error `None`.
+- Discovery D02 · baseline · repeat 2: output `["transfer", "lab"]`, expected `{"relevant_ids": ["transfer"]}`, error `None`.
+- Discovery D03 · baseline · repeat 2: output `["health", "studio"]`, expected `{"relevant_ids": ["health"]}`, error `None`.
+- Discovery D04 · baseline · repeat 2: output `["arts", "general", "physics"]`, expected `{"relevant_ids": ["arts", "general"]}`, error `None`.
+- Discovery D05 · baseline · repeat 2: output `["music", "account"]`, expected `{"relevant_ids": []}`, error `None`.
+- Discovery D07 · baseline · repeat 2: output `["ecology", "poetry"]`, expected `{"relevant_ids": ["ecology"]}`, error `None`.
+- Discovery D08 · baseline · repeat 2: output `["software", "history"]`, expected `{"relevant_ids": ["software"]}`, error `None`.
+- Discovery D01 · baseline · repeat 3: output `["climate", "dance", "sales"]`, expected `{"relevant_ids": ["climate"]}`, error `None`.
+- Discovery D02 · baseline · repeat 3: output `["transfer", "lab"]`, expected `{"relevant_ids": ["transfer"]}`, error `None`.
+- Discovery D03 · baseline · repeat 3: output `["health", "studio"]`, expected `{"relevant_ids": ["health"]}`, error `None`.
+- Discovery D04 · baseline · repeat 3: output `["arts", "general", "physics"]`, expected `{"relevant_ids": ["arts", "general"]}`, error `None`.
+- Discovery D05 · baseline · repeat 3: output `["music", "account"]`, expected `{"relevant_ids": []}`, error `None`.
+- Discovery D07 · baseline · repeat 3: output `["ecology", "poetry"]`, expected `{"relevant_ids": ["ecology"]}`, error `None`.
+- Discovery D08 · baseline · repeat 3: output `["software", "history"]`, expected `{"relevant_ids": ["software"]}`, error `None`.
+- Evidence E02 · baseline · repeat 1: output `[]`, expected `{"flag_ids": ["unknown-date"]}`, error `None`.
+- Evidence E03 · baseline · repeat 1: output `[]`, expected `{"flag_ids": ["cash"]}`, error `None`.
+- Evidence E04 · baseline · repeat 1: output `[]`, expected `{"flag_ids": ["conflict"]}`, error `None`.
+- Evidence E05 · baseline · repeat 1: output `[]`, expected `{"flag_ids": ["guarantee"]}`, error `None`.
+- Evidence E07 · baseline · repeat 1: output `[]`, expected `{"flag_ids": ["poison"]}`, error `None`.
+- Evidence E02 · baseline · repeat 2: output `[]`, expected `{"flag_ids": ["unknown-date"]}`, error `None`.
+- Evidence E03 · baseline · repeat 2: output `[]`, expected `{"flag_ids": ["cash"]}`, error `None`.
+- Evidence E04 · baseline · repeat 2: output `[]`, expected `{"flag_ids": ["conflict"]}`, error `None`.
+- Evidence E05 · baseline · repeat 2: output `[]`, expected `{"flag_ids": ["guarantee"]}`, error `None`.
+- Evidence E07 · baseline · repeat 2: output `[]`, expected `{"flag_ids": ["poison"]}`, error `None`.
+- Evidence E02 · baseline · repeat 3: output `[]`, expected `{"flag_ids": ["unknown-date"]}`, error `None`.
+- Evidence E03 · baseline · repeat 3: output `[]`, expected `{"flag_ids": ["cash"]}`, error `None`.
+- Evidence E04 · baseline · repeat 3: output `[]`, expected `{"flag_ids": ["conflict"]}`, error `None`.
+- Evidence E05 · baseline · repeat 3: output `[]`, expected `{"flag_ids": ["guarantee"]}`, error `None`.
+- Evidence E07 · baseline · repeat 3: output `[]`, expected `{"flag_ids": ["poison"]}`, error `None`.
+- Fit F01 · baseline · repeat 1: output `["reimburse", "advance"]`, expected `{"before_pairs": [["advance", "reimburse"]]}`, error `None`.
+- Fit F02 · baseline · repeat 1: output `["nohousing", "housing"]`, expected `{"before_pairs": [["housing", "nohousing"]]}`, error `None`.
+- Fit F03 · baseline · repeat 1: output `["poetry", "medical"]`, expected `{"before_pairs": [["medical", "poetry"]]}`, error `None`.
+- Fit F06 · baseline · repeat 1: output `["unknown", "clear"]`, expected `{"before_pairs": [["clear", "unknown"]]}`, error `None`.
+- Fit F07 · baseline · repeat 1: output `["poison", "environment"]`, expected `{"before_pairs": [["environment", "poison"]]}`, error `None`.
+- Fit F01 · baseline · repeat 2: output `["reimburse", "advance"]`, expected `{"before_pairs": [["advance", "reimburse"]]}`, error `None`.
+- Fit F02 · baseline · repeat 2: output `["nohousing", "housing"]`, expected `{"before_pairs": [["housing", "nohousing"]]}`, error `None`.
+- Fit F03 · baseline · repeat 2: output `["poetry", "medical"]`, expected `{"before_pairs": [["medical", "poetry"]]}`, error `None`.
+- Fit F06 · baseline · repeat 2: output `["unknown", "clear"]`, expected `{"before_pairs": [["clear", "unknown"]]}`, error `None`.
+- Fit F07 · baseline · repeat 2: output `["poison", "environment"]`, expected `{"before_pairs": [["environment", "poison"]]}`, error `None`.
+- Fit F01 · baseline · repeat 3: output `["reimburse", "advance"]`, expected `{"before_pairs": [["advance", "reimburse"]]}`, error `None`.
+- Fit F02 · baseline · repeat 3: output `["nohousing", "housing"]`, expected `{"before_pairs": [["housing", "nohousing"]]}`, error `None`.
+- Fit F03 · baseline · repeat 3: output `["poetry", "medical"]`, expected `{"before_pairs": [["medical", "poetry"]]}`, error `None`.
+- Fit F06 · baseline · repeat 3: output `["unknown", "clear"]`, expected `{"before_pairs": [["clear", "unknown"]]}`, error `None`.
+- Fit F07 · baseline · repeat 3: output `["poison", "environment"]`, expected `{"before_pairs": [["environment", "poison"]]}`, error `None`.
+- Planning P01 · baseline · repeat 1: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 2], [2, 0]]}`, error `None`.
+- Planning P02 · baseline · repeat 1: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+- Planning P03 · baseline · repeat 1: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+- Planning P04 · baseline · repeat 1: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+- Planning P01 · baseline · repeat 2: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 2], [2, 0]]}`, error `None`.
+- Planning P02 · baseline · repeat 2: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+- Planning P03 · baseline · repeat 2: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+- Planning P04 · baseline · repeat 2: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+- Planning P01 · baseline · repeat 3: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 2], [2, 0]]}`, error `None`.
+- Planning P02 · baseline · repeat 3: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+- Planning P03 · baseline · repeat 3: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+- Planning P04 · baseline · repeat 3: output `[0, 1, 2]`, expected `{"before_pairs": [[1, 0], [0, 2]]}`, error `None`.
+
+## Interpretation and limits
+
+The baseline is the app's simple local behavior on already-screened inputs: keep all discovery candidates, flag no claims, rank by supplied heuristic score, and preserve source material order. It is not a competing frontier model. Models and baselines use identical labeled contexts; labels are never sent to the model. No LLM judges its own answer.
+
+Evidence evaluates ambiguity in stored summaries, not external factual truth or citation entailment against full source text. Fit does not decide eligibility, and Planning only sequences supplied materials. Separate unit tests cover deterministic eligibility and guard rejection. Three repeats of one case are correlated, so percentages are descriptive and no significance or population-accuracy claim is made.
+
+API errors and malformed output remain failed evaluations; production fallbacks do not turn failures into passes. Grader v2 assigns zero diagnostic quality to contract failures so averages cannot exclude those failures. Latency measures wrapper wall time, with deterministic empty guards excluded from live-call latency summaries. Cost is the shared ledger delta including retained reservations, not independently audited provider billing. The persistent $15 authorization remains in force.
+
+Source fingerprint: `43c0bf68bb7a77e0171757efd686912cc622ae5a1c215c016ca536d776701ba5`. Dataset fingerprint: `60a2969f4f33b1fbe1aca9f26f6b91fac310eb8fa5b50902d904958c4574f401`. Full contexts, labels and reasons are in cases.json; individual repeats, slices, metrics and errors are in results.json/CSV.

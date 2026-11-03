@@ -1,0 +1,17 @@
+flowchart TD
+    A[Profile and reviewed opportunity rules] --> B{Any known rule failure?}
+    B -->|Yes| N[Not eligible]
+    B -->|No| C{Missing details or pending provider conditions?}
+    C -->|Yes| U[Needs confirmation]
+    C -->|No| Y[Screened criteria met]
+    N --> COMB[Combine eligibility with cycle and cost assessment]
+    U --> COMB
+    Y --> COMB
+    D[Current time and dated cycle fields] --> CY[Open, Upcoming, Closed, Unknown or Confirm closing time]
+    CY --> COMB
+    COST[Payment timing, housing and student constraints] --> BA[Known barriers or unresolved costs]
+    BA --> COMB
+    COMB --> SCORE[Heuristic relevance: goal 40, funding 30, criteria 20, preferences 10]
+    SCORE --> FILTER{Known failure or closed cycle?}
+    FILTER -->|Yes| ARCH[Retain for browsing; exclude from agent candidates and default results]
+    FILTER -->|No| CAND[Candidate for prioritization]
