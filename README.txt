@@ -50,7 +50,3 @@ provide persistent SQLite storage, and run Streamlit on the host-assigned port.
 Add authentication and per-user storage isolation before shared personal use.
 No public deployment is included.
 
-PUBLICATION SCOPE
-This is a clean source snapshot, excluding Markdown planning files, original Git
-history, credentials, local databases, virtual environments, raw source receipts,
-screenshots and build artifacts. The full working checkout remains local.
