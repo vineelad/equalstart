@@ -1,3 +1,5 @@
+This guide documents the original 32-case regression suite. Phase 2 adds python -m evals.phase2 and python -m evals.journeys; see the root README and docs/PHASE2_RESULTS.txt.
+
 # Equal Start evaluations for every agent
 
 The course requirement is evaluated at each specialist boundary, using the exact prompts, schemas, and identifier guards imported by the application. The runner measures model task quality separately from deterministic guard tests and the app's fallback behavior. No hosted evaluation service or extra dependency is required.

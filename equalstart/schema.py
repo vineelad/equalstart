@@ -122,3 +122,32 @@ class Task(StrictModel):
     text: str
     kind: str
     source_url: str | None = None
+    depends_on: list[str] = Field(default_factory=list)
+    suggested_date: date | None = None
+    effort: str = "Confirm effort"
+    external_help: bool = False
+
+
+class SourceSnapshot(StrictModel):
+    id: str
+    opportunity_id: str
+    url: HttpUrl
+    retrieved_at: datetime
+    content: str = Field(max_length=16000)
+
+
+class GroundedFinding(StrictModel):
+    claim_id: str
+    snapshot_id: str
+    status: Literal["Supported", "Contradicted", "Not found"]
+    quote: str = Field(default="", max_length=1800)
+    passage_index: int | None = Field(default=None, ge=0)
+
+
+class GroundedEvidenceOutput(StrictModel):
+    findings: list[GroundedFinding] = Field(max_length=30)
+
+
+class ResearchAction(StrictModel):
+    action: Literal["search", "fetch", "clarify", "finish"]
+    opportunity_id: str = ""

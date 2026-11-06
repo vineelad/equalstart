@@ -16,6 +16,8 @@ class Store:
                 CREATE TABLE IF NOT EXISTS saved (id TEXT PRIMARY KEY, tasks TEXT NOT NULL DEFAULT '[]');
                 CREATE TABLE IF NOT EXISTS usage (id INTEGER PRIMARY KEY, reserved REAL NOT NULL, actual REAL, status TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS runs (id TEXT PRIMARY KEY, created TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, events TEXT NOT NULL);
+                CREATE TABLE IF NOT EXISTS sources (url TEXT PRIMARY KEY, snapshot TEXT NOT NULL);
+                CREATE TABLE IF NOT EXISTS research (id TEXT PRIMARY KEY, trace TEXT NOT NULL);
             """)
             if "plan" not in {row[1] for row in con.execute("PRAGMA table_info(saved)")}:
                 con.execute("ALTER TABLE saved ADD COLUMN plan TEXT")
@@ -69,9 +71,34 @@ class Store:
         with self.connect() as con:
             con.execute("DELETE FROM saved")
 
+    def source(self, url: str) -> dict | None:
+        with self.connect() as con:
+            row = con.execute("SELECT snapshot FROM sources WHERE url=?", (url,)).fetchone()
+            return json.loads(row[0]) if row else None
+
+    def save_source(self, snapshot: dict):
+        # Official public source text only; no profile or model request payload.
+        with self.connect() as con:
+            con.execute("INSERT OR REPLACE INTO sources(url,snapshot) VALUES (?,?)", (snapshot["url"], json.dumps(snapshot)))
+
+    def log_research(self, run_id: str, trace: list[dict]):
+        allowed = ("action", "opportunity_id", "status", "source_id", "elapsed_ms", "reason", "mode")
+        safe = [{key: item[key] for key in allowed if key in item} for item in trace]
+        with self.connect() as con:
+            con.execute("INSERT OR REPLACE INTO research(id,trace) VALUES (?,?)", (run_id, json.dumps(safe)))
+
     def spent(self) -> float:
         with self.connect() as con:
             return float(con.execute("SELECT COALESCE(SUM(COALESCE(actual,reserved)),0) FROM usage").fetchone()[0])
+
+    def cost_for_calls(self, call_ids: list[int]) -> float:
+        if not call_ids:
+            return 0.0
+        if any(type(value) is not int or value < 1 for value in call_ids):
+            raise ValueError("Invalid usage reference")
+        with self.connect() as con:
+            placeholders = ",".join("?" for _ in call_ids)
+            return float(con.execute(f"SELECT COALESCE(SUM(COALESCE(actual,reserved)),0) FROM usage WHERE id IN ({placeholders})", call_ids).fetchone()[0])
 
     def reserve(self, amount: float, cap: float = 15) -> int:
         if amount <= 0 or not 0 < cap <= 15:

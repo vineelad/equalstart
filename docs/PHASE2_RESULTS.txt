@@ -1,0 +1,99 @@
+EQUAL START PHASE 2: RESULTS AND DESIGN NOTES
+
+Implemented
+- Bounded Discovery actions: search, fetch an approved source, ask one optional
+  clarification, or finish. Missing personal information stays unknown.
+- At most two searches and three fetch attempts per matching run. Initial
+  research uses up to two source fetches; one evidence-driven follow-up can use
+  the remaining slot for a different reviewed URL. No unreviewed lead is promoted.
+- Official source snapshots with URL, retrieval time, and stable source ID.
+  Six-hour receipts can be reused. The reviewed catalog is not silently changed.
+- Evidence judges Supported, Contradicted or Not found claims. It selects a
+  numbered passage; code copies exact text. Source/opportunity IDs, coverage,
+  duplicate references and passage indices are validated. Localization does not
+  establish semantic support or complete eligibility.
+- Evidence uncertainty flows into Fit and student-facing readiness. The default
+  shows up to three selected recommendations; the broader catalog is separate.
+  Empty Discovery output stays an empty recommendation set.
+- Side-by-side funding/housing/travel comparison, known-versus-unknown checks,
+  conservative suggested prerequisites/dates, and editable support drafts.
+  Suggested dates are not provider deadlines. Students review and send drafts.
+- Sanitized trace export and persistent source receipts; profiles stay in session.
+- Model costs attributed to usage-row IDs. Concurrent reservation settlements
+  cannot create negative per-case costs. Ambiguous calls retain reservations.
+
+Learning demonstrated
+Tool selection, conditional routing, bounded autonomy, stopping criteria,
+grounding with deterministic citation localization, uncertainty, agent handoffs,
+planning, human review, privacy-conscious state, evaluation and ablation.
+The same four specialist roles remain; tool control is deterministic code.
+
+Verification
+99 deterministic tests pass, including freshness/reuse, unapproved URLs, wrong
+sources, invented quotes/indices, tool limits, clarification decline, evidence
+handoffs, single follow-up, rule/financial invariants, dependency cycles, editable
+drafts, UI comparison and per-run cost isolation.
+Local and real-provider Edge journeys passed: shortlist, comparison control,
+details, checklist, editable draft and mobile overflow. Two-option selection is
+also covered by Streamlit AppTest; the portaled menu was not reliably controlled
+by Edge automation. Final live browser checks required an assessed-source
+Evidence stage without validation fallback. All eight diagrams rendered.
+
+Original regression suite (prompt 2026-11-03-phase2-v2)
+8 cases per role x 3 repeats, paired with local comparators. Each live role
+passed 24/24 with 100% contract validity. This is 96 live-mode evaluations:
+84 model calls and 12 empty-input guards, plus 96 baselines.
+Receipt: evals/20261103T042537223610Z/
+Attributed estimated usage/reservations: $0.0097155.
+
+Phase 2 role suite (same prompt version)
+5 cases per role x 3 repeats, paired with comparators. Each live role passed
+15/15 with 100% contract validity. This is 60 live-mode evaluations: 57 calls
+and 3 empty Planning guards, plus 60 baselines. Discovery tests tool decisions;
+Evidence tests grounded judgments. Fit/Planning reuse regression scenarios.
+Receipt: evals/phase2-20261103T042419841604Z/
+Attributed estimated usage/reservations: $0.0073485.
+
+End-to-end journey ablations
+Seven fixed synthetic journeys: community-college transfer, no upfront funds,
+missing residency, a known restriction, conflicting source evidence, no relevant
+catalog match, and a nomination-dependent plan. One run per case and variant.
+
+Variant                  Passed  Model calls  Estimated attributed cost
+Full workflow             7/7        24       $0.00297885
+All-local comparator      4/7         0       $0
+Without Discovery         6/7        13       $0.00210090
+Without Evidence          6/7        19       $0.00191205
+Without Fit               6/7        19       $0.00247125
+Without Planning          6/7        23       $0.00981195
+
+Receipt: experiments/journeys-20261103T042710097486Z/
+Each disabled role uses the documented simple comparator. The failures show
+role-specific value on these constructed tasks: abstention on irrelevant records,
+conflict detection, evidence-aware ordering, and nomination prerequisites.
+Some journeys are already handled by deterministic rules without extra model
+calls. A weak comparator does not establish the best possible deterministic result.
+
+Interpretation and limits
+Cases and labels are AI-assisted development artifacts, not independently
+reviewed annotations, held-out generalization estimates or real student trials.
+Prompts were revised after inspecting failures. There is no significance claim.
+Journey sources are controlled fixtures, not live retrieval benchmarks. The
+real-provider UI check demonstrates integration, not factual accuracy. Journey
+timings include an environment interruption and are not a speed benchmark.
+Costs include retained reservations for uncertain billing; external account
+billing is not independently audited. Historical concurrent shared-ledger cost
+deltas have COST_NOTE.txt annotations; use the final request-ID-attributed runs.
+
+Future work
+Full durable graph checkpoint/resume with a privacy design for profile storage;
+independently reviewed real-task labels, student usability and coverage/fairness
+assessment; authentication and per-user isolation before shared personal use.
+Source caching is completed retrieval reuse, not full graph recovery.
+
+Reproduce with the project Python
+python -m pytest -q
+python -m evals.runner --live --repeats 3 --max-cost 0.5
+python -m evals.phase2 --live --repeats 3 --max-cost 0.5
+python -m evals.journeys --live --max-cost 0.5
+Live commands share the existing cumulative ledger; no new $15 is authorized.

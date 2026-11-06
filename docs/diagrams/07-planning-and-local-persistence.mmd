@@ -14,5 +14,7 @@ flowchart TD
     SAVE --> UI[My plan: reload and check off tasks]
     UI --> SAVE
     UI --> EXPORT[Download JSON or Markdown]
+    TASK --> DEP[Validate suggested dependencies and add preparation dates when a deadline is known]
+    UI --> DRAFT[Edit and download provider, reference or nomination question drafts]
     UI --> CLEAR[Clear saved plans]
     CLEAR --> RETAIN[Budget ledger and stage logs remain]

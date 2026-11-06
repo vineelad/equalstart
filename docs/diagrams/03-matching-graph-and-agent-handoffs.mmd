@@ -4,8 +4,14 @@ flowchart TD
     I --> START([LangGraph START])
     START --> D[Discovery node: select or reorder supplied catalog IDs]
     KS[Optional Keenable search: separate unverified leads] -.-> D
-    D --> E[Evidence node: flag ambiguous stored claim IDs for selected records]
-    E --> F[Fit node: reorder every selected ID exactly once]
+    D --> RT[Bounded research: choose fetch, search, clarify or finish]
+    RT --> E[Evidence node: assess claims against exact source passages]
+    E --> Q{Missing decisive evidence and one approved follow-up available?}
+    Q -->|Yes, once| RF[Discovery chooses fetch or finish; controller validates]
+    RF -->|New receipt| E
+    RF -->|Finish or unavailable| F
+    Q -->|No| F
+    F[Fit node: reorder selected IDs using constraints and evidence uncertainty]
     F --> END([LangGraph END])
     END --> OUT[Prioritize selected IDs; retain all baseline catalog outcomes for filtering]
     OUT --> UI[Explore and details]

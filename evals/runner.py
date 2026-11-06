@@ -80,7 +80,7 @@ def score(case, values):
 def evaluate(case, provider, repeat, mode, store=None):
     started = perf_counter()
     counted = CountedProvider(provider)
-    before = store.spent() if store else 0
+    before = provider.cost() if store else 0
     row = {"case_id": case["id"], "agent": case["agent"], "slice": case["slice"], "repeat": repeat, "mode": mode,
            "contract_valid": False, "task_pass": False, "output": None, "error_type": None, "metrics": {}}
     try:
@@ -102,7 +102,7 @@ def evaluate(case, provider, repeat, mode, store=None):
             row["output"] = counted.raw_response.get(FIELDS[case["agent"]])
     row["model_calls"] = counted.calls if mode == "live" else 0
     row["latency_ms"] = round((perf_counter() - started) * 1000, 3)
-    row["estimated_cost_delta_usd"] = round(store.spent() - before, 9) if store else 0
+    row["estimated_cost_delta_usd"] = round(provider.cost() - before, 9) if store else 0
     return row
 
 
@@ -125,7 +125,7 @@ def summarize(rows):
             live_rows = [r for r in group if r["model_calls"]]
             latencies = [r["latency_ms"] for r in live_rows or group]
             metrics = {}
-            for name in ("precision", "recall", "f1", "reciprocal_rank", "pairwise_order"):
+            for name in ("precision", "recall", "f1", "reciprocal_rank", "pairwise_order", "action_accuracy", "finding_accuracy"):
                 values = [r["metrics"][name] for r in group if name in r["metrics"]]
                 if values:
                     metrics[name] = statistics.mean(values)
@@ -221,6 +221,7 @@ def main():
                                  "input_per_million_usd": provider.input_rate if provider else None,
                                  "output_per_million_usd": provider.output_rate if provider else None},
                 "initial_ledger_usd": before, "additional_eval_cap_usd": args.max_cost, "live": args.live,
+                "cost_attribution": "Provider request IDs; settled usage or retained reservation, independent of concurrent runs",
                 "gates": {"contract_rate": 1.0, "task_pass_rate": .9}}
     (directory / "metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     (directory / "cases.json").write_text(json.dumps(CASES, indent=2), encoding="utf-8")
@@ -238,7 +239,7 @@ def main():
                 write_reports(directory, metadata, rows)
     metadata["finished_utc"] = datetime.now(timezone.utc).isoformat()
     metadata["final_ledger_usd"] = store.spent()
-    metadata["estimated_eval_delta_usd"] = metadata["final_ledger_usd"] - before
+    metadata["estimated_eval_delta_usd"] = provider.cost() if provider else 0.0
     (directory / "metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     summaries = write_reports(directory, metadata, rows)
     print(json.dumps({"report": str(directory), "summaries": summaries, "estimated_eval_delta_usd": metadata["estimated_eval_delta_usd"]}), flush=True)
