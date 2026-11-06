@@ -14,6 +14,7 @@ from equalstart.eligibility import assess, cycle_status
 from equalstart.providers import Fireworks, Keenable, provider_display_name
 from equalstart.schema import Profile
 from equalstart.storage import Store
+from equalstart.hosting import SessionStore, public_demo
 from equalstart.workflow import application_tasks, run_matching
 from equalstart.readiness import readiness
 from equalstart.preparation import outreach_drafts
@@ -46,7 +47,13 @@ def catalog(revision: int):
 
 data = catalog((ROOT / "data" / "opportunities.json").stat().st_mtime_ns)
 lookup = {r.id: r for r in data}
-db = store()
+PUBLIC = public_demo()
+if PUBLIC:
+    if "visitor_store" not in st.session_state:
+        st.session_state["visitor_store"] = SessionStore()
+    db = st.session_state["visitor_store"]
+else:
+    db = store()
 try:
     provider = Fireworks(db)
     config_error = False
@@ -414,7 +421,7 @@ def tracker():
     st.html('<div class="eyebrow" style="margin-top:45px">MAKE POSSIBILITY A PLAN</div><div class="detail-title">One step closer.</div>')
     st.write("Your saved opportunities and the next small steps to pursue them.")
     saved = db.saved()
-    st.caption("Saved locally on this computer for this single-user demo. Your profile is not saved with the checklist.")
+    st.caption("Saved for this browser session. Download your checklist before leaving; a restart or lost session clears it." if PUBLIC else "Saved locally on this computer for this single-user demo. Your profile is not saved with the checklist.")
     if not saved:
         st.html('<div class="empty"><h3>Your next chapter starts with a save.</h3><p>Explore an opportunity and save it here to turn your ambition into a plan.</p></div>')
         if st.button("Explore opportunities", type="primary"):
@@ -470,7 +477,7 @@ def tracker():
         markdown += "\n".join(f"- [{'x' if t['complete'] else ' '}] {t['text']} ({t['kind']})" for t in item["tasks"]) + "\n\n"
     st.download_button("Download printable checklist · Markdown", markdown, file_name="equal-start-plan.md", mime="text/markdown", use_container_width=True)
     with st.expander("Manage local saved data"):
-        st.caption("Clearing removes saved opportunities and checklist progress. It preserves the inference budget ledger.")
+        st.caption("Clearing removes your saved opportunities and checklist progress.")
         clear = st.checkbox("Clear all my saved opportunities and checklist progress")
         if st.button("Clear saved data", disabled=not clear):
             db.clear_saved()
@@ -513,7 +520,8 @@ def how():
                           for s in report["summaries"]], hide_index=True, use_container_width=True)
             st.caption("Phase 2 evaluations include tool decisions and claim support against supplied source passages. Original regression runs assess stored-summary ambiguity. Neither proves complete eligibility or real-world factual accuracy.")
             st.caption("Release gates apply to live agents. Baseline rows provide comparison, not release readiness.")
-            st.download_button("Download full evaluation results", json.dumps(report, indent=2), file_name="equalstart-agent-evals.json", mime="application/json")
+            if not PUBLIC:
+                st.download_button("Download full evaluation results", json.dumps(report, indent=2), file_name="equalstart-agent-evals.json", mime="application/json")
         else:
             st.caption("No completed live evaluation report yet. Run the evaluation suite described in evals/README.txt.")
     with st.expander("Demo settings and technical details"):
@@ -523,11 +531,13 @@ def how():
         st.toggle(f"Use live {provider_display_name(provider)} agents", key="live", disabled=not available)
         st.caption("Live mode sends your goal and the minimum needed profile constraints to the configured model provider. Local mode runs the same graph with deterministic stages and makes no model calls.")
         st.write(f"Model: `{provider.model if provider else 'Not configured'}`")
-        st.write(f"Estimated inference spent or reserved: **${db.spent():.5f} / $15.00**")
-        st.caption("Persistent application ledger; not an account-wide billing guarantee. Unknown call costs retain conservative reservations. No automatic top-ups.")
+        if not PUBLIC:
+            st.write(f"Estimated inference spent or reserved: **${db.spent():.5f} / $15.00**")
+            st.caption("Persistent application ledger; not an account-wide billing guarantee. Unknown call costs retain conservative reservations. No automatic top-ups.")
         st.write("Search: Keenable, with provider credentials when configured.")
-        with st.expander("Recent stage records · no profile inputs"):
-            st.json(db.recent_runs())
+        if not PUBLIC:
+            with st.expander("Recent stage records · no profile inputs"):
+                st.json(db.recent_runs())
         if st.button("Clear this session's profile"):
             for key in ("profile", "run", "sample", "fresh-source", "leads"):
                 st.session_state.pop(key, None)
