@@ -307,6 +307,7 @@ docs/experiments/         Synthetic journeys and one-role-disabled comparisons
 docs/experiments/         Synthetic journeys and one-role-disabled comparisons
 docs/experiments/         Synthetic journeys and one-role-disabled comparisons
 docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
 scripts/                  Catalog seeding, source refresh, and browser checks
 ```
 
