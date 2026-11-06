@@ -1,0 +1,781 @@
+{
+  "metadata": {
+    "run_id": "journeys-20261103T040335733153Z",
+    "prompt_version": "2026-11-03-phase2-v1",
+    "live": true,
+    "model": "accounts/fireworks/models/gpt-oss-120b",
+    "dataset_fingerprint": "77e2c954947f9c40c9b44eefe39ddec8630d5dfe7f866b746a7e18f9e9fb92c6",
+    "annotation": "AI-assisted synthetic development journeys with controlled source fixtures; not real student trials or independently reviewed labels.",
+    "initial_ledger_usd": 0.06359279999999999,
+    "started_utc": "2026-11-03T04:03:35.738310+00:00",
+    "finished_utc": "2026-11-03T04:05:55.934800+00:00",
+    "final_ledger_usd": 0.07575749999999999,
+    "estimated_cost_delta_usd": 0.0121647
+  },
+  "summaries": [
+    {
+      "variant": "full",
+      "passed": 7,
+      "total": 7,
+      "model_calls": 24,
+      "cost": 0.00293505
+    },
+    {
+      "variant": "local-baseline",
+      "passed": 4,
+      "total": 7,
+      "model_calls": 0,
+      "cost": 0.0
+    },
+    {
+      "variant": "without-discovery",
+      "passed": 6,
+      "total": 7,
+      "model_calls": 13,
+      "cost": 0.00206415
+    },
+    {
+      "variant": "without-evidence",
+      "passed": 6,
+      "total": 7,
+      "model_calls": 19,
+      "cost": 0.00190965
+    },
+    {
+      "variant": "without-fit",
+      "passed": 6,
+      "total": 7,
+      "model_calls": 19,
+      "cost": 0.00242745
+    },
+    {
+      "variant": "without-planning",
+      "passed": 6,
+      "total": 7,
+      "model_calls": 23,
+      "cost": 0.0028284
+    }
+  ],
+  "results": [
+    {
+      "variant": "full",
+      "case_id": "community-college",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "relevant_selected": true,
+        "restriction_excluded": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "transfer"
+      ],
+      "model_calls": 4,
+      "latency_ms": 5726.83,
+      "estimated_cost_delta_usd": 0.0004575
+    },
+    {
+      "variant": "full",
+      "case_id": "no-upfront-funds",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "prepaid",
+        "reimbursed"
+      ],
+      "model_calls": 5,
+      "latency_ms": 7088.06,
+      "estimated_cost_delta_usd": 0.0006762
+    },
+    {
+      "variant": "full",
+      "case_id": "missing-residency",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "unknown_preserved": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "citizen-only"
+      ],
+      "model_calls": 4,
+      "latency_ms": 4906.78,
+      "estimated_cost_delta_usd": 0.0004569
+    },
+    {
+      "variant": "full",
+      "case_id": "known-restriction",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 0,
+      "latency_ms": 33.82,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "full",
+      "case_id": "conflicting-source",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true,
+        "contradiction_recognized": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "documented",
+        "disputed"
+      ],
+      "model_calls": 5,
+      "latency_ms": 7130.75,
+      "estimated_cost_delta_usd": 0.00070275
+    },
+    {
+      "variant": "full",
+      "case_id": "no-relevant-match",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 1,
+      "latency_ms": 1270.17,
+      "estimated_cost_delta_usd": 8.415e-05
+    },
+    {
+      "variant": "full",
+      "case_id": "nomination-plan",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "prerequisite_order": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "nomination"
+      ],
+      "model_calls": 5,
+      "latency_ms": 7080.19,
+      "estimated_cost_delta_usd": 0.00055755
+    },
+    {
+      "variant": "local-baseline",
+      "case_id": "community-college",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "relevant_selected": true,
+        "restriction_excluded": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "transfer"
+      ],
+      "model_calls": 0,
+      "latency_ms": 136.56,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "local-baseline",
+      "case_id": "no-upfront-funds",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "prepaid",
+        "reimbursed"
+      ],
+      "model_calls": 0,
+      "latency_ms": 198.86,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "local-baseline",
+      "case_id": "missing-residency",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "unknown_preserved": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "citizen-only"
+      ],
+      "model_calls": 0,
+      "latency_ms": 215.82,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "local-baseline",
+      "case_id": "known-restriction",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 0,
+      "latency_ms": 160.13,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "local-baseline",
+      "case_id": "conflicting-source",
+      "passed": false,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": false,
+        "contradiction_recognized": false
+      },
+      "error_type": null,
+      "selected_ids": [
+        "disputed",
+        "documented"
+      ],
+      "model_calls": 0,
+      "latency_ms": 87.15,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "local-baseline",
+      "case_id": "no-relevant-match",
+      "passed": false,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": false
+      },
+      "error_type": null,
+      "selected_ids": [
+        "poetry",
+        "music"
+      ],
+      "model_calls": 0,
+      "latency_ms": 93.06,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "local-baseline",
+      "case_id": "nomination-plan",
+      "passed": false,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "prerequisite_order": false
+      },
+      "error_type": null,
+      "selected_ids": [
+        "nomination"
+      ],
+      "model_calls": 0,
+      "latency_ms": 134.91,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "without-discovery",
+      "case_id": "community-college",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "relevant_selected": true,
+        "restriction_excluded": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "transfer"
+      ],
+      "model_calls": 2,
+      "latency_ms": 4107.7,
+      "estimated_cost_delta_usd": 0.0002742
+    },
+    {
+      "variant": "without-discovery",
+      "case_id": "no-upfront-funds",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "prepaid",
+        "reimbursed"
+      ],
+      "model_calls": 2,
+      "latency_ms": 4084.67,
+      "estimated_cost_delta_usd": 0.00036435
+    },
+    {
+      "variant": "without-discovery",
+      "case_id": "missing-residency",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "unknown_preserved": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "citizen-only"
+      ],
+      "model_calls": 2,
+      "latency_ms": 2847.06,
+      "estimated_cost_delta_usd": 0.0002643
+    },
+    {
+      "variant": "without-discovery",
+      "case_id": "known-restriction",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 0,
+      "latency_ms": 50.26,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "without-discovery",
+      "case_id": "conflicting-source",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true,
+        "contradiction_recognized": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "documented",
+        "disputed"
+      ],
+      "model_calls": 2,
+      "latency_ms": 3578.33,
+      "estimated_cost_delta_usd": 0.00040935
+    },
+    {
+      "variant": "without-discovery",
+      "case_id": "no-relevant-match",
+      "passed": false,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": false
+      },
+      "error_type": null,
+      "selected_ids": [
+        "poetry",
+        "music"
+      ],
+      "model_calls": 2,
+      "latency_ms": 3248.7,
+      "estimated_cost_delta_usd": 0.0003819
+    },
+    {
+      "variant": "without-discovery",
+      "case_id": "nomination-plan",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "prerequisite_order": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "nomination"
+      ],
+      "model_calls": 3,
+      "latency_ms": 3534.59,
+      "estimated_cost_delta_usd": 0.00037005
+    },
+    {
+      "variant": "without-evidence",
+      "case_id": "community-college",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "relevant_selected": true,
+        "restriction_excluded": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "transfer"
+      ],
+      "model_calls": 3,
+      "latency_ms": 3877.93,
+      "estimated_cost_delta_usd": 0.00027105
+    },
+    {
+      "variant": "without-evidence",
+      "case_id": "no-upfront-funds",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "prepaid",
+        "reimbursed"
+      ],
+      "model_calls": 4,
+      "latency_ms": 5556.07,
+      "estimated_cost_delta_usd": 0.00044535
+    },
+    {
+      "variant": "without-evidence",
+      "case_id": "missing-residency",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "unknown_preserved": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "citizen-only"
+      ],
+      "model_calls": 3,
+      "latency_ms": 3568.01,
+      "estimated_cost_delta_usd": 0.00028065
+    },
+    {
+      "variant": "without-evidence",
+      "case_id": "known-restriction",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 0,
+      "latency_ms": 20.86,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "without-evidence",
+      "case_id": "conflicting-source",
+      "passed": false,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": false,
+        "contradiction_recognized": false
+      },
+      "error_type": null,
+      "selected_ids": [
+        "disputed",
+        "documented"
+      ],
+      "model_calls": 4,
+      "latency_ms": 5371.84,
+      "estimated_cost_delta_usd": 0.0004458
+    },
+    {
+      "variant": "without-evidence",
+      "case_id": "no-relevant-match",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 1,
+      "latency_ms": 1787.02,
+      "estimated_cost_delta_usd": 8.415e-05
+    },
+    {
+      "variant": "without-evidence",
+      "case_id": "nomination-plan",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "prerequisite_order": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "nomination"
+      ],
+      "model_calls": 4,
+      "latency_ms": 7467.73,
+      "estimated_cost_delta_usd": 0.00038265
+    },
+    {
+      "variant": "without-fit",
+      "case_id": "community-college",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "relevant_selected": true,
+        "restriction_excluded": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "transfer"
+      ],
+      "model_calls": 3,
+      "latency_ms": 5794.48,
+      "estimated_cost_delta_usd": 0.00037065
+    },
+    {
+      "variant": "without-fit",
+      "case_id": "no-upfront-funds",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "prepaid",
+        "reimbursed"
+      ],
+      "model_calls": 4,
+      "latency_ms": 6469.55,
+      "estimated_cost_delta_usd": 0.0005523
+    },
+    {
+      "variant": "without-fit",
+      "case_id": "missing-residency",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "unknown_preserved": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "citizen-only"
+      ],
+      "model_calls": 3,
+      "latency_ms": 3717.89,
+      "estimated_cost_delta_usd": 0.00037035
+    },
+    {
+      "variant": "without-fit",
+      "case_id": "known-restriction",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 0,
+      "latency_ms": 46.12,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "without-fit",
+      "case_id": "conflicting-source",
+      "passed": false,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": false,
+        "contradiction_recognized": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "disputed",
+        "documented"
+      ],
+      "model_calls": 4,
+      "latency_ms": 5863.29,
+      "estimated_cost_delta_usd": 0.00057885
+    },
+    {
+      "variant": "without-fit",
+      "case_id": "no-relevant-match",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 1,
+      "latency_ms": 1276.23,
+      "estimated_cost_delta_usd": 8.415e-05
+    },
+    {
+      "variant": "without-fit",
+      "case_id": "nomination-plan",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "prerequisite_order": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "nomination"
+      ],
+      "model_calls": 4,
+      "latency_ms": 4893.33,
+      "estimated_cost_delta_usd": 0.00047115
+    },
+    {
+      "variant": "without-planning",
+      "case_id": "community-college",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "relevant_selected": true,
+        "restriction_excluded": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "transfer"
+      ],
+      "model_calls": 4,
+      "latency_ms": 4615.16,
+      "estimated_cost_delta_usd": 0.0004575
+    },
+    {
+      "variant": "without-planning",
+      "case_id": "no-upfront-funds",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "prepaid",
+        "reimbursed"
+      ],
+      "model_calls": 5,
+      "latency_ms": 6683.54,
+      "estimated_cost_delta_usd": 0.0006762
+    },
+    {
+      "variant": "without-planning",
+      "case_id": "missing-residency",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "unknown_preserved": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "citizen-only"
+      ],
+      "model_calls": 4,
+      "latency_ms": 4888.53,
+      "estimated_cost_delta_usd": 0.0004569
+    },
+    {
+      "variant": "without-planning",
+      "case_id": "known-restriction",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 0,
+      "latency_ms": 22.03,
+      "estimated_cost_delta_usd": 0.0
+    },
+    {
+      "variant": "without-planning",
+      "case_id": "conflicting-source",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "appropriate_first": true,
+        "contradiction_recognized": true
+      },
+      "error_type": null,
+      "selected_ids": [
+        "documented",
+        "disputed"
+      ],
+      "model_calls": 5,
+      "latency_ms": 6644.18,
+      "estimated_cost_delta_usd": 0.00070275
+    },
+    {
+      "variant": "without-planning",
+      "case_id": "no-relevant-match",
+      "passed": true,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "honest_empty_selection": true
+      },
+      "error_type": null,
+      "selected_ids": [],
+      "model_calls": 1,
+      "latency_ms": 1104.16,
+      "estimated_cost_delta_usd": 8.415e-05
+    },
+    {
+      "variant": "without-planning",
+      "case_id": "nomination-plan",
+      "passed": false,
+      "checks": {
+        "known_rules_preserved": true,
+        "no_stage_fallback": true,
+        "prerequisite_order": false
+      },
+      "error_type": null,
+      "selected_ids": [
+        "nomination"
+      ],
+      "model_calls": 4,
+      "latency_ms": 4559.74,
+      "estimated_cost_delta_usd": 0.0004509
+    }
+  ]
+}

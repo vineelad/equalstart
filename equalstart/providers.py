@@ -18,12 +18,20 @@ def configure():
     load_dotenv(ROOT / ".env", override=False)
 
 
+def provider_display_name(client):
+    name = getattr(client, "provider", "fireworks")
+    if not isinstance(name, str):
+        name = getattr(name, "provider", "fireworks")
+    return name.capitalize() if isinstance(name, str) else "Configured provider"
+
+
 class Fireworks:
     """Bounded JSON-schema calls, with a persistent pre-request cost reservation."""
 
     def __init__(self, store: Store):
         configure()
         self.store = store
+        self.call_ids: list[int] = []
         self.provider = os.getenv("LLM_PROVIDER", "fireworks").strip().lower()
 
         if self.provider == "nebius":
@@ -63,6 +71,9 @@ class Fireworks:
     def ready(self):
         return bool(self.key and self.input_rate and self.output_rate)
 
+    def cost(self):
+        return self.store.cost_for_calls(self.call_ids)
+
     def generate(self, role: str, instruction: str, context: dict, schema: type[T]) -> T:
         if not self.ready:
             raise RuntimeError("Model credentials or verified prices are not configured")
@@ -78,6 +89,7 @@ class Fireworks:
             raise ValueError("Context exceeds the app's bounded request limit")
         reserve = (input_bound * self.input_rate + max_output * self.output_rate) / 1_000_000 * 1.25
         call_id = self.store.reserve(reserve, self.cap)
+        self.call_ids.append(call_id)
         try:
             response = httpx.post(
                 self.endpoint,
@@ -122,7 +134,7 @@ class Keenable:
         if site:
             payload["site"] = site
         hits = self.request("search", payload).get("results", [])
-        return [hit for hit in hits if str(hit.get("url", "")).startswith("https://")]
+        return [hit for hit in hits if str(hit.get("url", "")).startswith("https://")][:5]
 
     def fetch(self, url: str, allowed_hosts: set[str]) -> dict:
         parsed = urlparse(url)

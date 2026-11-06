@@ -1,0 +1,4117 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'><title>Equal Start agent evaluations</title><style>body{font:16px system-ui;background:#faf9f5;color:#173632;max-width:1200px;margin:40px auto;padding:20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}article,details{background:white;padding:20px;border:1px solid #dce5dc;border-radius:14px;margin:10px 0}strong{font-size:36px}small{font-size:14px;color:#61756c}progress{width:100%;accent-color:#087f72}pre{white-space:pre-wrap;overflow-wrap:anywhere}summary{cursor:pointer}</style><h1>Equal Start agent evaluations</h1><p>Fixed synthetic cases, deterministic scoring, recorded failures. See REPORT.txt for definitions and limitations.</p><div class='grid'><article><h2>Discovery <small>baseline</small></h2><strong>12.5%</strong><p>3/24 task cases passed · 100% contract validity</p><progress max='1' value='0.125'></progress><p>0 model calls · p50 0 ms · gate FAIL</p></article><article><h2>Discovery <small>live</small></h2><strong>100.0%</strong><p>24/24 task cases passed · 100% contract validity</p><progress max='1' value='1.0'></progress><p>21 model calls · p50 978 ms · gate PASS</p></article><article><h2>Evidence <small>baseline</small></h2><strong>37.5%</strong><p>9/24 task cases passed · 100% contract validity</p><progress max='1' value='0.375'></progress><p>0 model calls · p50 0 ms · gate FAIL</p></article><article><h2>Evidence <small>live</small></h2><strong>100.0%</strong><p>24/24 task cases passed · 100% contract validity</p><progress max='1' value='1.0'></progress><p>21 model calls · p50 1080 ms · gate PASS</p></article><article><h2>Fit <small>baseline</small></h2><strong>37.5%</strong><p>9/24 task cases passed · 100% contract validity</p><progress max='1' value='0.375'></progress><p>0 model calls · p50 0 ms · gate FAIL</p></article><article><h2>Fit <small>live</small></h2><strong>100.0%</strong><p>24/24 task cases passed · 100% contract validity</p><progress max='1' value='1.0'></progress><p>21 model calls · p50 1141 ms · gate PASS</p></article><article><h2>Planning <small>baseline</small></h2><strong>50.0%</strong><p>12/24 task cases passed · 100% contract validity</p><progress max='1' value='0.5'></progress><p>0 model calls · p50 0 ms · gate FAIL</p></article><article><h2>Planning <small>live</small></h2><strong>100.0%</strong><p>24/24 task cases passed · 100% contract validity</p><progress max='1' value='1.0'></progress><p>21 model calls · p50 939 ms · gate PASS</p></article></div><h2>Individual evaluations</h2><details><summary>Discovery D01 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D01&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;climate&quot;,
+    &quot;dance&quot;,
+    &quot;sales&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.3333333333333333,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.5,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 2,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.153,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D01 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D01&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;climate&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1038.949,
+  &quot;estimated_cost_delta_usd&quot;: 9.315e-05
+}</pre></details><details><summary>Discovery D02 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D02&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;community_college&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;transfer&quot;,
+    &quot;lab&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.072,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D02 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D02&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;community_college&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;transfer&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 971.938,
+  &quot;estimated_cost_delta_usd&quot;: 9.93e-05
+}</pre></details><details><summary>Discovery D03 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D03&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;health&quot;,
+    &quot;studio&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.099,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D03 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D03&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;health&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 946.568,
+  &quot;estimated_cost_delta_usd&quot;: 9.12e-05
+}</pre></details><details><summary>Discovery D04 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D04&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;arts&quot;,
+    &quot;general&quot;,
+    &quot;physics&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.6666666666666666,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.8,
+    &quot;true_positive&quot;: 2,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.15,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D04 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D04&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;arts&quot;,
+    &quot;general&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 2,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1072.553,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001149
+}</pre></details><details><summary>Discovery D05 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D05&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;no_match&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;music&quot;,
+    &quot;account&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 2,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 0.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.159,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D05 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D05&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;no_match&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 911.46,
+  &quot;estimated_cost_delta_usd&quot;: 8.61e-05
+}</pre></details><details><summary>Discovery D06 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D06&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.071,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D06 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D06&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 1.301,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Discovery D07 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D07&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;ecology&quot;,
+    &quot;poetry&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.096,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D07 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D07&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;ecology&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 980.661,
+  &quot;estimated_cost_delta_usd&quot;: 0.00010035
+}</pre></details><details><summary>Discovery D08 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D08&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;untrusted_search&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;software&quot;,
+    &quot;history&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.086,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D08 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D08&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;untrusted_search&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;software&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 978.489,
+  &quot;estimated_cost_delta_usd&quot;: 9.825e-05
+}</pre></details><details><summary>Discovery D01 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D01&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;climate&quot;,
+    &quot;dance&quot;,
+    &quot;sales&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.3333333333333333,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.5,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 2,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.141,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D01 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D01&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;climate&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 869.272,
+  &quot;estimated_cost_delta_usd&quot;: 9.315e-05
+}</pre></details><details><summary>Discovery D02 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D02&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;community_college&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;transfer&quot;,
+    &quot;lab&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.093,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D02 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D02&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;community_college&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;transfer&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 963.159,
+  &quot;estimated_cost_delta_usd&quot;: 9.93e-05
+}</pre></details><details><summary>Discovery D03 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D03&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;health&quot;,
+    &quot;studio&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.082,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D03 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D03&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;health&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1054.693,
+  &quot;estimated_cost_delta_usd&quot;: 9.12e-05
+}</pre></details><details><summary>Discovery D04 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D04&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;arts&quot;,
+    &quot;general&quot;,
+    &quot;physics&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.6666666666666666,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.8,
+    &quot;true_positive&quot;: 2,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.067,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D04 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D04&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;arts&quot;,
+    &quot;general&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 2,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1068.279,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001149
+}</pre></details><details><summary>Discovery D05 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D05&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;no_match&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;music&quot;,
+    &quot;account&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 2,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 0.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.16,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D05 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D05&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;no_match&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 904.905,
+  &quot;estimated_cost_delta_usd&quot;: 8.61e-05
+}</pre></details><details><summary>Discovery D06 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D06&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.092,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D06 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D06&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 2.723,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Discovery D07 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D07&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;ecology&quot;,
+    &quot;poetry&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.152,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D07 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D07&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;ecology&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1049.111,
+  &quot;estimated_cost_delta_usd&quot;: 0.00010035
+}</pre></details><details><summary>Discovery D08 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D08&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;untrusted_search&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;software&quot;,
+    &quot;history&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.173,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D08 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D08&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;untrusted_search&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;software&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 936.014,
+  &quot;estimated_cost_delta_usd&quot;: 9.825e-05
+}</pre></details><details><summary>Discovery D01 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D01&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;climate&quot;,
+    &quot;dance&quot;,
+    &quot;sales&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.3333333333333333,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.5,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 2,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.13,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D01 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D01&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;climate&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 907.141,
+  &quot;estimated_cost_delta_usd&quot;: 9.315e-05
+}</pre></details><details><summary>Discovery D02 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D02&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;community_college&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;transfer&quot;,
+    &quot;lab&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.104,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D02 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D02&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;community_college&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;transfer&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1131.965,
+  &quot;estimated_cost_delta_usd&quot;: 9.93e-05
+}</pre></details><details><summary>Discovery D03 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D03&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;health&quot;,
+    &quot;studio&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.101,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D03 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D03&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;health&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1163.277,
+  &quot;estimated_cost_delta_usd&quot;: 9.12e-05
+}</pre></details><details><summary>Discovery D04 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D04&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;arts&quot;,
+    &quot;general&quot;,
+    &quot;physics&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.6666666666666666,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.8,
+    &quot;true_positive&quot;: 2,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.142,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D04 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D04&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;arts&quot;,
+    &quot;general&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 2,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1053.275,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001149
+}</pre></details><details><summary>Discovery D05 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D05&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;no_match&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;music&quot;,
+    &quot;account&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 2,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 0.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.146,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D05 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D05&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;no_match&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 864.536,
+  &quot;estimated_cost_delta_usd&quot;: 8.61e-05
+}</pre></details><details><summary>Discovery D06 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D06&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.065,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D06 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D06&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 1.225,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Discovery D07 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D07&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;ecology&quot;,
+    &quot;poetry&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.101,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D07 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D07&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;ecology&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 997.794,
+  &quot;estimated_cost_delta_usd&quot;: 0.00010035
+}</pre></details><details><summary>Discovery D08 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;D08&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;untrusted_search&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;software&quot;,
+    &quot;history&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 0.6666666666666666,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 1,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.11,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Discovery D08 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;D08&quot;,
+  &quot;agent&quot;: &quot;Discovery&quot;,
+  &quot;slice&quot;: &quot;untrusted_search&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;software&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0,
+    &quot;reciprocal_rank&quot;: 1.0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 941.441,
+  &quot;estimated_cost_delta_usd&quot;: 9.825e-05
+}</pre></details><details><summary>Evidence E01 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E01&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.122,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E01 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E01&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 931.668,
+  &quot;estimated_cost_delta_usd&quot;: 0.000123
+}</pre></details><details><summary>Evidence E02 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E02&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;missing_deadline&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.072,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E02 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E02&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;missing_deadline&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;unknown-date&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1078.529,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001347
+}</pre></details><details><summary>Evidence E03 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E03&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.107,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E03 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E03&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;cash&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1180.382,
+  &quot;estimated_cost_delta_usd&quot;: 0.00013395
+}</pre></details><details><summary>Evidence E04 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E04&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;conflicting_sources&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.106,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E04 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E04&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;conflicting_sources&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;conflict&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 888.77,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001056
+}</pre></details><details><summary>Evidence E05 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E05&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;unsupported_guarantee&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.104,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E05 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E05&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;unsupported_guarantee&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;guarantee&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1120.078,
+  &quot;estimated_cost_delta_usd&quot;: 0.00014745
+}</pre></details><details><summary>Evidence E06 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E06&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;clear_restriction&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.147,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E06 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E06&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;clear_restriction&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1037.105,
+  &quot;estimated_cost_delta_usd&quot;: 0.00013035
+}</pre></details><details><summary>Evidence E07 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E07&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.065,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E07 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E07&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;poison&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1119.769,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001464
+}</pre></details><details><summary>Evidence E08 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E08&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.039,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E08 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E08&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.584,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Evidence E01 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E01&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.103,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E01 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E01&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1103.862,
+  &quot;estimated_cost_delta_usd&quot;: 0.000123
+}</pre></details><details><summary>Evidence E02 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E02&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;missing_deadline&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.101,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E02 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E02&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;missing_deadline&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;unknown-date&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1135.426,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001347
+}</pre></details><details><summary>Evidence E03 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E03&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.069,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E03 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E03&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;cash&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1027.236,
+  &quot;estimated_cost_delta_usd&quot;: 0.00013395
+}</pre></details><details><summary>Evidence E04 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E04&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;conflicting_sources&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.095,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E04 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E04&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;conflicting_sources&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;conflict&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 905.921,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001056
+}</pre></details><details><summary>Evidence E05 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E05&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;unsupported_guarantee&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.083,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E05 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E05&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;unsupported_guarantee&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;guarantee&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1395.21,
+  &quot;estimated_cost_delta_usd&quot;: 0.00014745
+}</pre></details><details><summary>Evidence E06 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E06&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;clear_restriction&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.08,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E06 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E06&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;clear_restriction&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1080.367,
+  &quot;estimated_cost_delta_usd&quot;: 0.00013035
+}</pre></details><details><summary>Evidence E07 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E07&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.13,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E07 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E07&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;poison&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1606.094,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001464
+}</pre></details><details><summary>Evidence E08 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E08&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.038,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E08 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E08&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.651,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Evidence E01 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E01&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.085,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E01 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E01&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 936.093,
+  &quot;estimated_cost_delta_usd&quot;: 0.000123
+}</pre></details><details><summary>Evidence E02 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E02&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;missing_deadline&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.081,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E02 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E02&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;missing_deadline&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;unknown-date&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1478.785,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001347
+}</pre></details><details><summary>Evidence E03 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E03&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.145,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E03 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E03&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;cash&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1007.314,
+  &quot;estimated_cost_delta_usd&quot;: 0.00013395
+}</pre></details><details><summary>Evidence E04 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E04&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;conflicting_sources&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.134,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E04 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E04&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;conflicting_sources&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;conflict&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 874.789,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001056
+}</pre></details><details><summary>Evidence E05 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E05&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;unsupported_guarantee&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.085,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E05 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E05&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;unsupported_guarantee&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;guarantee&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1298.195,
+  &quot;estimated_cost_delta_usd&quot;: 0.00014745
+}</pre></details><details><summary>Evidence E06 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E06&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;clear_restriction&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.12,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E06 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E06&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;clear_restriction&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1028.301,
+  &quot;estimated_cost_delta_usd&quot;: 0.00013035
+}</pre></details><details><summary>Evidence E07 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;E07&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 0.0,
+    &quot;recall&quot;: 0.0,
+    &quot;f1&quot;: 0.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.074,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E07 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E07&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;poison&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 1,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1341.251,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001464
+}</pre></details><details><summary>Evidence E08 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E08&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.04,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Evidence E08 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;E08&quot;,
+  &quot;agent&quot;: &quot;Evidence&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;precision&quot;: 1.0,
+    &quot;recall&quot;: 1.0,
+    &quot;f1&quot;: 1.0,
+    &quot;true_positive&quot;: 0,
+    &quot;false_positive&quot;: 0,
+    &quot;false_negative&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.656,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Fit F01 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F01&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;reimburse&quot;,
+    &quot;advance&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.105,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F01 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F01&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;advance&quot;,
+    &quot;reimburse&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1178.709,
+  &quot;estimated_cost_delta_usd&quot;: 0.00011295
+}</pre></details><details><summary>Fit F02 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F02&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;housing&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;nohousing&quot;,
+    &quot;housing&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.101,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F02 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F02&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;housing&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;housing&quot;,
+    &quot;nohousing&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1302.188,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001212
+}</pre></details><details><summary>Fit F03 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F03&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;goal_fit&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;poetry&quot;,
+    &quot;medical&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.09,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F03 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F03&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;goal_fit&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;medical&quot;,
+    &quot;poetry&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1183.601,
+  &quot;estimated_cost_delta_usd&quot;: 0.00012825
+}</pre></details><details><summary>Fit F04 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F04&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;higher&quot;,
+    &quot;lower&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.112,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F04 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F04&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;higher&quot;,
+    &quot;lower&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 984.655,
+  &quot;estimated_cost_delta_usd&quot;: 0.00010605
+}</pre></details><details><summary>Fit F05 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F05&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;tie&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.144,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F05 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F05&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;tie&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1177.433,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001212
+}</pre></details><details><summary>Fit F06 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F06&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;unknown_costs&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;unknown&quot;,
+    &quot;clear&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.111,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F06 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F06&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;unknown_costs&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;clear&quot;,
+    &quot;unknown&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1107.034,
+  &quot;estimated_cost_delta_usd&quot;: 0.00012045
+}</pre></details><details><summary>Fit F07 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F07&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;poison&quot;,
+    &quot;environment&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.123,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F07 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F07&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;environment&quot;,
+    &quot;poison&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1208.866,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001227
+}</pre></details><details><summary>Fit F08 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F08&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.069,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F08 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F08&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 1.758,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Fit F01 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F01&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;reimburse&quot;,
+    &quot;advance&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.098,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F01 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F01&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;advance&quot;,
+    &quot;reimburse&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1103.642,
+  &quot;estimated_cost_delta_usd&quot;: 0.00011295
+}</pre></details><details><summary>Fit F02 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F02&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;housing&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;nohousing&quot;,
+    &quot;housing&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.098,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F02 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F02&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;housing&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;housing&quot;,
+    &quot;nohousing&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1419.404,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001212
+}</pre></details><details><summary>Fit F03 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F03&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;goal_fit&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;poetry&quot;,
+    &quot;medical&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.116,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F03 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F03&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;goal_fit&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;medical&quot;,
+    &quot;poetry&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1164.195,
+  &quot;estimated_cost_delta_usd&quot;: 0.00012825
+}</pre></details><details><summary>Fit F04 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F04&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;higher&quot;,
+    &quot;lower&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.114,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F04 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F04&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;higher&quot;,
+    &quot;lower&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1109.821,
+  &quot;estimated_cost_delta_usd&quot;: 0.00010605
+}</pre></details><details><summary>Fit F05 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F05&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;tie&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.163,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F05 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F05&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;tie&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1122.118,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001212
+}</pre></details><details><summary>Fit F06 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F06&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;unknown_costs&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;unknown&quot;,
+    &quot;clear&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.181,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F06 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F06&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;unknown_costs&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;clear&quot;,
+    &quot;unknown&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1140.54,
+  &quot;estimated_cost_delta_usd&quot;: 0.00012045
+}</pre></details><details><summary>Fit F07 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F07&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;poison&quot;,
+    &quot;environment&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.093,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F07 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F07&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;environment&quot;,
+    &quot;poison&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1138.674,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001227
+}</pre></details><details><summary>Fit F08 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F08&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.036,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F08 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F08&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.682,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Fit F01 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F01&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;reimburse&quot;,
+    &quot;advance&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.094,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F01 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F01&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;upfront_costs&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;advance&quot;,
+    &quot;reimburse&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1072.529,
+  &quot;estimated_cost_delta_usd&quot;: 0.00011295
+}</pre></details><details><summary>Fit F02 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F02&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;housing&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;nohousing&quot;,
+    &quot;housing&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.095,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F02 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F02&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;housing&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;housing&quot;,
+    &quot;nohousing&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1076.144,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001212
+}</pre></details><details><summary>Fit F03 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F03&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;goal_fit&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;poetry&quot;,
+    &quot;medical&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.078,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F03 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F03&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;goal_fit&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;medical&quot;,
+    &quot;poetry&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1147.481,
+  &quot;estimated_cost_delta_usd&quot;: 0.00012825
+}</pre></details><details><summary>Fit F04 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F04&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;higher&quot;,
+    &quot;lower&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.085,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F04 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F04&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;higher&quot;,
+    &quot;lower&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 954.548,
+  &quot;estimated_cost_delta_usd&quot;: 0.00010605
+}</pre></details><details><summary>Fit F05 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F05&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;tie&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.127,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F05 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F05&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;tie&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1105.434,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001212
+}</pre></details><details><summary>Fit F06 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F06&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;unknown_costs&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;unknown&quot;,
+    &quot;clear&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.109,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F06 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F06&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;unknown_costs&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;clear&quot;,
+    &quot;unknown&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1166.93,
+  &quot;estimated_cost_delta_usd&quot;: 0.00012045
+}</pre></details><details><summary>Fit F07 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;F07&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    &quot;poison&quot;,
+    &quot;environment&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.113,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F07 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F07&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    &quot;environment&quot;,
+    &quot;poison&quot;
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1487.621,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001227
+}</pre></details><details><summary>Fit F08 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F08&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.038,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Fit F08 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;F08&quot;,
+  &quot;agent&quot;: &quot;Fit&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.861,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Planning P01 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P01&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.143,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P01 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P01&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    2,
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1063.164,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001098
+}</pre></details><details><summary>Planning P02 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P02&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;external_dependency&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.096,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P02 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P02&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;external_dependency&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 861.347,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001023
+}</pre></details><details><summary>Planning P03 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P03&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;document_dependency&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.116,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P03 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P03&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;document_dependency&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 887.718,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001026
+}</pre></details><details><summary>Planning P04 · baseline · repeat 1 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P04&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;nomination&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.122,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P04 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P04&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;nomination&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 944.73,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001077
+}</pre></details><details><summary>Planning P05 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P05&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;flexible_order&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.122,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P05 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P05&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;flexible_order&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    2,
+    1,
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1136.8,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001359
+}</pre></details><details><summary>Planning P06 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P06&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.143,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P06 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P06&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1291.412,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001548
+}</pre></details><details><summary>Planning P07 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P07&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.058,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P07 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P07&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 1.223,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Planning P08 · baseline · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P08&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;single_material&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.086,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P08 · live · repeat 1 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P08&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;single_material&quot;,
+  &quot;repeat&quot;: 1,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 808.324,
+  &quot;estimated_cost_delta_usd&quot;: 8.79e-05
+}</pre></details><details><summary>Planning P01 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P01&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.114,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P01 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P01&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    2,
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 939.257,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001098
+}</pre></details><details><summary>Planning P02 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P02&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;external_dependency&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.087,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P02 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P02&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;external_dependency&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 882.23,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001023
+}</pre></details><details><summary>Planning P03 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P03&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;document_dependency&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.103,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P03 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P03&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;document_dependency&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1204.573,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001026
+}</pre></details><details><summary>Planning P04 · baseline · repeat 2 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P04&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;nomination&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.066,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P04 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P04&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;nomination&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 880.51,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001077
+}</pre></details><details><summary>Planning P05 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P05&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;flexible_order&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.112,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P05 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P05&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;flexible_order&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    2,
+    1,
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1319.128,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001359
+}</pre></details><details><summary>Planning P06 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P06&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.129,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P06 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P06&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1249.888,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001548
+}</pre></details><details><summary>Planning P07 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P07&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.069,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P07 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P07&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 1.445,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Planning P08 · baseline · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P08&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;single_material&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.149,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P08 · live · repeat 2 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P08&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;single_material&quot;,
+  &quot;repeat&quot;: 2,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 831.614,
+  &quot;estimated_cost_delta_usd&quot;: 8.79e-05
+}</pre></details><details><summary>Planning P01 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P01&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.104,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P01 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P01&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;normal&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    2,
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 936.367,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001098
+}</pre></details><details><summary>Planning P02 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P02&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;external_dependency&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.082,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P02 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P02&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;external_dependency&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 908.812,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001023
+}</pre></details><details><summary>Planning P03 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P03&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;document_dependency&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.209,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P03 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P03&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;document_dependency&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1038.164,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001026
+}</pre></details><details><summary>Planning P04 · baseline · repeat 3 · FAIL</summary><pre>{
+  &quot;case_id&quot;: &quot;P04&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;nomination&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: false,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 0.5,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.133,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P04 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P04&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;nomination&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    1,
+    0,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 2
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 925.555,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001077
+}</pre></details><details><summary>Planning P05 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P05&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;flexible_order&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.111,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P05 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P05&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;flexible_order&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    2,
+    1,
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1167.256,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001359
+}</pre></details><details><summary>Planning P06 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P06&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.126,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P06 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P06&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;prompt_injection&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0,
+    1,
+    2
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 1
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 1265.37,
+  &quot;estimated_cost_delta_usd&quot;: 0.0001548
+}</pre></details><details><summary>Planning P07 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P07&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.035,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P07 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P07&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;empty&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.602,
+  &quot;estimated_cost_delta_usd&quot;: 0.0
+}</pre></details><details><summary>Planning P08 · baseline · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P08&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;single_material&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;baseline&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 0,
+  &quot;latency_ms&quot;: 0.042,
+  &quot;estimated_cost_delta_usd&quot;: 0
+}</pre></details><details><summary>Planning P08 · live · repeat 3 · PASS</summary><pre>{
+  &quot;case_id&quot;: &quot;P08&quot;,
+  &quot;agent&quot;: &quot;Planning&quot;,
+  &quot;slice&quot;: &quot;single_material&quot;,
+  &quot;repeat&quot;: 3,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;contract_valid&quot;: true,
+  &quot;task_pass&quot;: true,
+  &quot;output&quot;: [
+    0
+  ],
+  &quot;error_type&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;pairwise_order&quot;: 1.0,
+    &quot;labeled_pairs&quot;: 0
+  },
+  &quot;model_calls&quot;: 1,
+  &quot;latency_ms&quot;: 840.775,
+  &quot;estimated_cost_delta_usd&quot;: 8.79e-05
+}</pre></details></html>

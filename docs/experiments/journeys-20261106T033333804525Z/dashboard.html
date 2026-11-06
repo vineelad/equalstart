@@ -1,0 +1,735 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><title>Journey ablations</title><style>body{font:16px/1.6 system-ui;max-width:1100px;margin:40px auto}pre{white-space:pre-wrap}</style><h1>Journey ablations</h1><pre>Equal Start journey ablations
+
+AI-assisted synthetic development journeys with controlled source fixtures; not real student trials or independently reviewed labels.
+Same fixed cases for every variant. One run per case; no statistical significance claim.
+
+full: 7/7 | 24 model calls | estimated $0.003037
+local-baseline: 4/7 | 0 model calls | estimated $0.000000
+without-discovery: 6/7 | 13 model calls | estimated $0.002141
+without-evidence: 6/7 | 19 model calls | estimated $0.001959
+without-fit: 6/7 | 19 model calls | estimated $0.002524
+without-planning: 6/7 | 23 model calls | estimated $0.002918
+
+A disabled role uses the documented simple local comparator. The all-local variant uses no model calls. Tool sources are controlled fixtures, so this does not evaluate live web retrieval. Inspect failures before interpreting differences.
+</pre><pre>[
+  {
+    &quot;variant&quot;: &quot;full&quot;,
+    &quot;case_id&quot;: &quot;community-college&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;relevant_selected&quot;: true,
+      &quot;restriction_excluded&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;transfer&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 4898.68,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004626
+  },
+  {
+    &quot;variant&quot;: &quot;full&quot;,
+    &quot;case_id&quot;: &quot;no-upfront-funds&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;prepaid&quot;,
+      &quot;reimbursed&quot;
+    ],
+    &quot;model_calls&quot;: 5,
+    &quot;latency_ms&quot;: 8095.14,
+    &quot;estimated_cost_delta_usd&quot;: 0.00071895
+  },
+  {
+    &quot;variant&quot;: &quot;full&quot;,
+    &quot;case_id&quot;: &quot;missing-residency&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;unknown_preserved&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;citizen-only&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 5944.03,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004662
+  },
+  {
+    &quot;variant&quot;: &quot;full&quot;,
+    &quot;case_id&quot;: &quot;known-restriction&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 39.64,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;full&quot;,
+    &quot;case_id&quot;: &quot;conflicting-source&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true,
+      &quot;contradiction_recognized&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;documented&quot;,
+      &quot;disputed&quot;
+    ],
+    &quot;model_calls&quot;: 5,
+    &quot;latency_ms&quot;: 10961.16,
+    &quot;estimated_cost_delta_usd&quot;: 0.0007179
+  },
+  {
+    &quot;variant&quot;: &quot;full&quot;,
+    &quot;case_id&quot;: &quot;no-relevant-match&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 1,
+    &quot;latency_ms&quot;: 1749.25,
+    &quot;estimated_cost_delta_usd&quot;: 8.775e-05
+  },
+  {
+    &quot;variant&quot;: &quot;full&quot;,
+    &quot;case_id&quot;: &quot;nomination-plan&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;prerequisite_order&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;nomination&quot;
+    ],
+    &quot;model_calls&quot;: 5,
+    &quot;latency_ms&quot;: 10070.07,
+    &quot;estimated_cost_delta_usd&quot;: 0.0005838
+  },
+  {
+    &quot;variant&quot;: &quot;local-baseline&quot;,
+    &quot;case_id&quot;: &quot;community-college&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;relevant_selected&quot;: true,
+      &quot;restriction_excluded&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;transfer&quot;
+    ],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 92.64,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;local-baseline&quot;,
+    &quot;case_id&quot;: &quot;no-upfront-funds&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;prepaid&quot;,
+      &quot;reimbursed&quot;
+    ],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 65.77,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;local-baseline&quot;,
+    &quot;case_id&quot;: &quot;missing-residency&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;unknown_preserved&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;citizen-only&quot;
+    ],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 66.24,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;local-baseline&quot;,
+    &quot;case_id&quot;: &quot;known-restriction&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 63.66,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;local-baseline&quot;,
+    &quot;case_id&quot;: &quot;conflicting-source&quot;,
+    &quot;passed&quot;: false,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: false,
+      &quot;contradiction_recognized&quot;: false
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;disputed&quot;,
+      &quot;documented&quot;
+    ],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 61.87,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;local-baseline&quot;,
+    &quot;case_id&quot;: &quot;no-relevant-match&quot;,
+    &quot;passed&quot;: false,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: false
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;poetry&quot;,
+      &quot;music&quot;
+    ],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 60.53,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;local-baseline&quot;,
+    &quot;case_id&quot;: &quot;nomination-plan&quot;,
+    &quot;passed&quot;: false,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;prerequisite_order&quot;: false
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;nomination&quot;
+    ],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 56.73,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;without-discovery&quot;,
+    &quot;case_id&quot;: &quot;community-college&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;relevant_selected&quot;: true,
+      &quot;restriction_excluded&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;transfer&quot;
+    ],
+    &quot;model_calls&quot;: 2,
+    &quot;latency_ms&quot;: 2916.23,
+    &quot;estimated_cost_delta_usd&quot;: 0.0002691
+  },
+  {
+    &quot;variant&quot;: &quot;without-discovery&quot;,
+    &quot;case_id&quot;: &quot;no-upfront-funds&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;prepaid&quot;,
+      &quot;reimbursed&quot;
+    ],
+    &quot;model_calls&quot;: 2,
+    &quot;latency_ms&quot;: 3950.29,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004005
+  },
+  {
+    &quot;variant&quot;: &quot;without-discovery&quot;,
+    &quot;case_id&quot;: &quot;missing-residency&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;unknown_preserved&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;citizen-only&quot;
+    ],
+    &quot;model_calls&quot;: 2,
+    &quot;latency_ms&quot;: 2947.43,
+    &quot;estimated_cost_delta_usd&quot;: 0.0002784
+  },
+  {
+    &quot;variant&quot;: &quot;without-discovery&quot;,
+    &quot;case_id&quot;: &quot;known-restriction&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 57.54,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;without-discovery&quot;,
+    &quot;case_id&quot;: &quot;conflicting-source&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true,
+      &quot;contradiction_recognized&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;documented&quot;,
+      &quot;disputed&quot;
+    ],
+    &quot;model_calls&quot;: 2,
+    &quot;latency_ms&quot;: 3676.4,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004227
+  },
+  {
+    &quot;variant&quot;: &quot;without-discovery&quot;,
+    &quot;case_id&quot;: &quot;no-relevant-match&quot;,
+    &quot;passed&quot;: false,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: false
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;poetry&quot;,
+      &quot;music&quot;
+    ],
+    &quot;model_calls&quot;: 2,
+    &quot;latency_ms&quot;: 2673.61,
+    &quot;estimated_cost_delta_usd&quot;: 0.00038025
+  },
+  {
+    &quot;variant&quot;: &quot;without-discovery&quot;,
+    &quot;case_id&quot;: &quot;nomination-plan&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;prerequisite_order&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;nomination&quot;
+    ],
+    &quot;model_calls&quot;: 3,
+    &quot;latency_ms&quot;: 3452.44,
+    &quot;estimated_cost_delta_usd&quot;: 0.0003903
+  },
+  {
+    &quot;variant&quot;: &quot;without-evidence&quot;,
+    &quot;case_id&quot;: &quot;community-college&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;relevant_selected&quot;: true,
+      &quot;restriction_excluded&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;transfer&quot;
+    ],
+    &quot;model_calls&quot;: 3,
+    &quot;latency_ms&quot;: 6618.61,
+    &quot;estimated_cost_delta_usd&quot;: 0.00028425
+  },
+  {
+    &quot;variant&quot;: &quot;without-evidence&quot;,
+    &quot;case_id&quot;: &quot;no-upfront-funds&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;prepaid&quot;,
+      &quot;reimbursed&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 8144.22,
+    &quot;estimated_cost_delta_usd&quot;: 0.00044955
+  },
+  {
+    &quot;variant&quot;: &quot;without-evidence&quot;,
+    &quot;case_id&quot;: &quot;missing-residency&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;unknown_preserved&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;citizen-only&quot;
+    ],
+    &quot;model_calls&quot;: 3,
+    &quot;latency_ms&quot;: 5420.0,
+    &quot;estimated_cost_delta_usd&quot;: 0.00027825
+  },
+  {
+    &quot;variant&quot;: &quot;without-evidence&quot;,
+    &quot;case_id&quot;: &quot;known-restriction&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 76.94,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;without-evidence&quot;,
+    &quot;case_id&quot;: &quot;conflicting-source&quot;,
+    &quot;passed&quot;: false,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: false,
+      &quot;contradiction_recognized&quot;: false
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;disputed&quot;,
+      &quot;documented&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 8609.36,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004578
+  },
+  {
+    &quot;variant&quot;: &quot;without-evidence&quot;,
+    &quot;case_id&quot;: &quot;no-relevant-match&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 1,
+    &quot;latency_ms&quot;: 2870.06,
+    &quot;estimated_cost_delta_usd&quot;: 8.775e-05
+  },
+  {
+    &quot;variant&quot;: &quot;without-evidence&quot;,
+    &quot;case_id&quot;: &quot;nomination-plan&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;prerequisite_order&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;nomination&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 7394.49,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004014
+  },
+  {
+    &quot;variant&quot;: &quot;without-fit&quot;,
+    &quot;case_id&quot;: &quot;community-college&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;relevant_selected&quot;: true,
+      &quot;restriction_excluded&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;transfer&quot;
+    ],
+    &quot;model_calls&quot;: 3,
+    &quot;latency_ms&quot;: 3332.49,
+    &quot;estimated_cost_delta_usd&quot;: 0.00037515
+  },
+  {
+    &quot;variant&quot;: &quot;without-fit&quot;,
+    &quot;case_id&quot;: &quot;no-upfront-funds&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;prepaid&quot;,
+      &quot;reimbursed&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 7760.17,
+    &quot;estimated_cost_delta_usd&quot;: 0.00059325
+  },
+  {
+    &quot;variant&quot;: &quot;without-fit&quot;,
+    &quot;case_id&quot;: &quot;missing-residency&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;unknown_preserved&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;citizen-only&quot;
+    ],
+    &quot;model_calls&quot;: 3,
+    &quot;latency_ms&quot;: 6645.32,
+    &quot;estimated_cost_delta_usd&quot;: 0.00037665
+  },
+  {
+    &quot;variant&quot;: &quot;without-fit&quot;,
+    &quot;case_id&quot;: &quot;known-restriction&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 93.48,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;without-fit&quot;,
+    &quot;case_id&quot;: &quot;conflicting-source&quot;,
+    &quot;passed&quot;: false,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: false,
+      &quot;contradiction_recognized&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;disputed&quot;,
+      &quot;documented&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 10233.06,
+    &quot;estimated_cost_delta_usd&quot;: 0.0005934
+  },
+  {
+    &quot;variant&quot;: &quot;without-fit&quot;,
+    &quot;case_id&quot;: &quot;no-relevant-match&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 1,
+    &quot;latency_ms&quot;: 1938.84,
+    &quot;estimated_cost_delta_usd&quot;: 8.775e-05
+  },
+  {
+    &quot;variant&quot;: &quot;without-fit&quot;,
+    &quot;case_id&quot;: &quot;nomination-plan&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;prerequisite_order&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;nomination&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 8817.37,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004974
+  },
+  {
+    &quot;variant&quot;: &quot;without-planning&quot;,
+    &quot;case_id&quot;: &quot;community-college&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;relevant_selected&quot;: true,
+      &quot;restriction_excluded&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;transfer&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 7426.45,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004626
+  },
+  {
+    &quot;variant&quot;: &quot;without-planning&quot;,
+    &quot;case_id&quot;: &quot;no-upfront-funds&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;prepaid&quot;,
+      &quot;reimbursed&quot;
+    ],
+    &quot;model_calls&quot;: 5,
+    &quot;latency_ms&quot;: 10151.13,
+    &quot;estimated_cost_delta_usd&quot;: 0.00071895
+  },
+  {
+    &quot;variant&quot;: &quot;without-planning&quot;,
+    &quot;case_id&quot;: &quot;missing-residency&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;unknown_preserved&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;citizen-only&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 6273.94,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004662
+  },
+  {
+    &quot;variant&quot;: &quot;without-planning&quot;,
+    &quot;case_id&quot;: &quot;known-restriction&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 0,
+    &quot;latency_ms&quot;: 60.03,
+    &quot;estimated_cost_delta_usd&quot;: 0.0
+  },
+  {
+    &quot;variant&quot;: &quot;without-planning&quot;,
+    &quot;case_id&quot;: &quot;conflicting-source&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;appropriate_first&quot;: true,
+      &quot;contradiction_recognized&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;documented&quot;,
+      &quot;disputed&quot;
+    ],
+    &quot;model_calls&quot;: 5,
+    &quot;latency_ms&quot;: 7714.72,
+    &quot;estimated_cost_delta_usd&quot;: 0.0007179
+  },
+  {
+    &quot;variant&quot;: &quot;without-planning&quot;,
+    &quot;case_id&quot;: &quot;no-relevant-match&quot;,
+    &quot;passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;honest_empty_selection&quot;: true
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [],
+    &quot;model_calls&quot;: 1,
+    &quot;latency_ms&quot;: 1116.38,
+    &quot;estimated_cost_delta_usd&quot;: 8.775e-05
+  },
+  {
+    &quot;variant&quot;: &quot;without-planning&quot;,
+    &quot;case_id&quot;: &quot;nomination-plan&quot;,
+    &quot;passed&quot;: false,
+    &quot;checks&quot;: {
+      &quot;known_rules_preserved&quot;: true,
+      &quot;no_stage_fallback&quot;: true,
+      &quot;prerequisite_order&quot;: false
+    },
+    &quot;error_type&quot;: null,
+    &quot;selected_ids&quot;: [
+      &quot;nomination&quot;
+    ],
+    &quot;model_calls&quot;: 4,
+    &quot;latency_ms&quot;: 5114.95,
+    &quot;estimated_cost_delta_usd&quot;: 0.0004644
+  }
+]</pre></html>

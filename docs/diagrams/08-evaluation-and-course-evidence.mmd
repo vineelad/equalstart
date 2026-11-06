@@ -1,5 +1,5 @@
 flowchart TD
-    CASES[Freeze 32 synthetic labeled cases: eight per agent] --> SPLIT[Separate model context from expected labels]
+    CASES[Freeze versioned regression cases for each specialist] --> SPLIT[Separate model context from expected labels]
     SPLIT --> BASE[Run local role baseline]
     SPLIT --> LIVE[Run production invoke_agent prompts, schemas and guards]
     CONFIG[Record model, prompt, dataset and grader fingerprints] --> LIVE
@@ -16,3 +16,5 @@ flowchart TD
     DIAG --> REPORT
     REPORT --> TEAM[Team review and capstone evidence]
     REPORT --> APP[How it works evaluation scorecards]
+    NEW[Phase 2: 20 tool, grounding and permutation cases] --> GRADE
+    JOURNEY[Seven synthetic journeys: full, local and one-role-disabled variants] --> TEAM

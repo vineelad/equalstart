@@ -3,7 +3,7 @@
 All names, constraints, and claims here are synthetic. provider.example is reserved
 example data. Cases never enter the app's real opportunity catalog.
 """
-DATASET_VERSION = "2026-11-02-v1"
+DATASET_VERSION = "2026-11-05-v2"
 CASES = []
 
 

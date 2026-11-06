@@ -1,0 +1,26 @@
+{
+  "run_id": "phase2-20261103T041945025872Z",
+  "started_utc": "2026-11-03T04:19:45.027944+00:00",
+  "prompt_version": "2026-11-03-phase2-v2",
+  "dataset_version": "phase2-development-v1",
+  "dataset_fingerprint": "d67bcf8d3de6abd19a44159d8ead983668af582023504f7261008b3fe92128d4",
+  "source_fingerprint": "f72efca6ff8dfcf016a44353a4cc3525f55ffc1b661ac6e2421bce0044b1fce6",
+  "annotation": "AI-assisted synthetic development cases; not independently reviewed or held-out. Fit/Planning cases intentionally reuse regression scenarios.",
+  "model": "accounts/fireworks/models/gpt-oss-120b",
+  "live": true,
+  "initial_ledger_usd": 0.0950376,
+  "additional_eval_cap_usd": 0.5,
+  "repeats": 3,
+  "model_config": {
+    "temperature": 0,
+    "reasoning_effort": "low",
+    "max_output_tokens": 4096
+  },
+  "gates": {
+    "contract_rate": 1.0,
+    "task_pass_rate": 0.9
+  },
+  "finished_utc": "2026-11-03T04:20:56.718818+00:00",
+  "final_ledger_usd": 0.1091531625,
+  "estimated_eval_delta_usd": 0.014115562499999998
+}

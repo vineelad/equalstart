@@ -17,6 +17,9 @@ def test_dataset_has_distinct_cases_per_agent():
 
     ids = [case["id"] for case in CASES]
     assert len(ids) == len(set(ids)), "Evaluation case IDs must be unique"
+    for case in CASES:
+        assert case["label_reason"]
+        assert "expected" not in case["context"]
 
 
 

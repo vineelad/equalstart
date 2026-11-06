@@ -11,10 +11,12 @@ import streamlit as st
 from equalstart.catalog import ROOT, load_catalog
 from equalstart.agents import PROMPT_VERSION
 from equalstart.eligibility import assess, cycle_status
-from equalstart.providers import Fireworks, Keenable
+from equalstart.providers import Fireworks, Keenable, provider_display_name
 from equalstart.schema import Profile
 from equalstart.storage import Store
 from equalstart.workflow import application_tasks, run_matching
+from equalstart.readiness import readiness
+from equalstart.preparation import outreach_drafts
 
 st.set_page_config(page_title="Equal Start · Find your next chapter", page_icon="✳", layout="wide", initial_sidebar_state="collapsed")
 st.html(f"<style>{(ROOT / 'equalstart' / 'design.css').read_text(encoding='utf-8')}</style>")
@@ -135,9 +137,10 @@ def profile_form():
                 return
             st.session_state.profile = profile
             st.session_state.sample = False
+            st.session_state["clarification_handled"] = False
             with st.spinner("Finding relevant opportunities and checking published criteria…"):
                 st.session_state.run = run_matching(profile, data, provider if st.session_state.live else None,
-                                                    search=Keenable() if st.session_state.live else None)
+                                                    search=Keenable() if st.session_state.live else None, store=db)
                 st.session_state.leads = st.session_state.run.get("leads", [])
                 db.log_run(st.session_state.run["run_id"], [e.model_dump() for e in st.session_state.run["events"]])
             st.rerun()
@@ -156,6 +159,16 @@ def card(record, match):
             st.html(f'<div class="card-fit">{h(match.status)} · Relevance {match.score}/100</div><div class="score"><div style="width:{match.score}%"></div></div>')
             if match.barriers:
                 st.caption(match.barriers[0])
+            state_info = readiness(record, match, st.session_state.get("run", {}).get("findings", []))
+            st.markdown(f"**{state_info['label']}**")
+            st.caption(state_info["next_step"])
+            met = sum(criterion.state == "Met" for criterion in match.criteria)
+            unknown = sum(criterion.state == "Unknown" for criterion in match.criteria)
+            st.caption(f"Recorded checks: {met} met · {unknown} need confirmation")
+            if state_info["supported"] or state_info["unresolved"]:
+                st.caption(f"Retrieved evidence: {state_info['supported']} supported · {state_info['unresolved']} unresolved")
+            else:
+                st.caption(state_info["evidence"])
         else:
             st.caption("Add your profile to check eligibility and financial barriers.")
         c1, c2 = st.columns([3, 1])
@@ -167,6 +180,56 @@ def card(record, match):
             if st.button("Saved" if saved else "Save", key=f"save-{record.id}", disabled=saved, use_container_width=True):
                 db.save(record.id)
                 st.rerun()
+
+
+def clarify_profile():
+    question = st.session_state.get("run", {}).get("clarification")
+    if not question or st.session_state.get("clarification_handled"):
+        return
+    with st.container(border=True):
+        st.markdown("**One detail could help us check the requirements**")
+        st.caption("Optional. Skipping keeps this unknown and does not make you ineligible.")
+        answer = st.selectbox(question["prompt"], ["Prefer not to say"]+question["options"], key=f"clarify-{question['field']}")
+        if st.button("Continue with this answer", key="answer-clarification"):
+            profile_data = st.session_state.profile.model_dump()
+            if answer != "Prefer not to say":
+                profile_data[question["field"]] = {"Yes": True, "No": False}.get(answer, answer)
+            profile = Profile.model_validate(profile_data)
+            st.session_state.profile = profile
+            st.session_state["clarification_handled"] = True
+            st.session_state["profile_revision"] = st.session_state.get("profile_revision", 0)+1
+            with st.spinner("Updating the shortlist and source checks…"):
+                st.session_state.run = run_matching(profile, data, provider if st.session_state.live else None,
+                                                    search=Keenable() if st.session_state.live else None,
+                                                    store=db, allow_clarification=False)
+                st.session_state.leads = st.session_state.run.get("leads", [])
+                db.log_run(st.session_state.run["run_id"], [e.model_dump() for e in st.session_state.run["events"]])
+            st.rerun()
+
+
+def compare_options(records, matches):
+    with st.expander("Compare your options"):
+        selected = st.multiselect("Choose up to three opportunities", [record.id for record in records if record.id in matches],
+                                  format_func=lambda rid: lookup[rid].title, max_selections=3)
+        if selected:
+            columns = st.columns(len(selected))
+            for col, rid in zip(columns, selected):
+                record, match = lookup[rid], matches[rid]
+                state_info = readiness(record, match, st.session_state.get("run", {}).get("findings", []))
+                with col:
+                    st.markdown(f"**{record.title}**")
+                    st.write(record.award)
+                    st.caption(f"Housing: {record.housing}")
+                    st.caption(f"Travel: {record.travel}")
+                    st.caption(f"Upfront costs: {record.upfront}")
+                    st.write(state_info["label"])
+                    st.caption(state_info["evidence"])
+                    sources = [source for source in st.session_state.get("run", {}).get("snapshots", []) if source.opportunity_id == rid]
+                    if sources:
+                        st.caption("Source receipt: " + max(source.retrieved_at for source in sources).isoformat())
+                    for barrier in match.barriers:
+                        st.warning(barrier)
+                    st.link_button("Read official conditions", str(record.official_url), key=f"compare-source-{rid}")
 
 
 def explore():
@@ -183,6 +246,8 @@ def explore():
     st.html('<div class="intro-strip"><strong>Potential is everywhere. Access should be, too.</strong><span>You bring the ambition. We help you find a way in.</span></div>')
     profile_form()
     profile = st.session_state.get("profile")
+    if profile:
+        clarify_profile()
     if st.session_state.get("sample"):
         st.info("Showing Maya's fictional sample profile with real catalog opportunities. Edit the profile to make this yours.")
     st.html('<div class="section-head"><h2>Find your way forward</h2><span>Small steps. Real possibilities.</span></div><p class="section-sub">Explore the reviewed catalog, or add your goals for a personalized shortlist.</p>')
@@ -213,9 +278,16 @@ def explore():
         if match and ((eligibility == "Potential matches" and match.status == "Not eligible") or (eligibility not in ("Potential matches", "All outcomes") and match.status != eligibility)):
             continue
         visible.append((record, match))
-    st.caption(f"{len(visible)} opportunities shown · {len(data)} reviewed records · catalog checked November 2, 2026 · unknown cycles require confirmation")
+    if profile:
+        compare_options([record for record, _ in visible], matches)
+        view = st.radio("Explore view", ["Recommended next steps", "Browse reviewed catalog"], horizontal=True)
+        if view == "Recommended next steps":
+            selected_ids = set(st.session_state.get("run", {}).get("selected_ids", []))
+            visible = [(record, match) for record, match in visible if record.id in selected_ids][:3]
+            st.caption("Up to three prioritized options. Confirm conditions before applying; these are not award or eligibility guarantees.")
+    st.caption(f"{len(visible)} opportunities shown · {len(data)} reviewed records · unknown cycles require confirmation")
     if not visible:
-        st.html('<div class="empty"><h3>A different route may open a door.</h3><p>Try broader filters or edit your goals. We never relax hard eligibility rules to fill a shortlist.</p></div>')
+        st.html('<div class="empty"><h3>No confirmed route from this shortlist yet.</h3><p>The catalog may lack your subject, cycles may be closed, or recorded conditions may not fit. Browse the catalog or review separate discovery leads. We keep eligibility restrictions intact.</p></div>')
     for start in range(0, len(visible), 3):
         cols = st.columns(3)
         for col, pair in zip(cols, visible[start:start+3]):
@@ -226,6 +298,10 @@ def explore():
             trace(st.session_state.run["events"])
             if st.session_state.run.get("flagged_claims"):
                 st.warning("Evidence needs additional review: " + ", ".join(st.session_state.run["flagged_claims"]))
+            st.caption("Research stopped: " + st.session_state.run.get("stop_reason", "Local matching completed"))
+            st.json(st.session_state.run.get("research_trace", []))
+            st.download_button("Download research activity", json.dumps(st.session_state.run.get("research_trace", []), indent=2),
+                               file_name="equal-start-research.json", mime="application/json")
     with st.expander("Search beyond the reviewed catalog"):
         st.caption("Keenable returns discovery leads. These are not verified recommendations and are not added to your eligible shortlist.")
         query = st.text_input("Search official U.S. opportunity pages", value=(profile.goal if profile else "undergraduate scholarships funded research USA"), max_chars=500)
@@ -261,8 +337,8 @@ def detail():
             with st.spinner("Organizing the published application steps…"):
                 tasks, event = application_tasks(record, provider if st.session_state.live else None)
             db.save(record.id)
-            st.session_state.setdefault("plans", {})[record.id] = [t.model_dump() for t in tasks]
-            db.save_plan(record.id, [t.model_dump() for t in tasks])
+            st.session_state.setdefault("plans", {})[record.id] = [t.model_dump(mode="json") for t in tasks]
+            db.save_plan(record.id, [t.model_dump(mode="json") for t in tasks])
             db.log_run(str(uuid4()), [event.model_dump()])
             st.session_state.setdefault("planning_events", {})[record.id] = event
             go("My plan")
@@ -310,6 +386,16 @@ def detail():
                 st.write(claim.text)
                 st.link_button("Read provider source", str(claim.url), key=f"claim-{claim.id}")
                 st.caption(f"Evidence reference: {claim.id}")
+                finding = next((item for item in st.session_state.get("run", {}).get("findings", []) if item["claim_id"] == claim.id), None)
+                if finding:
+                    st.markdown(f"**Retrieved evidence: {finding['status']}**")
+                    source = next((source for source in st.session_state.run.get("snapshots", []) if source.id == finding["snapshot_id"]), None)
+                    if finding["quote"]:
+                        st.text(finding["quote"])
+                    if source:
+                        st.caption(f"Source receipt {source.id} · retrieved {source.retrieved_at.isoformat()}")
+                        st.link_button("Open cited provider page", str(source.url), key=f"grounded-{claim.id}")
+                    st.caption("A located passage supports review; it does not establish complete eligibility. Contradicted or missing facts need provider confirmation.")
         if st.button("Refresh this source with Keenable", key="refresh-source"):
             try:
                 with st.spinner("Fetching the current official page…"):
@@ -341,7 +427,7 @@ def tracker():
         record = lookup[id]
         tasks = db.plan(id)
         if tasks is None:
-            tasks = [t.model_dump() for t in application_tasks(record)[0]]
+            tasks = [t.model_dump(mode="json") for t in application_tasks(record)[0]]
         with st.container(border=True):
             c1, c2 = st.columns([4, 1])
             with c1:
@@ -352,14 +438,27 @@ def tracker():
                     db.remove(id)
                     st.rerun()
             done = []
+            task_labels = {item["id"]:item["text"] for item in tasks}
             for task in tasks:
                 if st.checkbox(task["text"], value=task["id"] in completed, key=f"task-{id}-{task['id']}"):
                     done.append(task["id"])
                 st.caption(task["kind"] + (f" · [Source]({task['source_url']})" if task.get("source_url") else ""))
+                if task.get("depends_on"):
+                    st.caption("Prepare first: " + " · ".join(task_labels.get(dep, "Earlier preparation step") for dep in task["depends_on"]))
+                if task.get("suggested_date"):
+                    st.caption("Suggested preparation date: " + str(task["suggested_date"]) + " · not a provider deadline")
+                if task.get("effort"):
+                    st.caption(task["effort"])
             if set(done) != set(completed):
                 db.tasks(id, done)
             st.progress(len(done)/len(tasks), text=f"{len(done)} of {len(tasks)} steps complete")
             st.link_button("Official application information  ↗", str(record.official_url))
+            with st.expander("Ask for support · editable drafts"):
+                st.caption("Use the official page to locate the right contact. These drafts are suggestions, not published requirements. Review and send them yourself.")
+                drafts = outreach_drafts(record)
+                draft_type = st.selectbox("What would you like to ask?", list(drafts), key=f"draft-type-{id}")
+                draft = st.text_area("Your editable draft", value=drafts[draft_type], height=240, key=f"draft-{id}-{draft_type}")
+                st.download_button("Download draft", draft, file_name=f"{id}-support-request.txt", key=f"draft-download-{id}")
             if id in st.session_state.get("planning_events", {}):
                 with st.expander("Checklist preparation details"):
                     trace([st.session_state.planning_events[id]])
@@ -384,7 +483,7 @@ def how():
     st.write("Equal Start pairs a reviewed opportunity catalog with specialist agents. Every recommendation keeps eligibility, uncertainty, and financial barriers visible.")
     for number, title, text in [
         ("01", "Discover a direction", "Your goals guide retrieval from the reviewed U.S. catalog."),
-        ("02", "Look for evidence", "Stored provider evidence supports the facts. Missing information stays visible."),
+        ("02", "Look for evidence", "Bounded research retrieves reviewed official pages. The Evidence agent compares claims with exact passages; missing and conflicting information stays visible."),
         ("03", "Check the fit", "Deterministic rules enforce known eligibility. AI can refine ordering, never override a failed rule."),
         ("04", "Make a plan", "The planning agent sequences published materials. General preparation advice is labeled separately."),
     ]:
@@ -412,7 +511,7 @@ def how():
                            "Contract validity": f"{s['contract_rate']:.0%}", "Task pass rate": f"{s['task_pass_rate']:.1%}",
                            "p50 latency ms": round(s["latency_p50_ms"]), "Gate": "PASS" if s["release_gate"] else "FAIL"}
                           for s in report["summaries"]], hide_index=True, use_container_width=True)
-            st.caption("Evidence scores ambiguity detection in stored summaries, not factual verification against full webpages. Empty-input guards make no model calls.")
+            st.caption("Phase 2 evaluations include tool decisions and claim support against supplied source passages. Original regression runs assess stored-summary ambiguity. Neither proves complete eligibility or real-world factual accuracy.")
             st.caption("Release gates apply to live agents. Baseline rows provide comparison, not release readiness.")
             st.download_button("Download full evaluation results", json.dumps(report, indent=2), file_name="equalstart-agent-evals.json", mime="application/json")
         else:
@@ -421,8 +520,8 @@ def how():
         if config_error:
             st.warning("Model configuration needs attention. Local matching is available.")
         available = bool(provider and provider.ready)
-        st.toggle("Use live Fireworks agents", key="live", disabled=not available)
-        st.caption("Live mode sends your goal and the minimum needed profile constraints to Fireworks. Local mode runs the same graph with deterministic stages and makes no model calls.")
+        st.toggle(f"Use live {provider_display_name(provider)} agents", key="live", disabled=not available)
+        st.caption("Live mode sends your goal and the minimum needed profile constraints to the configured model provider. Local mode runs the same graph with deterministic stages and makes no model calls.")
         st.write(f"Model: `{provider.model if provider else 'Not configured'}`")
         st.write(f"Estimated inference spent or reserved: **${db.spent():.5f} / $15.00**")
         st.caption("Persistent application ledger; not an account-wide billing guarantee. Unknown call costs retain conservative reservations. No automatic top-ups.")

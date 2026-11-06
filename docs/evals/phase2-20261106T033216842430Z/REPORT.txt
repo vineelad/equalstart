@@ -1,0 +1,56 @@
+Equal Start Phase 2 agent evaluation
+Run: phase2-20261106T033216842430Z
+Prompt: 2026-11-05-phase2-v3
+AI-assisted synthetic development cases, not independent held-out accuracy.
+Discovery/Evidence cover new tool/grounding contracts; Fit/Planning reuse existing regression scenarios.
+Live gates per role: 100% contract validity and at least 90% task-case passes.
+
+Discovery | baseline | 12/15 | contract 100.0% | gate FAIL
+Discovery | live | 15/15 | contract 100.0% | gate PASS
+Evidence | baseline | 6/15 | contract 100.0% | gate FAIL
+Evidence | live | 15/15 | contract 100.0% | gate PASS
+Fit | baseline | 0/15 | contract 100.0% | gate FAIL
+Fit | live | 15/15 | contract 100.0% | gate PASS
+Planning | baseline | 3/15 | contract 100.0% | gate FAIL
+Planning | live | 15/15 | contract 100.0% | gate PASS
+
+Failures:
+DR04 baseline repeat 1: task quality
+EG01 baseline repeat 1: task quality
+EG02 baseline repeat 1: task quality
+EG04 baseline repeat 1: task quality
+V2-F01 baseline repeat 1: task quality
+V2-F02 baseline repeat 1: task quality
+V2-F03 baseline repeat 1: task quality
+V2-F06 baseline repeat 1: task quality
+V2-F07 baseline repeat 1: task quality
+V2-P01 baseline repeat 1: task quality
+V2-P02 baseline repeat 1: task quality
+V2-P03 baseline repeat 1: task quality
+V2-P04 baseline repeat 1: task quality
+DR04 baseline repeat 2: task quality
+EG01 baseline repeat 2: task quality
+EG02 baseline repeat 2: task quality
+EG04 baseline repeat 2: task quality
+V2-F01 baseline repeat 2: task quality
+V2-F02 baseline repeat 2: task quality
+V2-F03 baseline repeat 2: task quality
+V2-F06 baseline repeat 2: task quality
+V2-F07 baseline repeat 2: task quality
+V2-P01 baseline repeat 2: task quality
+V2-P02 baseline repeat 2: task quality
+V2-P03 baseline repeat 2: task quality
+V2-P04 baseline repeat 2: task quality
+DR04 baseline repeat 3: task quality
+EG01 baseline repeat 3: task quality
+EG02 baseline repeat 3: task quality
+EG04 baseline repeat 3: task quality
+V2-F01 baseline repeat 3: task quality
+V2-F02 baseline repeat 3: task quality
+V2-F03 baseline repeat 3: task quality
+V2-F06 baseline repeat 3: task quality
+V2-F07 baseline repeat 3: task quality
+V2-P01 baseline repeat 3: task quality
+V2-P02 baseline repeat 3: task quality
+V2-P03 baseline repeat 3: task quality
+V2-P04 baseline repeat 3: task quality

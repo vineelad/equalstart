@@ -8,6 +8,31 @@ The app combines a custom Streamlit interface with predictable eligibility rules
 
 [Quick start](#quick-start) · [How it works](#how-it-works) · [Agent evaluations](#agent-evaluations) · [Project structure](#project-structure) · [Contributing](#contributing)
 
+
+## Phase 2: evidence to action
+
+The recommendation experience now connects research, evidence, and preparation:
+
+- **A focused shortlist and comparison:** up to three selected opportunities, a separate catalog view, side-by-side funding/housing/travel checks, and clear unresolved conditions.
+- **Bounded tool use:** Discovery can propose search, fetch, clarify, or finish. Code validates actions and reviewed URLs. Each matching run permits at most two searches, three fetch attempts, and one optional clarification; answering starts another run and can reuse source receipts.
+- **Evidence with exact citations:** official source text is timestamped and cached for six hours. Evidence selects numbered passages; code copies their exact text. Missing decisive evidence can trigger one additional approved-source fetch within the same three-fetch cap.
+- **Uncertainty passed downstream:** Fit receives unresolved evidence topics and assessment status. The reviewed catalog and hard eligibility outcomes stay intact.
+- **Preparation without an existing network:** suggested dates/dependencies and editable funding, reference, and nomination questions help students take the next step. No messages are sent automatically.
+- **Inspectable execution:** sanitized tool actions, stop reasons and source IDs can be exported. Model costs are attributed to request IDs so concurrent runs cannot contaminate per-run cost figures.
+
+The expanded 38-case regression suite passes Discovery 27/27, Evidence 30/30, Fit 30/30 and Planning 27/27 over three repeats. The six teammate-added cases are preserved alongside the original 32. The additional Phase 2 suite passes 15/15 per role over three repeats, with 100% contract validity. It covers tool decisions, grounding and existing Fit/Planning regression scenarios. Fit/Planning examples intentionally reuse earlier cases; all remain AI-assisted development data.
+
+Seven controlled synthetic journeys compare the full workflow, an all-local comparator, and each role disabled individually. The full workflow passed 7/7; the local comparator passed 4/7; each single-role-disabled variant passed 6/7. These are single runs on constructed cases, not independent user validation, statistical significance, or proof that four agents are always required. Inspect the per-case failures and cost/latency tradeoffs before generalizing.
+
+```powershell
+# New role contracts and quality cases, paired with local comparators.
+.\.venv\Scripts\python.exe -m evals.phase2 --live --repeats 3 --max-cost 0.5
+# Seven journeys: full workflow, local comparator, and one role disabled at a time.
+.\.venv\Scripts\python.exe -m evals.journeys --live --max-cost 0.5
+```
+
+See [Phase 2 results and limitations](docs/PHASE2_RESULTS.txt), [role evaluation receipts](docs/evals/), and [journey experiments](docs/experiments/). Live commands use the existing cumulative ledger. Full interrupted-graph recovery and independently reviewed student validation remain future work; source caching is not full execution checkpointing.
+
 ## What students can do
 
 - Describe a goal and optionally add details such as year of study, institution type, GPA, and citizenship or residency.
@@ -59,6 +84,8 @@ Edit your local `.env` with your own provider keys:
 | `INFERENCE_BUDGET_USD` | Sets the cumulative inference cap for this local database, up to $15. |
 | `FIREWORKS_INPUT_PER_MILLION`, `FIREWORKS_OUTPUT_PER_MILLION` | Optional for the default model, which has built-in rates; required for custom models. |
 
+Optional Nebius support from the team is preserved. Set `LLM_PROVIDER=nebius` and configure `NEBIUS_API_KEY`, `NEBIUS_MODEL`, and both verified `NEBIUS_INPUT_PER_MILLION` / `NEBIUS_OUTPUT_PER_MILLION` rates. Fireworks remains the default. The Phase 2 grounding contracts were live-tested with Fireworks; the [retained Nebius report](docs/evals/NEBIUS_EVALUATION_SUMMARY.md) covers the earlier summary/permutation contracts.
+
 Restart after changing provider settings. Open **How it works → Demo settings** to inspect live-mode settings and budget usage, then submit your own profile from Explore. Keys remain server-side and `.env` is ignored by Git.
 
 ## How it works
@@ -96,7 +123,7 @@ The Streamlit app validates the student's input and loads the reviewed JSON cata
 | Streamlit + custom CSS | Explore, opportunity details, saved plans, and workflow visibility. |
 | Pydantic | Validate profiles, catalog records, and model output schemas. |
 | Python rules | Determine recorded eligibility outcomes, cycle status, financial barriers, and local relevance scores. |
-| LangGraph | Run Discovery, Evidence, and Fit in sequence with shared state. |
+| LangGraph | Coordinate matching, bounded tool actions, optional clarification, and one evidence-driven follow-up with shared state. |
 | Fireworks | Run the bounded specialist prompts using an open-weight model. |
 | Keenable | Search for separate web leads and retrieve approved provider URLs. |
 | SQLite | Persist checklist state, concise stage metadata, and cumulative cost reservations. |
@@ -118,8 +145,12 @@ Matching begins with deterministic checks across the catalog. Known failures and
 flowchart TD
     A[Profile and reviewed catalog] --> B[Local rules and candidate screening]
     B --> C[Discovery]
-    C --> D[Evidence]
-    D --> E[Fit]
+    C --> R[Bounded research and optional clarification]
+    R --> D[Evidence: source passage judgments]
+    D --> Q{One useful reviewed-source follow-up?}
+    Q -->|Yes, at most once| R2[Fetch approved source]
+    R2 --> D
+    Q -->|No| E[Fit]
     E --> F[Explore results and select an opportunity]
     F --> G[Planning]
     G --> H[Source-linked application checklist]
@@ -127,12 +158,12 @@ flowchart TD
 
 | Agent | What it receives | What it returns | Boundary |
 | --- | --- | --- | --- |
-| **Discovery** | Goal, discipline, reviewed candidates, and optional unverified search leads. | Relevant supplied catalog IDs in priority order. | Cannot create candidate IDs or promote a web lead into a reviewed record. |
-| **Evidence** | Stored claim summaries for selected opportunities. | Existing claim IDs that need clarity review. | Screens ambiguity; does not independently verify webpages. |
-| **Fit** | Goal, cost/housing constraints, candidate scores, and known barriers. | Every selected opportunity ID, reordered. | Cannot override hard eligibility results or change the candidate set. |
+| **Discovery** | Goal, reviewed candidates, optional leads, and bounded research state. | Relevant catalog IDs and a validated next research action. | Fetches are restricted to reviewed URLs; web leads cannot become reviewed recommendations. |
+| **Evidence** | Reviewed claims and numbered passages from official source receipts. | Supported, Contradicted, or Not found findings with source and passage references. | Code copies exact source text. A cited passage does not establish complete eligibility. Without receipts, the role uses labeled summary clarity screening. |
+| **Fit** | Goal, cost/housing constraints, candidate scores, barriers, and evidence uncertainty. | Every selected opportunity ID, reordered. | Cannot override hard eligibility results or change the candidate set. |
 | **Planning** | A selected opportunity's published materials. | Every material index in a preparation order. | Cannot invent or remove published requirements. |
 
-The LangGraph matching workflow has **three sequential nodes**: Discovery → Evidence → Fit. Planning runs separately when a student builds a checklist. The result list prioritizes selected IDs while retaining the other catalog outcomes for browsing and filtering.
+The LangGraph workflow includes conditional research and one evidence-driven follow-up around Discovery, Evidence, and Fit. Planning runs separately on selection. The default shortlist shows up to three selected options; Browse reviewed catalog retains the broader rule outcomes. An empty Discovery selection stays an empty recommendation set.
 
 Without live inference, Discovery keeps screened candidates, Evidence adds no model flags, Fit uses local scores, and Planning keeps source order. A model or validation failure records a visible **Fallback** event and retains the corresponding local result. Valid empty inputs do not make model calls.
 
@@ -196,7 +227,7 @@ The application cap is cumulative for calls recorded in that database, including
 
 For a selected opportunity, Planning orders explicit zero-based material indices. The app checks that every original index appears exactly once, then builds tasks using the unchanged requirement text and source links. If the model fails, the published source order is preserved.
 
-General preparation steps—rechecking eligibility, confirming costs, and reviewing before submission—are labeled separately from published requirements. SQLite preserves the checklist and completed task IDs so the student can return to the plan and export it.
+General preparation steps—rechecking eligibility, confirming costs, and reviewing before submission—are labeled separately from published requirements. Suggested dependencies are validated, and suggested preparation dates are added only when a future deadline is known; these dates are not provider requirements. Editable provider-question, reference-request and nomination-support drafts help students ask for support. Students review and send drafts themselves. SQLite preserves the checklist and completed task IDs.
 
 <details>
 <summary>View planning and persistence</summary>
@@ -209,7 +240,7 @@ General preparation steps—rechecking eligibility, confirming costs, and review
 
 Each specialist has a dedicated quality evaluation suite using the **same production prompts, schemas, and identifier guards** as the app. Expected labels are kept out of model requests, and deterministic graders compare outputs against those labels.
 
-The suite contains 32 synthetic cases: eight per agent. With three repeats, a paired run records 96 live-mode case results and 96 local-baseline results. The live side makes 84 model calls; the remaining 12 cases exercise empty-input guards without a call.
+The current suite contains 38 synthetic development cases: Discovery 9, Evidence 10, Fit 10 and Planning 9. With three repeats, it records 114 live-mode case results and 114 local-baseline results. The live side makes 102 model calls; 12 cases exercise empty-input guards. Historical 32-case runs remain available.
 
 <details>
 <summary>View the evaluation flow</summary>
@@ -222,16 +253,16 @@ The suite contains 32 synthetic cases: eight per agent. With three repeats, a pa
 
 | Agent | Task-quality check | Recorded final live result |
 | --- | --- | --- |
-| Discovery | Relevant-ID precision and recall of at least 0.80 per case. | 24/24 cases passed. |
-| Evidence | Ambiguity-flag F1 of at least 0.80 per case. | 24/24 cases passed. |
-| Fit | All labeled preference pairs correctly ordered, with every candidate preserved. | 24/24 cases passed. |
-| Planning | All labeled prerequisite pairs correctly ordered, with every material preserved. | 24/24 cases passed. |
+| Discovery | Relevant-ID precision and recall of at least 0.80 per case. | 27/27 cases passed. |
+| Evidence | Ambiguity-flag F1 of at least 0.80 per case. | 30/30 cases passed. |
+| Fit | All labeled preference pairs correctly ordered, with every candidate preserved. | 30/30 cases passed. |
+| Planning | All labeled prerequisite pairs correctly ordered, with every material preserved. | 27/27 cases passed. |
 
 Each live agent must achieve **100% contract validity** and **at least 90% task-case passes** to pass its gate. The recorded final run met both gates for every agent. Contract failures count as failed cases. The runner also records latency, cost, diagnostic quality metrics, and repeat stability.
 
 These are small synthetic development cases used during prompt refinement. The results demonstrate behavior on that regression suite; they do not establish held-out real-world accuracy or scholarship selection outcomes. Earlier failed runs are retained alongside the final run.
 
-See the [evaluation guide](evals/README.txt), [recorded final report](docs/evals/20261103T025831998872Z/REPORT.txt), and [all run artifacts](docs/evals/). Download the repo to open the standalone HTML dashboards in a browser.
+See the [evaluation guide](evals/README.txt), [recorded final report](docs/evals/20261106T032951000782Z/REPORT.txt), and [all run artifacts](docs/evals/). Download the repo to open the standalone HTML dashboards in a browser.
 
 ### Run checks locally
 
@@ -247,14 +278,17 @@ See the [evaluation guide](evals/README.txt), [recorded final report](docs/evals
 .\.venv\Scripts\python.exe -m evals.runner --live --repeats 3 --max-cost 1
 ```
 
-Use `.venv/bin/python` on macOS/Linux. The latest verified deterministic suite has **68 passing tests**. Live evaluations use the same cumulative budget ledger with the specified smaller run cap. Reports are written to a unique folder under `docs/evals/`; a failed live gate returns a nonzero exit code and still preserves its results.
+Use `.venv/bin/python` on macOS/Linux. The latest verified deterministic suite has **108 passing tests**. Live evaluations use the same cumulative budget ledger with the specified smaller run cap. Reports are written to a unique folder under `docs/evals/`; a failed live gate returns a nonzero exit code and still preserves its results.
 
 ## Project structure
 
 ```text
 app.py                    Streamlit pages and student interactions
 equalstart/
-  workflow.py             Matching graph and on-demand checklist planning
+  workflow.py             Conditional matching graph and on-demand checklist planning
+  research.py             Bounded tool controller and official source receipts
+  readiness.py            Student-facing readiness from rule and evidence outcomes
+  preparation.py          Suggested dependencies/dates and editable support drafts
   agents.py               Shared prompts, output schemas, and reference guards
   eligibility.py          Eligibility rules, cycle status, barriers, and scoring
   providers.py            Fireworks and Keenable clients
@@ -267,6 +301,13 @@ evals/                    Fixed cases, deterministic graders, and evaluation run
 tests/                    Rule, contract, storage, and UI regression checks
 docs/diagrams/            Flow diagrams, offline viewer, and PDF handout
 docs/evals/               Recorded evaluation runs and dashboards
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
 scripts/                  Catalog seeding, source refresh, and browser checks
 ```
 

@@ -1,0 +1,13 @@
+Equal Start journey ablations
+
+AI-assisted synthetic development journeys with controlled source fixtures; not real student trials or independently reviewed labels.
+Same fixed cases for every variant. One run per case; no statistical significance claim.
+
+full: 7/7 | 24 model calls | estimated $0.002935
+local-baseline: 4/7 | 0 model calls | estimated $0.000000
+without-discovery: 6/7 | 13 model calls | estimated $0.002064
+without-evidence: 6/7 | 19 model calls | estimated $0.001910
+without-fit: 6/7 | 19 model calls | estimated $0.002427
+without-planning: 6/7 | 23 model calls | estimated $0.002828
+
+A disabled role uses the documented simple local comparator. The all-local variant uses no model calls. Tool sources are controlled fixtures, so this does not evaluate live web retrieval. Inspect failures before interpreting differences.
