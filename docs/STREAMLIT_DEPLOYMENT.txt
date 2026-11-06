@@ -1,0 +1,66 @@
+Equal Start: Streamlit Community Cloud
+
+Deployment state: source prepared; deployment requires the owner's Streamlit login.
+Do not describe the app as hosted until Streamlit returns a working app URL.
+
+Create the app at https://share.streamlit.io/ using:
+  Repository: vineelad/equalstart
+  Branch: deploy/streamlit-community-cloud
+  Main file: streamlit_app.py
+  Advanced settings / Python: 3.12
+  Custom subdomain: equalstart-demo (only if available)
+
+This branch includes Phase 2; it can be deployed before PR #2 merges.
+The public entrypoint keeps saved plans and checklist progress in each browser
+session, while sharing server-side source receipts and an inference usage ledger.
+Lost sessions and host restarts lose plans. Students should download checklists.
+The local app.py entrypoint still uses persistent single-user saved plans.
+
+Initially deploy without secrets to check the UI in local matching mode. For live
+agents, add ROOT-LEVEL secrets in Streamlit Advanced settings (not a [section]):
+
+LLM_PROVIDER = "fireworks"
+FIREWORKS_API_KEY = "paste the existing key privately here"
+FIREWORKS_MODEL = "accounts/fireworks/models/gpt-oss-120b"
+INFERENCE_BUDGET_USD = "2"
+KEENABLE_API_KEY = "paste the existing key privately here"
+
+The $2 value is a suggested hosted-demo allocation, not a newly authorized budget.
+It is part of the existing cumulative $15 inference allowance, not additional.
+Do not post actual secrets in GitHub, chat, logs, screenshots or documentation.
+Root-level Streamlit secrets are loaded before model configuration, becoming env
+variables. No local .env file is uploaded. Without keys local matching still works.
+
+Optional Nebius: set LLM_PROVIDER to nebius and supply NEBIUS_API_KEY,
+NEBIUS_MODEL, NEBIUS_INPUT_PER_MILLION and NEBIUS_OUTPUT_PER_MILLION with verified
+rates. Token Factory credits fund inference; free Streamlit hosting needs none.
+
+Public visitors do not see the runtime budget display, cross-session stage logs,
+provider keys or full evaluation-result download. Agent scorecards stay visible.
+Historical evaluation reports are already public in the source repository; those
+development costs are not account balances or current runtime usage.
+
+Budget limitation: Community Cloud disk and SQLite are ephemeral. The local
+authoritative ledger is not uploaded. Host rebuilds can reset the hosted ledger;
+an app-only cap cannot guarantee cumulative billing across those resets. Configure
+provider-side spending controls where supported and reconcile hosted spend with
+the local ledger before further paid development. Keenable has separate usage;
+the inference cap does not limit search charges. Do not assume zero balance stops
+all billing automatically. No new paid resources are created by these instructions.
+
+Verify after deployment:
+1. Open the assigned HTTPS URL and try Maya's sample profile.
+2. Save an opportunity in one browser and verify a separate private browser has
+   an empty My plan. Download a checklist before ending either session.
+3. Confirm How it works has no runtime spending or shared recent-record panel.
+4. If keys were added, run one live match and check evidence and provider usage.
+5. Share the actual URL with teammates. Free hosting may sleep when inactive;
+   open it before the presentation and wait for it to wake.
+
+To end the two-week demo, use the Streamlit owner's app controls to delete the
+deployment, and remove its secrets. No automatic removal has been scheduled.
+This is a session-based capstone demo, without durable accounts or authentication.
+
+Official instructions:
+https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy
+https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management
