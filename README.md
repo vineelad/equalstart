@@ -20,7 +20,7 @@ The recommendation experience now connects research, evidence, and preparation:
 - **Preparation without an existing network:** suggested dates/dependencies and editable funding, reference, and nomination questions help students take the next step. No messages are sent automatically.
 - **Inspectable execution:** sanitized tool actions, stop reasons and source IDs can be exported. Model costs are attributed to request IDs so concurrent runs cannot contaminate per-run cost figures.
 
-The original 32-case regression suite passes 24/24 cases for each live role over three repeats. The additional Phase 2 suite passes 15/15 per role over three repeats, with 100% contract validity. It covers tool decisions, grounding and existing Fit/Planning regression scenarios. Fit/Planning examples intentionally reuse earlier cases; all remain AI-assisted development data.
+The expanded 38-case regression suite passes Discovery 27/27, Evidence 30/30, Fit 30/30 and Planning 27/27 over three repeats. The six teammate-added cases are preserved alongside the original 32. The additional Phase 2 suite passes 15/15 per role over three repeats, with 100% contract validity. It covers tool decisions, grounding and existing Fit/Planning regression scenarios. Fit/Planning examples intentionally reuse earlier cases; all remain AI-assisted development data.
 
 Seven controlled synthetic journeys compare the full workflow, an all-local comparator, and each role disabled individually. The full workflow passed 7/7; the local comparator passed 4/7; each single-role-disabled variant passed 6/7. These are single runs on constructed cases, not independent user validation, statistical significance, or proof that four agents are always required. Inspect the per-case failures and cost/latency tradeoffs before generalizing.
 
@@ -83,6 +83,8 @@ Edit your local `.env` with your own provider keys:
 | `FIREWORKS_MODEL` | Defaults to `accounts/fireworks/models/gpt-oss-120b`. |
 | `INFERENCE_BUDGET_USD` | Sets the cumulative inference cap for this local database, up to $15. |
 | `FIREWORKS_INPUT_PER_MILLION`, `FIREWORKS_OUTPUT_PER_MILLION` | Optional for the default model, which has built-in rates; required for custom models. |
+
+Optional Nebius support from the team is preserved. Set `LLM_PROVIDER=nebius` and configure `NEBIUS_API_KEY`, `NEBIUS_MODEL`, and both verified `NEBIUS_INPUT_PER_MILLION` / `NEBIUS_OUTPUT_PER_MILLION` rates. Fireworks remains the default. The Phase 2 grounding contracts were live-tested with Fireworks; the [retained Nebius report](docs/evals/NEBIUS_EVALUATION_SUMMARY.md) covers the earlier summary/permutation contracts.
 
 Restart after changing provider settings. Open **How it works → Demo settings** to inspect live-mode settings and budget usage, then submit your own profile from Explore. Keys remain server-side and `.env` is ignored by Git.
 
@@ -238,7 +240,7 @@ General preparation steps—rechecking eligibility, confirming costs, and review
 
 Each specialist has a dedicated quality evaluation suite using the **same production prompts, schemas, and identifier guards** as the app. Expected labels are kept out of model requests, and deterministic graders compare outputs against those labels.
 
-The suite contains 32 synthetic cases: eight per agent. With three repeats, a paired run records 96 live-mode case results and 96 local-baseline results. The live side makes 84 model calls; the remaining 12 cases exercise empty-input guards without a call.
+The current suite contains 38 synthetic development cases: Discovery 9, Evidence 10, Fit 10 and Planning 9. With three repeats, it records 114 live-mode case results and 114 local-baseline results. The live side makes 102 model calls; 12 cases exercise empty-input guards. Historical 32-case runs remain available.
 
 <details>
 <summary>View the evaluation flow</summary>
@@ -251,16 +253,16 @@ The suite contains 32 synthetic cases: eight per agent. With three repeats, a pa
 
 | Agent | Task-quality check | Recorded final live result |
 | --- | --- | --- |
-| Discovery | Relevant-ID precision and recall of at least 0.80 per case. | 24/24 cases passed. |
-| Evidence | Ambiguity-flag F1 of at least 0.80 per case. | 24/24 cases passed. |
-| Fit | All labeled preference pairs correctly ordered, with every candidate preserved. | 24/24 cases passed. |
-| Planning | All labeled prerequisite pairs correctly ordered, with every material preserved. | 24/24 cases passed. |
+| Discovery | Relevant-ID precision and recall of at least 0.80 per case. | 27/27 cases passed. |
+| Evidence | Ambiguity-flag F1 of at least 0.80 per case. | 30/30 cases passed. |
+| Fit | All labeled preference pairs correctly ordered, with every candidate preserved. | 30/30 cases passed. |
+| Planning | All labeled prerequisite pairs correctly ordered, with every material preserved. | 27/27 cases passed. |
 
 Each live agent must achieve **100% contract validity** and **at least 90% task-case passes** to pass its gate. The recorded final run met both gates for every agent. Contract failures count as failed cases. The runner also records latency, cost, diagnostic quality metrics, and repeat stability.
 
 These are small synthetic development cases used during prompt refinement. The results demonstrate behavior on that regression suite; they do not establish held-out real-world accuracy or scholarship selection outcomes. Earlier failed runs are retained alongside the final run.
 
-See the [evaluation guide](evals/README.txt), [recorded final report](docs/evals/20261103T042537223610Z/REPORT.txt), and [all run artifacts](docs/evals/). Download the repo to open the standalone HTML dashboards in a browser.
+See the [evaluation guide](evals/README.txt), [recorded final report](docs/evals/20261106T032951000782Z/REPORT.txt), and [all run artifacts](docs/evals/). Download the repo to open the standalone HTML dashboards in a browser.
 
 ### Run checks locally
 
@@ -276,7 +278,7 @@ See the [evaluation guide](evals/README.txt), [recorded final report](docs/evals
 .\.venv\Scripts\python.exe -m evals.runner --live --repeats 3 --max-cost 1
 ```
 
-Use `.venv/bin/python` on macOS/Linux. The latest verified deterministic suite has **99 passing tests**. Live evaluations use the same cumulative budget ledger with the specified smaller run cap. Reports are written to a unique folder under `docs/evals/`; a failed live gate returns a nonzero exit code and still preserves its results.
+Use `.venv/bin/python` on macOS/Linux. The latest verified deterministic suite has **108 passing tests**. Live evaluations use the same cumulative budget ledger with the specified smaller run cap. Reports are written to a unique folder under `docs/evals/`; a failed live gate returns a nonzero exit code and still preserves its results.
 
 ## Project structure
 
@@ -299,6 +301,9 @@ evals/                    Fixed cases, deterministic graders, and evaluation run
 tests/                    Rule, contract, storage, and UI regression checks
 docs/diagrams/            Flow diagrams, offline viewer, and PDF handout
 docs/evals/               Recorded evaluation runs and dashboards
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
+docs/experiments/         Synthetic journeys and one-role-disabled comparisons
 docs/experiments/         Synthetic journeys and one-role-disabled comparisons
 docs/experiments/         Synthetic journeys and one-role-disabled comparisons
 docs/experiments/         Synthetic journeys and one-role-disabled comparisons

@@ -11,7 +11,7 @@ import streamlit as st
 from equalstart.catalog import ROOT, load_catalog
 from equalstart.agents import PROMPT_VERSION
 from equalstart.eligibility import assess, cycle_status
-from equalstart.providers import Fireworks, Keenable
+from equalstart.providers import Fireworks, Keenable, provider_display_name
 from equalstart.schema import Profile
 from equalstart.storage import Store
 from equalstart.workflow import application_tasks, run_matching
@@ -520,8 +520,8 @@ def how():
         if config_error:
             st.warning("Model configuration needs attention. Local matching is available.")
         available = bool(provider and provider.ready)
-        st.toggle("Use live Fireworks agents", key="live", disabled=not available)
-        st.caption("Live mode sends your goal and the minimum needed profile constraints to Fireworks. Local mode runs the same graph with deterministic stages and makes no model calls.")
+        st.toggle(f"Use live {provider_display_name(provider)} agents", key="live", disabled=not available)
+        st.caption("Live mode sends your goal and the minimum needed profile constraints to the configured model provider. Local mode runs the same graph with deterministic stages and makes no model calls.")
         st.write(f"Model: `{provider.model if provider else 'Not configured'}`")
         st.write(f"Estimated inference spent or reserved: **${db.spent():.5f} / $15.00**")
         st.caption("Persistent application ledger; not an account-wide billing guarantee. Unknown call costs retain conservative reservations. No automatic top-ups.")

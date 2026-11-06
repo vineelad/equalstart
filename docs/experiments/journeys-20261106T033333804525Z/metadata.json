@@ -1,0 +1,20 @@
+{
+  "run_id": "journeys-20261106T033333804525Z",
+  "prompt_version": "2026-11-05-phase2-v3",
+  "live": true,
+  "model": "accounts/fireworks/models/gpt-oss-120b",
+  "dataset_fingerprint": "77e2c954947f9c40c9b44eefe39ddec8630d5dfe7f866b746a7e18f9e9fb92c6",
+  "annotation": "AI-assisted synthetic development journeys with controlled source fixtures; not real student trials or independently reviewed labels.",
+  "initial_ledger_usd": 0.19860405,
+  "started_utc": "2026-11-06T03:33:33.807247+00:00",
+  "source_fingerprint": "4f044267679715b24c4c74b1b7662e4e1b741ad6fe4fe486d25ff6d0ec2bdf18",
+  "model_config": {
+    "temperature": 0,
+    "reasoning_effort": "low",
+    "max_output_tokens": 4096
+  },
+  "cost_attribution": "Provider request IDs; settled usage or retained reservation",
+  "finished_utc": "2026-11-06T03:36:31.755077+00:00",
+  "final_ledger_usd": 0.2148357,
+  "estimated_cost_delta_usd": 0.012578849999999999
+}

@@ -156,7 +156,7 @@ def write_reports(directory, metadata, rows):
         writer.writeheader()
         writer.writerows({**r, "output": json.dumps(r["output"]), "metrics": json.dumps(r["metrics"])} for r in rows)
     lines = ["# Equal Start agent evaluation report", "", f"Run: {metadata['run_id']}. Model: {metadata['model']}. Prompt: {metadata['prompt_version']}. Dataset: {metadata['dataset_version']}.", "",
-             "Eight fixed synthetic cases per agent, repeated three times by default. Labels and gates were authored before the live run. This is an authored regression set, not independently held-out data or a student usability study.", "",
+             "Fixed synthetic development cases, repeated per run configuration. Per-agent counts are recorded below. Expected labels are excluded from model requests. This is not independently held-out data or a student usability study.", "",
              "| Agent | Mode | Passed / evaluated | Contract | Task pass | Model calls | p50 / p95 ms | Gate |",
              "| --- | --- | --- | --- | --- | --- | --- | --- |"]
     for s in summaries:
@@ -216,7 +216,9 @@ def main():
                 "source_fingerprint": digest({"specs": {role: (schema.model_json_schema(), instruction) for role, (schema, instruction) in SPECS.items()},
                                               "agents_source": (ROOT / "equalstart" / "agents.py").read_text(encoding="utf-8"),
                                               "provider_source": (ROOT / "equalstart" / "providers.py").read_text(encoding="utf-8")}),
-                "repeats": args.repeats, "python": platform.python_version(), "pydantic": version("pydantic"), "langgraph": version("langgraph"),
+                "repeats": args.repeats, "case_counts": {role:sum(case['agent']==role for case in CASES) for role in SPECS},
+                "provider": getattr(provider,"provider","local"),
+                "python": platform.python_version(), "pydantic": version("pydantic"), "langgraph": version("langgraph"),
                 "model_config": {"temperature": 0, "reasoning_effort": "low", "max_output_tokens": 4096,
                                  "input_per_million_usd": provider.input_rate if provider else None,
                                  "output_per_million_usd": provider.output_rate if provider else None},

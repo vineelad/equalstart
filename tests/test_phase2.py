@@ -172,6 +172,42 @@ def test_eval_cost_attribution_ignores_another_runs_reservation_settlement(tmp_p
     assert store.cost_for_calls([])==0
 
 
+@pytest.mark.parametrize("provider_name", ["fireworks", "nebius"])
+def test_both_provider_adapters_preserve_request_cost_tracking(tmp_path,monkeypatch,provider_name):
+    from equalstart.providers import Fireworks
+    from equalstart.schema import DiscoveryOutput
+    monkeypatch.setattr("equalstart.providers.configure",lambda:None)
+    monkeypatch.setenv("LLM_PROVIDER",provider_name)
+    for prefix in ("FIREWORKS","NEBIUS"):
+        monkeypatch.setenv(f"{prefix}_API_KEY","fixture-key-not-a-credential")
+        monkeypatch.setenv(f"{prefix}_INPUT_PER_MILLION","0.2")
+        monkeypatch.setenv(f"{prefix}_OUTPUT_PER_MILLION","0.6")
+        monkeypatch.delenv(f"{prefix}_MODEL",raising=False)
+    endpoints=[]
+    class Response:
+        def raise_for_status(self): pass
+        def json(self):
+            return {"usage":{"prompt_tokens":100,"completion_tokens":20},"choices":[{"finish_reason":"stop","message":{"content":'{"opportunity_ids":[]}'}}]}
+    def post(endpoint,**kwargs):
+        endpoints.append(endpoint)
+        return Response()
+    monkeypatch.setattr("equalstart.providers.httpx.post",post)
+    store=Store(tmp_path/f"{provider_name}.sqlite")
+    provider=Fireworks(store)
+    assert provider.ready
+    provider.generate("Discovery","Return supplied references only.",{},DiscoveryOutput)
+    assert provider.provider==provider_name and provider_name in endpoints[0]
+    assert len(provider.call_ids)==1
+    assert provider.cost()==pytest.approx((100*.2+20*.6)/1_000_000)
+
+
+def test_provider_labels_work_with_ablation_wrappers():
+    from equalstart.providers import provider_display_name
+    from evals.journeys import AblatedProvider
+    assert provider_display_name(AblatedProvider(None,set()))=="Fireworks"
+    assert provider_display_name(SimpleNamespace(provider=SimpleNamespace(provider="nebius")))=="Nebius"
+
+
 def test_suggested_dates_missing_deadlines_and_dependency_cycles():
     item = record().model_copy(update={"deadline": None, "deadline_date": None})
     tasks, _ = application_tasks(item, today=date(2026, 11, 2))

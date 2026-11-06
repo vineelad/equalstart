@@ -8,7 +8,7 @@ flowchart TD
     RES --> TX[Atomic SQLite reservation: BEGIN IMMEDIATE]
     TX --> CAP{Fits remaining cumulative cap?}
     CAP -->|No| FALL[Record Fallback event and use local result]
-    CAP -->|Yes| CALL[Call Fireworks with bounded output and timeout]
+    CAP -->|Yes| CALL[Call configured provider with bounded output and timeout]
     CALL --> RESP{Response received with usable usage?}
     RESP -->|Yes| SET[Settle estimated cost using returned token counts]
     RESP -->|No or ambiguous failure| KEEP[Retain reservation for unknown billed usage]

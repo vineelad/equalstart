@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 from langgraph.graph import END, START, StateGraph
 
 from equalstart.agents import invoke_agent
+from equalstart.providers import provider_display_name
 from equalstart.schema import ResearchAction, SourceSnapshot
 
 
@@ -147,7 +148,7 @@ def research_sources(profile, records, provider=None, client=None, store=None,
                     "completed_sources": len(state["snapshots"]), "remaining_fetches": max_fetches-len(state["attempted"]),
                     "remaining_searches": 2-state["searches"],
                 }})
-                mode = "Fireworks"
+                mode = provider_display_name(provider)
             except Exception as error:
                 mode, reason = "Fallback", f"{type(error).__name__}: local bounded action retained"
         trace = state["trace"] + [{"action": default.action, "opportunity_id": default.opportunity_id,

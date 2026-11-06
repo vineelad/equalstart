@@ -8,7 +8,7 @@ from langgraph.graph import END, START, StateGraph
 
 from equalstart.eligibility import rank
 from equalstart.agents import invoke_agent
-from equalstart.providers import Fireworks, Keenable
+from equalstart.providers import Fireworks, Keenable, provider_display_name
 from equalstart.schema import AgentEvent, Match, Opportunity, Profile, Task
 from equalstart.research import research_sources, source_context, retrieve_source
 from equalstart.preparation import enrich_tasks
@@ -35,11 +35,12 @@ class RunState(TypedDict, total=False):
 def run_matching(profile: Profile, catalog: list[Opportunity], provider: Fireworks | None = None, now: datetime | None = None, search: Keenable | None = None, store=None, allow_clarification=True) -> RunState:
     baseline = rank(profile, catalog, now)
     live = provider is not None and provider.ready
+    provider_label = provider_display_name(provider)
 
     def stage(name, function, fallback, state):
         started = perf_counter()
         requested_model = live and bool(initial if name == "Discovery" else state.get("selected_ids", []))
-        actual_mode = "Fireworks" if requested_model else "Local baseline"
+        actual_mode = provider_label if requested_model else "Local baseline"
         try:
             updates, summary = function()
             event = AgentEvent(stage=name, mode=actual_mode, status="Complete", summary=summary, elapsed_ms=round((perf_counter()-started)*1000))
@@ -120,7 +121,7 @@ def run_matching(profile: Profile, catalog: list[Opportunity], provider: Firewor
 
     def evidence_followup(state):
         targets = followup_targets(state)
-        trace = {"action":"evidence-followup", "mode":"Fireworks", "status":"Not fetched", "reason":"Missing decisive source evidence"}
+        trace = {"action":"evidence-followup", "mode":provider_label, "status":"Not fetched", "reason":"Missing decisive source evidence"}
         snapshots = state.get("snapshots", [])
         started = perf_counter()
         fetched = False
@@ -207,4 +208,4 @@ def application_tasks(record: Opportunity, provider: Fireworks | None = None, to
     review = Task(id="review", text="Review your application before submitting through the official provider portal.", kind="Suggested preparation", source_url=str(record.official_url))
     submission = next((n for n, task in enumerate(tasks) if task.id.startswith("material-") and re.search(r"\bsubmit\b|final submission", task.text.lower())), len(tasks))
     tasks.insert(submission, review)
-    return enrich_tasks(tasks, record, today), AgentEvent(stage="Planning", mode="Fireworks" if live and indices else "Local baseline", status=status, summary=summary, elapsed_ms=round((perf_counter()-started)*1000))
+    return enrich_tasks(tasks, record, today), AgentEvent(stage="Planning", mode=provider_display_name(provider) if live and indices else "Local baseline", status=status, summary=summary, elapsed_ms=round((perf_counter()-started)*1000))

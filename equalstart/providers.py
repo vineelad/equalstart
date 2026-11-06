@@ -18,6 +18,13 @@ def configure():
     load_dotenv(ROOT / ".env", override=False)
 
 
+def provider_display_name(client):
+    name = getattr(client, "provider", "fireworks")
+    if not isinstance(name, str):
+        name = getattr(name, "provider", "fireworks")
+    return name.capitalize() if isinstance(name, str) else "Configured provider"
+
+
 class Fireworks:
     """Bounded JSON-schema calls, with a persistent pre-request cost reservation."""
 
@@ -25,18 +32,37 @@ class Fireworks:
         configure()
         self.store = store
         self.call_ids: list[int] = []
-        self.key = os.getenv("FIREWORKS_API_KEY", "").strip()
-        configured = os.getenv("FIREWORKS_MODEL", "").strip()
-        # The initial setup example used a retired serverless model; migrate that placeholder.
-        self.model = DEFAULT_MODEL if configured in ("", "accounts/fireworks/models/llama-v3p3-70b-instruct") else configured
-        input_rate = os.getenv("FIREWORKS_INPUT_PER_MILLION", "").strip()
-        output_rate = os.getenv("FIREWORKS_OUTPUT_PER_MILLION", "").strip()
-        defaults = (0.15, 0.60) if self.model == DEFAULT_MODEL else (None, None)
+        self.provider = os.getenv("LLM_PROVIDER", "fireworks").strip().lower()
+
+        if self.provider == "nebius":
+            self.key = os.getenv("NEBIUS_API_KEY", "").strip()
+            self.model = os.getenv("NEBIUS_MODEL", "zai-org/GLM-5.3-Flash").strip()
+            self.endpoint = "https://api.tokenfactory.nebius.com/v1/chat/completions"
+            input_rate = os.getenv("NEBIUS_INPUT_PER_MILLION", "").strip()
+            output_rate = os.getenv("NEBIUS_OUTPUT_PER_MILLION", "").strip()
+            defaults = (None, None)
+
+        elif self.provider == "fireworks":
+            self.key = os.getenv("FIREWORKS_API_KEY", "").strip()
+            configured = os.getenv("FIREWORKS_MODEL", "").strip()
+            self.model = DEFAULT_MODEL if configured in (
+                "", "accounts/fireworks/models/llama-v3p3-70b-instruct"
+            ) else configured
+            self.endpoint = "https://api.fireworks.ai/inference/v1/chat/completions"
+            input_rate = os.getenv("FIREWORKS_INPUT_PER_MILLION", "").strip()
+            output_rate = os.getenv("FIREWORKS_OUTPUT_PER_MILLION", "").strip()
+            defaults = (0.15, 0.60) if self.model == DEFAULT_MODEL else (None, None)
+
+        else:
+            raise ValueError(f"Unsupported LLM provider: {self.provider}")
+
         self.input_rate = float(input_rate) if input_rate else defaults[0]
         self.output_rate = float(output_rate) if output_rate else defaults[1]
+
         self.cap = min(15.0, float(os.getenv("INFERENCE_BUDGET_USD", "15") or "15"))
         if self.cap <= 0:
             raise ValueError("Inference budget must be positive")
+
         for rate in (self.input_rate, self.output_rate):
             if rate is not None and not 0 < rate < 1000:
                 raise ValueError("Invalid model price")
@@ -66,7 +92,7 @@ class Fireworks:
         self.call_ids.append(call_id)
         try:
             response = httpx.post(
-                "https://api.fireworks.ai/inference/v1/chat/completions",
+                self.endpoint,
                 headers={"Authorization": f"Bearer {self.key}"},
                 json={"model": self.model, "messages": messages, "max_tokens": max_output,
                       "reasoning_effort": "low", "temperature": 0,

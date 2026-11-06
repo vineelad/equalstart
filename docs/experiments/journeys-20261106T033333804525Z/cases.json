@@ -1,0 +1,604 @@
+[
+  {
+    "id": "community-college",
+    "profile": {
+      "goal": "Community college transfer tuition scholarship",
+      "discipline": "Environment",
+      "year": "Sophomore",
+      "institution_type": "Community college",
+      "institution": null,
+      "citizenship": "US citizen",
+      "gpa": null,
+      "full_time": null,
+      "research_career": null,
+      "transfer_plans": null,
+      "no_upfront": true,
+      "needs_housing": true
+    },
+    "records": [
+      {
+        "id": "four-year",
+        "title": "Environmental summer research",
+        "provider": "Synthetic evaluation provider",
+        "category": "Research",
+        "summary": "Undergraduate environmental summer research with funding",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Environment"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/four-year",
+        "claims": [
+          {
+            "id": "four-year-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/four-year",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [
+          {
+            "field": "institution_type",
+            "op": "eq",
+            "value": "Four-year",
+            "label": "Four-year institution",
+            "claim_id": "four-year-funding"
+          }
+        ],
+        "confirmations": [],
+        "materials": []
+      },
+      {
+        "id": "transfer",
+        "title": "Community college transfer tuition scholarship",
+        "provider": "Synthetic evaluation provider",
+        "category": "Scholarship",
+        "summary": "Tuition support for community college transfer",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "All fields",
+          "Transfer"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/transfer",
+        "claims": [
+          {
+            "id": "transfer-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/transfer",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [],
+        "confirmations": [],
+        "materials": []
+      }
+    ],
+    "expected": {
+      "selected": "transfer",
+      "excluded": "four-year"
+    },
+    "sources": {
+      "https://example.edu/four-year": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+      "https://example.edu/transfer": "For 2027, travel is prepaid and selected students receive a $2,000 stipend."
+    }
+  },
+  {
+    "id": "no-upfront-funds",
+    "profile": {
+      "goal": "Environmental summer research",
+      "discipline": "Environment",
+      "year": "Sophomore",
+      "institution_type": "Four-year",
+      "institution": null,
+      "citizenship": "US citizen",
+      "gpa": null,
+      "full_time": null,
+      "research_career": null,
+      "transfer_plans": null,
+      "no_upfront": true,
+      "needs_housing": true
+    },
+    "records": [
+      {
+        "id": "reimbursed",
+        "title": "Environmental summer research",
+        "provider": "Synthetic evaluation provider",
+        "category": "Research",
+        "summary": "Undergraduate environmental summer research with funding",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Environment"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Reimbursement barrier",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/reimbursed",
+        "claims": [
+          {
+            "id": "reimbursed-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/reimbursed",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [],
+        "confirmations": [],
+        "materials": []
+      },
+      {
+        "id": "prepaid",
+        "title": "Environmental summer research",
+        "provider": "Synthetic evaluation provider",
+        "category": "Research",
+        "summary": "Undergraduate environmental summer research with funding",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Environment"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/prepaid",
+        "claims": [
+          {
+            "id": "prepaid-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/prepaid",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [],
+        "confirmations": [],
+        "materials": []
+      }
+    ],
+    "expected": {
+      "first": "prepaid"
+    },
+    "sources": {
+      "https://example.edu/reimbursed": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+      "https://example.edu/prepaid": "For 2027, travel is prepaid and selected students receive a $2,000 stipend."
+    }
+  },
+  {
+    "id": "missing-residency",
+    "profile": {
+      "goal": "Environmental summer research",
+      "discipline": "Environment",
+      "year": "Sophomore",
+      "institution_type": "Four-year",
+      "institution": null,
+      "citizenship": null,
+      "gpa": null,
+      "full_time": null,
+      "research_career": null,
+      "transfer_plans": null,
+      "no_upfront": true,
+      "needs_housing": true
+    },
+    "records": [
+      {
+        "id": "citizen-only",
+        "title": "Environmental summer research",
+        "provider": "Synthetic evaluation provider",
+        "category": "Research",
+        "summary": "Undergraduate environmental summer research with funding",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Environment"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/citizen-only",
+        "claims": [
+          {
+            "id": "citizen-only-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/citizen-only",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [
+          {
+            "field": "citizenship",
+            "op": "eq",
+            "value": "US citizen",
+            "label": "US citizenship",
+            "claim_id": "citizen-only-funding"
+          }
+        ],
+        "confirmations": [],
+        "materials": []
+      }
+    ],
+    "expected": {
+      "status": [
+        "citizen-only",
+        "Needs confirmation"
+      ]
+    },
+    "sources": {
+      "https://example.edu/citizen-only": "For 2027, travel is prepaid and selected students receive a $2,000 stipend."
+    }
+  },
+  {
+    "id": "known-restriction",
+    "profile": {
+      "goal": "Environmental summer research",
+      "discipline": "Environment",
+      "year": "Sophomore",
+      "institution_type": "Four-year",
+      "institution": null,
+      "citizenship": "International student",
+      "gpa": null,
+      "full_time": null,
+      "research_career": null,
+      "transfer_plans": null,
+      "no_upfront": true,
+      "needs_housing": true
+    },
+    "records": [
+      {
+        "id": "citizen-only",
+        "title": "Environmental summer research",
+        "provider": "Synthetic evaluation provider",
+        "category": "Research",
+        "summary": "Undergraduate environmental summer research with funding",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Environment"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/citizen-only",
+        "claims": [
+          {
+            "id": "citizen-only-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/citizen-only",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [
+          {
+            "field": "citizenship",
+            "op": "eq",
+            "value": "US citizen",
+            "label": "US citizenship",
+            "claim_id": "citizen-only-funding"
+          }
+        ],
+        "confirmations": [],
+        "materials": []
+      }
+    ],
+    "expected": {
+      "empty": true
+    },
+    "sources": {
+      "https://example.edu/citizen-only": "For 2027, travel is prepaid and selected students receive a $2,000 stipend."
+    }
+  },
+  {
+    "id": "conflicting-source",
+    "profile": {
+      "goal": "Environmental summer research",
+      "discipline": "Environment",
+      "year": "Sophomore",
+      "institution_type": "Four-year",
+      "institution": null,
+      "citizenship": "US citizen",
+      "gpa": null,
+      "full_time": null,
+      "research_career": null,
+      "transfer_plans": null,
+      "no_upfront": true,
+      "needs_housing": false
+    },
+    "records": [
+      {
+        "id": "disputed",
+        "title": "Environmental summer research",
+        "provider": "Synthetic evaluation provider",
+        "category": "Research",
+        "summary": "Undergraduate environmental summer research with funding",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Environment"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/disputed",
+        "claims": [
+          {
+            "id": "disputed-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/disputed",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [],
+        "confirmations": [],
+        "materials": []
+      },
+      {
+        "id": "documented",
+        "title": "Environmental summer research",
+        "provider": "Synthetic evaluation provider",
+        "category": "Research",
+        "summary": "Undergraduate environmental summer research with funding",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Environment"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Allowance or arranged",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/documented",
+        "claims": [
+          {
+            "id": "documented-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/documented",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [],
+        "confirmations": [],
+        "materials": []
+      }
+    ],
+    "expected": {
+      "first": "documented",
+      "contradicted": "disputed-funding"
+    },
+    "sources": {
+      "https://example.edu/disputed": "For the 2027 cycle, students must pay travel costs themselves before reimbursement. Travel is not prepaid; a $2,000 stipend is available.",
+      "https://example.edu/documented": "For 2027, travel is prepaid and selected students receive a $2,000 stipend."
+    }
+  },
+  {
+    "id": "no-relevant-match",
+    "profile": {
+      "goal": "Astronomy astrophysics research internship",
+      "discipline": "STEM",
+      "year": "Sophomore",
+      "institution_type": "Four-year",
+      "institution": null,
+      "citizenship": "US citizen",
+      "gpa": null,
+      "full_time": null,
+      "research_career": null,
+      "transfer_plans": null,
+      "no_upfront": true,
+      "needs_housing": true
+    },
+    "records": [
+      {
+        "id": "poetry",
+        "title": "Poetry tuition award",
+        "provider": "Synthetic evaluation provider",
+        "category": "Scholarship",
+        "summary": "Tuition support for literary arts",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Arts"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/poetry",
+        "claims": [
+          {
+            "id": "poetry-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/poetry",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [],
+        "confirmations": [],
+        "materials": []
+      },
+      {
+        "id": "music",
+        "title": "Music tuition award",
+        "provider": "Synthetic evaluation provider",
+        "category": "Scholarship",
+        "summary": "Tuition support for performance",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Arts"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/music",
+        "claims": [
+          {
+            "id": "music-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/music",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [],
+        "confirmations": [],
+        "materials": []
+      }
+    ],
+    "expected": {
+      "empty": true
+    },
+    "sources": {
+      "https://example.edu/poetry": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+      "https://example.edu/music": "For 2027, travel is prepaid and selected students receive a $2,000 stipend."
+    }
+  },
+  {
+    "id": "nomination-plan",
+    "profile": {
+      "goal": "Environmental summer research",
+      "discipline": "Environment",
+      "year": "Sophomore",
+      "institution_type": "Four-year",
+      "institution": null,
+      "citizenship": "US citizen",
+      "gpa": null,
+      "full_time": null,
+      "research_career": null,
+      "transfer_plans": null,
+      "no_upfront": true,
+      "needs_housing": true
+    },
+    "records": [
+      {
+        "id": "nomination",
+        "title": "Environmental summer research",
+        "provider": "Synthetic evaluation provider",
+        "category": "Research",
+        "summary": "Undergraduate environmental summer research with funding",
+        "location": "USA fixture",
+        "country": "US",
+        "tags": [
+          "Environment"
+        ],
+        "award": "$2,000 stipend",
+        "housing": "Provided",
+        "travel": "Supported; timing unknown",
+        "fee": "None stated in fixture",
+        "upfront": "Confirmed none",
+        "opens_on": null,
+        "deadline": null,
+        "deadline_date": "2027-01-31",
+        "cycle": "2027",
+        "cycle_status": "Open",
+        "official_url": "https://example.edu/nomination",
+        "claims": [
+          {
+            "id": "nomination-funding",
+            "topic": "funding",
+            "text": "For 2027, travel is prepaid and selected students receive a $2,000 stipend.",
+            "url": "https://example.edu/nomination",
+            "checked": "2026-11-02"
+          }
+        ],
+        "rules": [],
+        "confirmations": [],
+        "materials": [
+          "Submit the final nominated application",
+          "Receive the required institutional nomination",
+          "Contact the nominating representative"
+        ]
+      }
+    ],
+    "expected": {
+      "plan_order": [
+        "material-2",
+        "material-1",
+        "material-0"
+      ]
+    },
+    "sources": {
+      "https://example.edu/nomination": "For 2027, travel is prepaid and selected students receive a $2,000 stipend."
+    }
+  }
+]

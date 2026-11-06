@@ -29,7 +29,7 @@ planning, human review, privacy-conscious state, evaluation and ablation.
 The same four specialist roles remain; tool control is deterministic code.
 
 Verification
-99 deterministic tests pass, including freshness/reuse, unapproved URLs, wrong
+108 deterministic tests pass, including freshness/reuse, unapproved URLs, wrong
 sources, invented quotes/indices, tool limits, clarification decline, evidence
 handoffs, single follow-up, rule/financial invariants, dependency cycles, editable
 drafts, UI comparison and per-run cost isolation.
@@ -39,20 +39,38 @@ also covered by Streamlit AppTest; the portaled menu was not reliably controlled
 by Edge automation. Final live browser checks required an assessed-source
 Evidence stage without validation fallback. All eight diagrams rendered.
 
-Original regression suite (prompt 2026-11-03-phase2-v2)
+
+Merged team integration (November 5, 2026)
+The teammate's Nebius adapter and six additional development cases are preserved.
+Fireworks remains the default; Nebius needs its own key/model and verified rates.
+Both adapters have mocked endpoint/cost checks. Phase 2 live grounding validation
+uses Fireworks; the retained Nebius report is not evidence for the new contract.
+
+The current summary/permutation suite has 38 cases: Discovery 9, Evidence 10,
+Fit 10, Planning 9. Three repetitions passed 27/27, 30/30, 30/30 and 27/27,
+respectively, with 100% contract validity. There are 114 live-mode case results,
+102 model calls, 12 empty guards and 114 paired baseline results.
+Receipt: evals/20261106T032951000782Z/ (prompt 2026-11-05-phase2-v3).
+Attributed estimated usage/reservations: $0.01253475.
+The new P09 case initially failed because degree-eligibility confirmation was
+ordered after essay preparation. That run remains at evals/20261106T032434041261Z/.
+The revised Planning instruction puts eligibility prerequisites before substantive
+application work. This is development iteration, not fresh held-out validation.
+
+Historical original regression suite (prompt 2026-11-03-phase2-v2)
 8 cases per role x 3 repeats, paired with local comparators. Each live role
 passed 24/24 with 100% contract validity. This is 96 live-mode evaluations:
 84 model calls and 12 empty-input guards, plus 96 baselines.
 Receipt: evals/20261103T042537223610Z/
 Attributed estimated usage/reservations: $0.0097155.
 
-Phase 2 role suite (same prompt version)
+Phase 2 role suite (current prompt 2026-11-05-phase2-v3)
 5 cases per role x 3 repeats, paired with comparators. Each live role passed
 15/15 with 100% contract validity. This is 60 live-mode evaluations: 57 calls
 and 3 empty Planning guards, plus 60 baselines. Discovery tests tool decisions;
 Evidence tests grounded judgments. Fit/Planning reuse regression scenarios.
-Receipt: evals/phase2-20261103T042419841604Z/
-Attributed estimated usage/reservations: $0.0073485.
+Receipt: evals/phase2-20261106T033216842430Z/
+Attributed estimated usage/reservations: $0.0074889.
 
 End-to-end journey ablations
 Seven fixed synthetic journeys: community-college transfer, no upfront funds,
@@ -60,14 +78,14 @@ missing residency, a known restriction, conflicting source evidence, no relevant
 catalog match, and a nomination-dependent plan. One run per case and variant.
 
 Variant                  Passed  Model calls  Estimated attributed cost
-Full workflow             7/7        24       $0.00297885
+Full workflow             7/7        24       $0.00303720
 All-local comparator      4/7         0       $0
-Without Discovery         6/7        13       $0.00210090
-Without Evidence          6/7        19       $0.00191205
-Without Fit               6/7        19       $0.00247125
-Without Planning          6/7        23       $0.00981195
+Without Discovery         6/7        13       $0.00214125
+Without Evidence          6/7        19       $0.00195900
+Without Fit               6/7        19       $0.00252360
+Without Planning          6/7        23       $0.00291780
 
-Receipt: experiments/journeys-20261103T042710097486Z/
+Receipt: experiments/journeys-20261106T033333804525Z/
 Each disabled role uses the documented simple comparator. The failures show
 role-specific value on these constructed tasks: abstention on irrelevant records,
 conflict detection, evidence-aware ordering, and nomination prerequisites.
@@ -79,7 +97,7 @@ Cases and labels are AI-assisted development artifacts, not independently
 reviewed annotations, held-out generalization estimates or real student trials.
 Prompts were revised after inspecting failures. There is no significance claim.
 Journey sources are controlled fixtures, not live retrieval benchmarks. The
-real-provider UI check demonstrates integration, not factual accuracy. Journey
+real-provider UI check demonstrates integration, not factual accuracy. Some historical journey
 timings include an environment interruption and are not a speed benchmark.
 Costs include retained reservations for uncertain billing; external account
 billing is not independently audited. Historical concurrent shared-ledger cost
