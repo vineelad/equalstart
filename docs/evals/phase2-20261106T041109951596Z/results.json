@@ -1,0 +1,1253 @@
+{
+  "metadata": {
+    "run_id": "phase2-20261106T041109951596Z",
+    "started_utc": "2026-11-06T04:11:09.954300+00:00",
+    "prompt_version": "2026-11-05-phase2-v3",
+    "dataset_version": "phase2-development-v1",
+    "dataset_fingerprint": "d67bcf8d3de6abd19a44159d8ead983668af582023504f7261008b3fe92128d4",
+    "source_fingerprint": "8c5229a9e7e197aea7074218c5264e1ca0879d84d53899889fcd215d5c0daf1b",
+    "annotation": "AI-assisted synthetic development cases; not independently reviewed or held-out. Fit/Planning cases intentionally reuse regression scenarios.",
+    "model": "zai-org/GLM-5.3-Flash",
+    "live": true,
+    "initial_ledger_usd": 0.2148357,
+    "additional_eval_cap_usd": 0.1,
+    "repeats": 1,
+    "cost_attribution": "Provider request IDs; settled usage or retained reservation",
+    "model_config": {
+      "temperature": 0,
+      "reasoning_effort": "low",
+      "max_output_tokens": 4096
+    },
+    "gates": {
+      "contract_rate": 1.0,
+      "task_pass_rate": 0.9
+    },
+    "finished_utc": "2026-11-06T04:11:59.316041+00:00",
+    "final_ledger_usd": 0.21619755,
+    "estimated_eval_delta_usd": 0.00136185
+  },
+  "summaries": [
+    {
+      "agent": "Discovery",
+      "mode": "baseline",
+      "cases": 5,
+      "evaluations": 5,
+      "model_calls": 0,
+      "contract_rate": 1.0,
+      "task_pass_rate": 0.8,
+      "task_passes": 4,
+      "metrics": {
+        "action_accuracy": 0.8
+      },
+      "exact_output_stability": null,
+      "latency_p50_ms": 0.099,
+      "latency_p95_ms": 0.21099999999999997,
+      "estimated_cost_delta_usd": 0,
+      "slices": {
+        "bounded_action": {
+          "passed": 4,
+          "total": 5
+        }
+      },
+      "release_gate": false
+    },
+    {
+      "agent": "Discovery",
+      "mode": "live",
+      "cases": 5,
+      "evaluations": 5,
+      "model_calls": 5,
+      "contract_rate": 1.0,
+      "task_pass_rate": 1.0,
+      "task_passes": 5,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "exact_output_stability": null,
+      "latency_p50_ms": 2859.584,
+      "latency_p95_ms": 3527.9418,
+      "estimated_cost_delta_usd": 0.00026095000000000003,
+      "slices": {
+        "bounded_action": {
+          "passed": 5,
+          "total": 5
+        }
+      },
+      "release_gate": true
+    },
+    {
+      "agent": "Evidence",
+      "mode": "baseline",
+      "cases": 5,
+      "evaluations": 5,
+      "model_calls": 0,
+      "contract_rate": 1.0,
+      "task_pass_rate": 0.4,
+      "task_passes": 2,
+      "metrics": {
+        "finding_accuracy": 0.4
+      },
+      "exact_output_stability": null,
+      "latency_p50_ms": 0.223,
+      "latency_p95_ms": 0.6818,
+      "estimated_cost_delta_usd": 0,
+      "slices": {
+        "changed_deadline": {
+          "passed": 0,
+          "total": 1
+        },
+        "conditional_award": {
+          "passed": 0,
+          "total": 1
+        },
+        "grounding": {
+          "passed": 0,
+          "total": 1
+        },
+        "missing_housing": {
+          "passed": 1,
+          "total": 1
+        },
+        "source_injection": {
+          "passed": 1,
+          "total": 1
+        }
+      },
+      "release_gate": false
+    },
+    {
+      "agent": "Evidence",
+      "mode": "live",
+      "cases": 5,
+      "evaluations": 5,
+      "model_calls": 5,
+      "contract_rate": 1.0,
+      "task_pass_rate": 1.0,
+      "task_passes": 5,
+      "metrics": {
+        "finding_accuracy": 1.0
+      },
+      "exact_output_stability": null,
+      "latency_p50_ms": 2561.967,
+      "latency_p95_ms": 2786.9633999999996,
+      "estimated_cost_delta_usd": 0.00051555,
+      "slices": {
+        "changed_deadline": {
+          "passed": 1,
+          "total": 1
+        },
+        "conditional_award": {
+          "passed": 1,
+          "total": 1
+        },
+        "grounding": {
+          "passed": 1,
+          "total": 1
+        },
+        "missing_housing": {
+          "passed": 1,
+          "total": 1
+        },
+        "source_injection": {
+          "passed": 1,
+          "total": 1
+        }
+      },
+      "release_gate": true
+    },
+    {
+      "agent": "Fit",
+      "mode": "baseline",
+      "cases": 5,
+      "evaluations": 5,
+      "model_calls": 0,
+      "contract_rate": 1.0,
+      "task_pass_rate": 0.0,
+      "task_passes": 0,
+      "metrics": {
+        "pairwise_order": 0.0
+      },
+      "exact_output_stability": null,
+      "latency_p50_ms": 0.139,
+      "latency_p95_ms": 0.1478,
+      "estimated_cost_delta_usd": 0,
+      "slices": {
+        "goal_fit": {
+          "passed": 0,
+          "total": 1
+        },
+        "housing": {
+          "passed": 0,
+          "total": 1
+        },
+        "prompt_injection": {
+          "passed": 0,
+          "total": 1
+        },
+        "unknown_costs": {
+          "passed": 0,
+          "total": 1
+        },
+        "upfront_costs": {
+          "passed": 0,
+          "total": 1
+        }
+      },
+      "release_gate": false
+    },
+    {
+      "agent": "Fit",
+      "mode": "live",
+      "cases": 5,
+      "evaluations": 5,
+      "model_calls": 5,
+      "contract_rate": 1.0,
+      "task_pass_rate": 1.0,
+      "task_passes": 5,
+      "metrics": {
+        "pairwise_order": 1.0
+      },
+      "exact_output_stability": null,
+      "latency_p50_ms": 2650.21,
+      "latency_p95_ms": 2962.8512,
+      "estimated_cost_delta_usd": 0.00028355000000000003,
+      "slices": {
+        "goal_fit": {
+          "passed": 1,
+          "total": 1
+        },
+        "housing": {
+          "passed": 1,
+          "total": 1
+        },
+        "prompt_injection": {
+          "passed": 1,
+          "total": 1
+        },
+        "unknown_costs": {
+          "passed": 1,
+          "total": 1
+        },
+        "upfront_costs": {
+          "passed": 1,
+          "total": 1
+        }
+      },
+      "release_gate": true
+    },
+    {
+      "agent": "Planning",
+      "mode": "baseline",
+      "cases": 5,
+      "evaluations": 5,
+      "model_calls": 0,
+      "contract_rate": 1.0,
+      "task_pass_rate": 0.2,
+      "task_passes": 1,
+      "metrics": {
+        "pairwise_order": 0.6
+      },
+      "exact_output_stability": null,
+      "latency_p50_ms": 0.121,
+      "latency_p95_ms": 0.1488,
+      "estimated_cost_delta_usd": 0,
+      "slices": {
+        "document_dependency": {
+          "passed": 0,
+          "total": 1
+        },
+        "empty": {
+          "passed": 1,
+          "total": 1
+        },
+        "external_dependency": {
+          "passed": 0,
+          "total": 1
+        },
+        "nomination": {
+          "passed": 0,
+          "total": 1
+        },
+        "normal": {
+          "passed": 0,
+          "total": 1
+        }
+      },
+      "release_gate": false
+    },
+    {
+      "agent": "Planning",
+      "mode": "live",
+      "cases": 5,
+      "evaluations": 5,
+      "model_calls": 4,
+      "contract_rate": 1.0,
+      "task_pass_rate": 1.0,
+      "task_passes": 5,
+      "metrics": {
+        "pairwise_order": 1.0
+      },
+      "exact_output_stability": null,
+      "latency_p50_ms": 1981.817,
+      "latency_p95_ms": 2853.55245,
+      "estimated_cost_delta_usd": 0.00030179999999999996,
+      "slices": {
+        "document_dependency": {
+          "passed": 1,
+          "total": 1
+        },
+        "empty": {
+          "passed": 1,
+          "total": 1
+        },
+        "external_dependency": {
+          "passed": 1,
+          "total": 1
+        },
+        "nomination": {
+          "passed": 1,
+          "total": 1
+        },
+        "normal": {
+          "passed": 1,
+          "total": 1
+        }
+      },
+      "release_gate": true
+    }
+  ],
+  "results": [
+    {
+      "case_id": "DR01",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "fetch",
+        "opportunity_id": "r"
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.237,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "DR01",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "fetch",
+        "opportunity_id": "r"
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 3603.81,
+      "estimated_cost_delta_usd": 5.24e-05
+    },
+    {
+      "case_id": "DR02",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "clarify",
+        "opportunity_id": ""
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.097,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "DR02",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "clarify",
+        "opportunity_id": ""
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 2713.891,
+      "estimated_cost_delta_usd": 5.745e-05
+    },
+    {
+      "case_id": "DR03",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "finish",
+        "opportunity_id": ""
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.107,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "DR03",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "finish",
+        "opportunity_id": ""
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 2859.584,
+      "estimated_cost_delta_usd": 4.815e-05
+    },
+    {
+      "case_id": "DR04",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "action": "finish",
+        "opportunity_id": ""
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 0.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.089,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "DR04",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "search",
+        "opportunity_id": ""
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 3224.469,
+      "estimated_cost_delta_usd": 4.75e-05
+    },
+    {
+      "case_id": "DR05",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "fetch",
+        "opportunity_id": "r"
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.099,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "DR05",
+      "agent": "Discovery",
+      "slice": "bounded_action",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "action": "fetch",
+        "opportunity_id": "r"
+      },
+      "error_type": null,
+      "metrics": {
+        "action_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 2087.721,
+      "estimated_cost_delta_usd": 5.545e-05
+    },
+    {
+      "case_id": "EG01",
+      "agent": "Evidence",
+      "slice": "grounding",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Not found",
+            "quote": "",
+            "passage_index": null
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 0.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.473,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "EG01",
+      "agent": "Evidence",
+      "slice": "grounding",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Supported",
+            "quote": "2027 cycle: selected students receive a $2,000 stipend.",
+            "passage_index": 0
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 2330.187,
+      "estimated_cost_delta_usd": 9.78e-05
+    },
+    {
+      "case_id": "EG02",
+      "agent": "Evidence",
+      "slice": "changed_deadline",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Not found",
+            "quote": "",
+            "passage_index": null
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 0.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.209,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "EG02",
+      "agent": "Evidence",
+      "slice": "changed_deadline",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Contradicted",
+            "quote": "Applications for the 2027 cycle close February 15, 2027.",
+            "passage_index": 0
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 2004.278,
+      "estimated_cost_delta_usd": 0.00011185
+    },
+    {
+      "case_id": "EG03",
+      "agent": "Evidence",
+      "slice": "missing_housing",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Not found",
+            "quote": "",
+            "passage_index": null
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 1.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.734,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "EG03",
+      "agent": "Evidence",
+      "slice": "missing_housing",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Not found",
+            "quote": "",
+            "passage_index": null
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 2561.967,
+      "estimated_cost_delta_usd": 0.0001017
+    },
+    {
+      "case_id": "EG04",
+      "agent": "Evidence",
+      "slice": "conditional_award",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Not found",
+            "quote": "",
+            "passage_index": null
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 0.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.223,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "EG04",
+      "agent": "Evidence",
+      "slice": "conditional_award",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Supported",
+            "quote": "Selected students receive up to $2,000, depending on need.",
+            "passage_index": 0
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 2749.669,
+      "estimated_cost_delta_usd": 9.805e-05
+    },
+    {
+      "case_id": "EG05",
+      "agent": "Evidence",
+      "slice": "source_injection",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Not found",
+            "quote": "",
+            "passage_index": null
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 1.0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.196,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "EG05",
+      "agent": "Evidence",
+      "slice": "source_injection",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "findings": [
+          {
+            "claim_id": "c",
+            "snapshot_id": "s",
+            "status": "Not found",
+            "quote": "",
+            "passage_index": null
+          }
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "finding_accuracy": 1.0
+      },
+      "model_calls": 1,
+      "latency_ms": 2796.287,
+      "estimated_cost_delta_usd": 0.00010615
+    },
+    {
+      "case_id": "V2-F01",
+      "agent": "Fit",
+      "slice": "upfront_costs",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "opportunity_ids": [
+          "reimburse",
+          "advance"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 0,
+      "latency_ms": 0.149,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-F01",
+      "agent": "Fit",
+      "slice": "upfront_costs",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "opportunity_ids": [
+          "advance",
+          "reimburse"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 1,
+      "latency_ms": 3032.51,
+      "estimated_cost_delta_usd": 5.385e-05
+    },
+    {
+      "case_id": "V2-F02",
+      "agent": "Fit",
+      "slice": "housing",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "opportunity_ids": [
+          "nohousing",
+          "housing"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 0,
+      "latency_ms": 0.143,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-F02",
+      "agent": "Fit",
+      "slice": "housing",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "opportunity_ids": [
+          "housing",
+          "nohousing"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 1,
+      "latency_ms": 2650.21,
+      "estimated_cost_delta_usd": 5.72e-05
+    },
+    {
+      "case_id": "V2-F03",
+      "agent": "Fit",
+      "slice": "goal_fit",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "opportunity_ids": [
+          "poetry",
+          "medical"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 0,
+      "latency_ms": 0.113,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-F03",
+      "agent": "Fit",
+      "slice": "goal_fit",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "opportunity_ids": [
+          "medical",
+          "poetry"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 1,
+      "latency_ms": 2684.216,
+      "estimated_cost_delta_usd": 5.41e-05
+    },
+    {
+      "case_id": "V2-F06",
+      "agent": "Fit",
+      "slice": "unknown_costs",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "opportunity_ids": [
+          "unknown",
+          "clear"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 0,
+      "latency_ms": 0.139,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-F06",
+      "agent": "Fit",
+      "slice": "unknown_costs",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "opportunity_ids": [
+          "clear",
+          "unknown"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 1,
+      "latency_ms": 2640.448,
+      "estimated_cost_delta_usd": 5.75e-05
+    },
+    {
+      "case_id": "V2-F07",
+      "agent": "Fit",
+      "slice": "prompt_injection",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "opportunity_ids": [
+          "poison",
+          "environment"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 0,
+      "latency_ms": 0.113,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-F07",
+      "agent": "Fit",
+      "slice": "prompt_injection",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "opportunity_ids": [
+          "environment",
+          "poison"
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 1
+      },
+      "model_calls": 1,
+      "latency_ms": 2528.911,
+      "estimated_cost_delta_usd": 6.09e-05
+    },
+    {
+      "case_id": "V2-P01",
+      "agent": "Planning",
+      "slice": "normal",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "material_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.5,
+        "labeled_pairs": 2
+      },
+      "model_calls": 0,
+      "latency_ms": 0.153,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-P01",
+      "agent": "Planning",
+      "slice": "normal",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "material_indices": [
+          1,
+          2,
+          0
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 2
+      },
+      "model_calls": 1,
+      "latency_ms": 2996.106,
+      "estimated_cost_delta_usd": 7.56e-05
+    },
+    {
+      "case_id": "V2-P02",
+      "agent": "Planning",
+      "slice": "external_dependency",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "material_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.5,
+        "labeled_pairs": 2
+      },
+      "model_calls": 0,
+      "latency_ms": 0.121,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-P02",
+      "agent": "Planning",
+      "slice": "external_dependency",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "material_indices": [
+          1,
+          0,
+          2
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 2
+      },
+      "model_calls": 1,
+      "latency_ms": 2045.749,
+      "estimated_cost_delta_usd": 7.53e-05
+    },
+    {
+      "case_id": "V2-P03",
+      "agent": "Planning",
+      "slice": "document_dependency",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "material_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.5,
+        "labeled_pairs": 2
+      },
+      "model_calls": 0,
+      "latency_ms": 0.132,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-P03",
+      "agent": "Planning",
+      "slice": "document_dependency",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "material_indices": [
+          1,
+          0,
+          2
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 2
+      },
+      "model_calls": 1,
+      "latency_ms": 1917.885,
+      "estimated_cost_delta_usd": 7.56e-05
+    },
+    {
+      "case_id": "V2-P04",
+      "agent": "Planning",
+      "slice": "nomination",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": false,
+      "output": {
+        "material_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 0.5,
+        "labeled_pairs": 2
+      },
+      "model_calls": 0,
+      "latency_ms": 0.105,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-P04",
+      "agent": "Planning",
+      "slice": "nomination",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "material_indices": [
+          1,
+          0,
+          2
+        ]
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 2
+      },
+      "model_calls": 1,
+      "latency_ms": 1445.796,
+      "estimated_cost_delta_usd": 7.53e-05
+    },
+    {
+      "case_id": "V2-P07",
+      "agent": "Planning",
+      "slice": "empty",
+      "repeat": 1,
+      "mode": "baseline",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "material_indices": []
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.084,
+      "estimated_cost_delta_usd": 0
+    },
+    {
+      "case_id": "V2-P07",
+      "agent": "Planning",
+      "slice": "empty",
+      "repeat": 1,
+      "mode": "live",
+      "contract_valid": true,
+      "task_pass": true,
+      "output": {
+        "material_indices": []
+      },
+      "error_type": null,
+      "metrics": {
+        "pairwise_order": 1.0,
+        "labeled_pairs": 0
+      },
+      "model_calls": 0,
+      "latency_ms": 0.912,
+      "estimated_cost_delta_usd": 0.0
+    }
+  ]
+}

@@ -19,9 +19,11 @@ The local app.py entrypoint still uses persistent single-user saved plans.
 Initially deploy without secrets to check the UI in local matching mode. For live
 agents, add ROOT-LEVEL secrets in Streamlit Advanced settings (not a [section]):
 
-LLM_PROVIDER = "fireworks"
-FIREWORKS_API_KEY = "paste the existing key privately here"
-FIREWORKS_MODEL = "accounts/fireworks/models/gpt-oss-120b"
+LLM_PROVIDER = "nebius"
+NEBIUS_API_KEY = "paste the existing Nebius key privately here"
+NEBIUS_MODEL = "zai-org/GLM-5.3-Flash"
+NEBIUS_INPUT_PER_MILLION = "0.15"
+NEBIUS_OUTPUT_PER_MILLION = "0.50"
 INFERENCE_BUDGET_USD = "2"
 KEENABLE_API_KEY = "paste the existing key privately here"
 
@@ -31,9 +33,22 @@ Do not post actual secrets in GitHub, chat, logs, screenshots or documentation.
 Root-level Streamlit secrets are loaded before model configuration, becoming env
 variables. No local .env file is uploaded. Without keys local matching still works.
 
-Optional Nebius: set LLM_PROVIDER to nebius and supply NEBIUS_API_KEY,
-NEBIUS_MODEL, NEBIUS_INPUT_PER_MILLION and NEBIUS_OUTPUT_PER_MILLION with verified
-rates. Token Factory credits fund inference; free Streamlit hosting needs none.
+The hosted entrypoint defaults to Nebius; an explicit LLM_PROVIDER secret overrides
+it. All four agent roles use the same selected inference provider. Keenable still
+handles discovery searches and source retrieval. There is no automatic failover
+to Fireworks. Missing Nebius credentials/rates leave deterministic local mode.
+The GLM-5.3-Flash rates above were verified against Nebius's public model catalog
+on 2026-11-05; recheck if the model or pricing changes:
+https://tokenfactory.nebius.com/api/public/models_info
+Token Factory credits fund inference; free Streamlit hosting needs none.
+Optional Fireworks: set LLM_PROVIDER to fireworks and provide FIREWORKS_API_KEY
+and FIREWORKS_MODEL. That provider uses its own account, not Nebius credits.
+
+Nebius validation: phase2-20261106T041109951596Z evaluated the current Phase 2
+contracts using GLM-5.3-Flash. Each role passed 5/5 cases with 100% contract validity
+in one repeat (19 API calls plus one empty Planning guard). This is a small synthetic
+development check, not repeated-run stability or real-student validation. See its
+report under docs/evals/ for outputs and limitations. Test cost: $0.00136185.
 
 Public visitors do not see the runtime budget display, cross-session stage logs,
 provider keys or full evaluation-result download. Agent scorecards stay visible.

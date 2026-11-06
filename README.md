@@ -11,7 +11,7 @@ The app combines a custom Streamlit interface with predictable eligibility rules
 
 ## Phase 2: evidence to action
 
-**Free demo hosting:** deploy `streamlit_app.py` from branch `deploy/streamlit-community-cloud` on [Streamlit Community Cloud](https://share.streamlit.io/), selecting Python 3.12. Saved plans are separate for each browser session and can be downloaded; session loss or a restart clears them. Provider keys belong in private Streamlit secrets. See [deployment instructions](docs/STREAMLIT_DEPLOYMENT.txt) for configuration and budget/storage limits. This repository includes deployment preparation; a hosted URL is not yet verified.
+**Free demo hosting:** deploy `streamlit_app.py` from branch `deploy/streamlit-community-cloud` on [Streamlit Community Cloud](https://share.streamlit.io/), selecting Python 3.12. All four agents default to Nebius Token Factory; Keenable handles source retrieval. Saved plans are separate for each browser session and can be downloaded; session loss or a restart clears them. Provider keys belong in private Streamlit secrets. See [deployment instructions](docs/STREAMLIT_DEPLOYMENT.txt) for configuration and budget/storage limits. This repository includes deployment preparation; a hosted URL is not yet verified.
 
 The recommendation experience now connects research, evidence, and preparation:
 

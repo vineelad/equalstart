@@ -32,6 +32,7 @@ def test_plan_values_cannot_mutate_another_store_view(tmp_path):
 
 
 def test_cloud_entrypoint_hides_usage_and_other_visitors(monkeypatch, tmp_path):
+    monkeypatch.delenv("LLM_PROVIDER", raising=False)
     monkeypatch.setenv("EQUALSTART_PUBLIC", "1")
     monkeypatch.setenv("FIREWORKS_API_KEY", "")
     monkeypatch.setenv("NEBIUS_API_KEY", "")
@@ -46,4 +47,5 @@ def test_cloud_entrypoint_hides_usage_and_other_visitors(monkeypatch, tmp_path):
     assert not app.exception
     assert not any("spent or reserved" in str(item.value) for item in app.markdown)
     assert not app.json
+    assert any("Use live Nebius agents" == item.label for item in app.toggle)
     assert not any("full evaluation" in str(item.label) for item in app.get("download_button"))
